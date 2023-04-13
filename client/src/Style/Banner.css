@@ -1,0 +1,139 @@
+.Home{
+    background-color: #FFCC33;
+    position: absolute;
+    left: -1px;
+    width: 100%;
+    height: 120px;
+    top: -60px;
+    border-radius: 59px;
+}
+
+.TitleApp{
+    position: absolute;
+    width: 50%;
+    height: 35px;
+    top: 11px;
+    left: 2.5%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.ButtonUser{
+    position: absolute;
+    display: flex;
+    
+    height: 41px;
+    left: 66.96%;
+    right: 3.1%;
+    top: 5px;
+    
+    background-color: #FFCC33;
+    
+    border-width: 0px;
+}
+
+.IconGuest{
+    width: 41px;
+    height: 41px;    
+}
+
+.ButtonUser:hover .IconGuest{
+    width: 50px;
+    height: 50px;
+}
+
+.UserName{
+    margin-top: 2%;
+    margin-left: 10px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.ButtonUser:hover .UserName{
+    font-size: 30px;
+    margin-top: 4%;
+}
+
+.modalStyle .ant-modal-content{
+    background-color: #FFCC33;
+    border-radius: 10%;
+    width: 468.38px;
+    height: 422.68px;
+}
+
+.ButtonBeginSesion{
+    position: absolute;
+    display: flex;
+    background-color: #FFA600;
+    border: 0px;
+    border-radius: 5%;
+    width: 400.7px;
+    height: 97.22px;
+    left: 33.79px;
+    top: 132.07px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 37.4094px;
+    line-height: 45px;
+
+    color: #FFFFFF;
+}
+
+.ButtonBeginSesion:hover{
+    width: 450.7px;
+    height: 107.22px;
+    left: 10px;
+    background-color: #E57602;
+}
+
+.GoogleIconButton{
+    position: relative;
+    top: 20%;
+    left: 10%;
+    width:53px;
+    height:53px;
+}
+
+.TitleButton{
+    position: relative;
+    top: -10%;
+    left: 15%;
+}
+
+.ButtonRegister{
+    position: absolute;
+    background-color: #FFA600;
+    border: 0px;
+    border-radius: 5%;
+    width: 379.22px;
+    height: 76.2px;
+    left: 45.05px;
+    top: 263.45px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 42.5299px;
+    line-height: 51px;
+
+    color: white;
+}
+
+.ButtonRegister:hover{
+    background-color: #E57602;
+    width: 429.22px;
+    height: 86.2px;
+    left: 20px;
+}
