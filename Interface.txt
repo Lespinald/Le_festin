@@ -1,0 +1,20 @@
+interface Usuario {
+    ID_usuario: string, (uid de firebase),
+    userName: string, (displayName de firebase),
+    email: string, (correo de firebase),
+}
+
+interface Receta {
+    ID_receta: int,
+    nombre: string,
+    imagen:string,
+    descripcion: string,
+    procedimiento: string[],
+    ingredientes: numbers[]
+}
+
+interface Ingrediente {
+    ID_ingrediente:int,
+    nombre:string,
+    imagen:string
+}

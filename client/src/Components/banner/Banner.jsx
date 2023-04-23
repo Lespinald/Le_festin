@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../Style/Banner.css";
 import { Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { startGoogleSignIn } from "../../store/auth/thunks";
+import { Link, Navigate, Route } from 'react-router-dom';
 
-const Banner = () => {
+const Banner = ({setError}) => {
   const dispatch = useDispatch();
-  const info = useSelector(state => state.auth);
+  const info = useSelector((state) => state.auth);
   const [BeginModal, setBeginModal] = useState(false);
-  const [Validate, setValidate] = useState(true)
+  const [Validate, setValidate] = useState(true);
 
   const BeginSesion = async () => {
-    await dispatch(startGoogleSignIn())
+    await dispatch(startGoogleSignIn());
     ModalClose();
-    setValidate(info?.status === "authenticated")
+    setValidate(info?.status === "authenticated");
   };
 
   const ModalOpen = () => {
@@ -25,29 +26,35 @@ const Banner = () => {
   };
 
   return (
-    <>
+    <>      
       <div className="Home" />
       <div className="TitleApp">Titulo de Pagina</div>
       <button className="ButtonUser" onClick={ModalOpen}>
         <img src="icon_guest.png" className="IconGuest" />
         <p className="UserName">{info?.displayName}</p>
       </button>
-      {Validate && <Modal
-        open={BeginModal}
-        onCancel={ModalClose}
-        footer={null}
-        centered={true}
-        className="modalStyle"
-      >
-        <button onClick={BeginSesion} className="ButtonBeginSesion">
-          <img src="Google Icon.png" className="GoogleIconButton"/>
-          <p className="TitleButton">Iniciar Sesión</p>
-        </button>
-        <button onClick={BeginSesion} className="ButtonRegister">
-          Registrarse
-        </button>
-      </Modal>}
-      <div/>
+      <br></br>
+      <button onClick={() => {setError(false)}}>
+        Redirect
+      </button>
+      {Validate && (
+        <Modal
+          open={BeginModal}
+          onCancel={ModalClose}
+          footer={null}
+          centered={true}
+          className="modalStyle"
+        >
+          <button onClick={BeginSesion} className="ButtonBeginSesion">
+            <img src="Google Icon.png" className="GoogleIconButton" />
+            <p className="TitleButton">Iniciar Sesión</p>
+          </button>
+          <button onClick={BeginSesion} className="ButtonRegister">
+            Registrarse
+          </button>
+        </Modal>
+      )}
+      <div />
     </>
   );
 };
