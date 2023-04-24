@@ -1,0 +1,46 @@
+{
+    "ingredientes": [
+      {
+        "nombre": "Harina de trigo"
+      },
+      {
+        "nombre": "Azúcar blanca"
+      },
+      {
+        "nombre": "Mantequilla"
+      },
+      {
+        "nombre": "Huevos"
+      },
+      {
+        "nombre": "Leche"
+      },
+      {
+        "nombre": "Sal"
+      },
+      {
+        "nombre": "Polvo de hornear"
+      },
+      {
+        "nombre": "Vainilla"
+      },
+      {
+        "nombre": "Canela"
+      },
+      {
+        "nombre": "Chocolate"
+      },
+      {
+        "nombre": "Tomate"
+      },
+      {
+        "nombre": "Manzana"
+      },
+      {
+        "nombre": "Pasta"
+      },
+      {
+        "nombre": "Ajo"
+      }
+    ]
+  }

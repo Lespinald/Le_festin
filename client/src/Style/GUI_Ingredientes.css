@@ -1,0 +1,88 @@
+button {
+    cursor: pointer; /* Cambia el cursor a una mano */
+}
+button:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado al pasar el mouse */
+}
+
+.componente_busqueda {
+    position: absolute;
+    left: 2%;
+    top:  100px;
+    width: 30%;
+    height: 60px;
+    overflow: hidden;
+    /*background-color: #d6d6d6;*/
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.barra_busqueda {
+    /*display: inline-block;*/
+    position: absolute;
+    left: 1px;
+    width: calc(100% - 7px);
+    height: 90%;
+    border-radius: 32px;
+    border: #d6e8ea;
+    background-color: #d6e8ea;
+    color: #00000080;
+    font-size: 23.3962px;
+    font-weight: 600;
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    justify-content: center;
+    text-indent: 80px;
+}
+
+.lupa_icon {
+    position: absolute;
+    left: 25px;
+    width: 35px;
+    height: 35px;
+    overflow: visible;
+}
+
+
+.componente_Ingredientes {
+    position: absolute;
+    left: 2%;
+    top:  200px;
+    width: 30.8%;
+    max-height: 700px;
+    overflow-y: auto;
+    /*background-color: #dddddd;*/
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    width: 95%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    
+  }
+  
+.grid-item {
+    background: #F0D678;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 11.6981px;
+    border: #F0D678;
+    height: 200px;
+    color: #000000;
+    font-size: 23.3962px;
+    font-weight: 600;
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.grid-item:hover{
+    
+}
