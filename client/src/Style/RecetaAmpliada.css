@@ -1,0 +1,52 @@
+
+
+.MainContainer{
+  font-family: 'Maven Pro', consolas;
+  font-size: large;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-height: 97vh;
+  background-color: #CFE3E6;
+  border-radius: 1.2rem;
+  padding: 1rem;
+}
+
+.IngredientContainer{
+  grid-column: 1;
+  font-weight: bold;
+
+  width: min-content;
+  max-height: 100%;
+}
+
+.RecipeContainer{
+  flex-grow: 1;
+}
+
+.IngredientScrollable{
+  padding: 0.75rem;
+
+  box-sizing: border-box;
+  max-height: 96%;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #00000010;
+  border-radius: 1rem;
+}
+
+.IngredientImage{
+  width: 100%;
+  overflow: hidden;
+}
+.IngredientImageCrop{
+  position: relative;
+  width: 200%;
+  left: -50%;
+}
