@@ -1,6 +1,4 @@
-
-
-.MainContainer{
+.MainRecetaAmpliada{
   font-family: 'Maven Pro', consolas;
   font-size: large;
   display: flex;
@@ -20,11 +18,9 @@
   width: min-content;
   max-height: 100%;
 }
-
 .RecipeContainer{
   flex-grow: 1;
 }
-
 .IngredientScrollable{
   padding: 0.75rem;
 
@@ -44,6 +40,7 @@
 .IngredientImage{
   width: 100%;
   overflow: hidden;
+  background-color: #f00;
 }
 .IngredientImageCrop{
   position: relative;

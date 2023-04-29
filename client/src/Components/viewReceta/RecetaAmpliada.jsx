@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+
+import Ingredientes from '../Ingredientes'
+import RecetaMax from './RecetaMax'
 import '../../Style/RecetaAmpliada.css'
 
 //uso <RecetaAmpliada receta="{receta}" ingredientes="{ingredientes}" usuario="{usuario}"><RecetaAmpliada/>
-const RecetaAmpliada = () => {
+const RecetaAmpliada = (props) => {
   const [receta, setReceta] = useState({
     ID_receta: 0,
     nombre: "Changua",
@@ -22,7 +25,7 @@ const RecetaAmpliada = () => {
       "Undecimo paso",
       "Doceavo paso"
     ],
-    ingredientes: [0,1,2]
+    ingredientes: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
   })
 
   const [ingredientes, setIngredientes] = useState([
@@ -35,53 +38,19 @@ const RecetaAmpliada = () => {
 
   return (
     <>
-      <div className='MainContainer'>
+      <div className='MainRecetaAmpliada'>
         <div className='IngredientContainer'>
           <div style={{marginRight: "0.5rem"}}>Ingredientes</div>
           <div className='IngredientScrollable'>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
-            <div className='IngredientImage'>
-              <img className='IngredientImageCrop' src={ingredientes[0].imagen} alt="tomate" />
-            </div>
+            {
+              ingredientes.map(
+                (e, i) => <Ingredientes/>
+              )
+            }
           </div>
         </div>
         <div className='RecipeContainer'>
-          <div>receta</div>
+          <RecetaMax receta={props.receta} usuario={props.usuario}/>
         </div>
       </div>
     </>
