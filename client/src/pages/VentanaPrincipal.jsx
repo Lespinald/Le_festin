@@ -4,10 +4,9 @@ import Ingredientes from '../Components/Ingredientes'
 import Receta from '../Components/Receta'
 
 
-const VentanaPrincipal = ({setError}) => {
+const VentanaPrincipal = () => {
   return (
     <div className='VentanaPrincipal'>
-      <Banner setError={setError}/>  
       <Ingredientes/>
       <Receta/>
     </div>
