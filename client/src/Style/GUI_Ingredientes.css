@@ -1,3 +1,9 @@
+* {
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    font-weight: 600;
+}
+
 button {
     cursor: pointer; /* Cambia el cursor a una mano */
 }
@@ -5,14 +11,22 @@ button:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado al pasar el mouse */
 }
 
+.INGREDIENTES {
+    position: absolute;
+    /*background-color: #8bf890;*/
+    top: 85px;
+    left: 1.5%;
+    height: calc(97% - 85px);
+    width: calc(35% - 1.5%);
+}
+
 .componente_busqueda {
     position: absolute;
-    left: 2%;
-    top:  100px;
-    width: 30%;
-    height: 60px;
-    overflow: hidden;
-    /*background-color: #d6d6d6;*/
+    left: 0%;
+    top:  0%;
+    width: 100%;
+    height: 50px;
+    /*background-color: #ffacac;*/
     display: flex;
     justify-content: left;
     align-items: center;
@@ -20,7 +34,7 @@ button:hover{
 
 .barra_busqueda {
     /*display: inline-block;*/
-    position: absolute;
+    position: relative;
     left: 1px;
     width: calc(100% - 7px);
     height: 90%;
@@ -29,9 +43,6 @@ button:hover{
     background-color: #d6e8ea;
     color: #00000080;
     font-size: 23.3962px;
-    font-weight: 600;
-    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
     justify-content: center;
     text-indent: 80px;
 }
@@ -44,23 +55,24 @@ button:hover{
     overflow: visible;
 }
 
-
 .componente_Ingredientes {
-    position: fixed;
-    background: #dbdbdb86;
-    left: 2%;
-    top:  400px;
-    width: 30%;
-    height: 50%;
-    overflow-y: auto;
+    position: absolute;
+    background: #F0EDE8;
+    left: 0%;
+    top:  calc(27% + 55px);
+    width: 100%;
+    height: calc(100% - calc(27% + 55px));
+    overflow-y: scroll;
     /*background-color: #dddddd;*/
     display: flex;
     justify-content: center;
+    border-radius: 20px;
 }
 
 .componente_Ingredientes::-webkit-scrollbar {
-    width: 0.5em;
-  }
+    width: 0.01em;
+    opacity: 0;
+}
 
 .grid-container_ingredientes {
     position: relative;
@@ -72,18 +84,16 @@ button:hover{
 }
   
 .grid-item_ingrediente {
+    position: relative;
     background: #F0D678;
     padding: 10px;
     text-align: center;
     vertical-align: middle;
-    border-radius: 11.6981px;
+    border-radius: 25px;
     border: #F0D678;
     height: 200px;
     color: #000000;
-    font-size: 23.3962px;
-    font-weight: 600;
-    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
+    font-size: 20px;
     overflow-wrap: anywhere;
     hyphens: auto;
     display: flex;
@@ -91,42 +101,58 @@ button:hover{
     align-items: flex-end;
 }
 
-
+.imagen_Ingrediente {
+    position: absolute;
+    max-width: 100%;
+    max-height: 60%;
+    top: 10%;
+}
 
 .componente_elegidos {
     position: absolute;
-    left: 2%;
-    top:  160px;
-    width: 30%;
-    height: 200px;
-    /*background-color: #dddddd;*/
+    /*background-color: #ff9edf;*/
+    left: 0%;
+    top:  50px;
+    width: 100%;
+    height: 27%;
 }
 
 .text_ingredientes_elegidos{
-    position: relative;
+    position: absolute;
     left: 3%;
-    font-weight: 600;
-    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
+    margin-top: 15px;
 }
 
 .componente_elegidos_grid {
-    position: relative;
-    top:  10px;
-    max-height: 120px;
-    overflow-y: auto;
+    position: absolute;
+    top:  50px;
+    height: calc(100% - 60px);
+    width: calc(100% - 4px);
+    overflow-y: scroll;
     /*background-color: #dddddd;*/
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+    border: 2px solid #dbdbdb86;
+    border-radius: 20px;
+}
+
+.mensaje_Ingredientes {
+    color: #0000004f;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .componente_elegidos_grid::-webkit-scrollbar {
-    width: 0.5em;
-  }
+    width: 0.01em;
+}
 
 .grid-container_elegidos {
+    position: relative;
     display: grid;
     width: 95%;
+    margin-top: 8px;
+    margin-bottom: 8px;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
@@ -139,16 +165,34 @@ button:hover{
     /*vertical-align: left;*/
     border-radius: 11.6981px;
     border: #d6e8ea;
-    height: 50px;
+    height: 60px;
     color: #000000;
     font-size: 18px;
-    font-weight: 600;
-    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
     overflow-wrap: anywhere;
     hyphens: auto;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
+
+.imagen-hover {
+    position: absolute;
+    display: none;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.grid-item_elegido:hover {
+    color: #00000069;
+    background-color: #ff6262;
+}
+
+.grid-item_elegido:hover .imagen-hover {
+    display: block;
+    opacity: 0.8;
+}
+
