@@ -31,27 +31,18 @@ const Ingredientes = () => {
   console.log(ingredientes_elegidos)
 
   return (
-    <div>
+    <div className="INGREDIENTES">
+      
       {/*Apartado de la barra de busqueda------------------------------------ */}
       <section className="componente_busqueda">
-        <input 
-          type="text" 
-          placeholder="Buscar ingredientes" 
-          className="barra_busqueda" 
-          onChange={(e) => {
-            set_search_Ingrediente(e.target.value)
-          }}
-        />
-        <img 
-          src="lupa_icon.png" 
-          className="lupa_icon" 
-        />
+        <input type="text" placeholder="Buscar ingredientes" className="barra_busqueda" onChange={(e) => {set_search_Ingrediente(e.target.value)}} />
+        <img src="lupa_icon.png" className="lupa_icon" />
       </section>
       {/*Apartado de los ingredientes que se seleccionaron------------------- */}
       <section className="componente_elegidos">
-        <h2 className="text_ingredientes_elegidos">
+        <h3 className="text_ingredientes_elegidos">
           Ingredientes seleccionados:
-        </h2>
+        </h3>
         <div className="componente_elegidos_grid">
           {ingredientes_elegidos.length === 0 && (
             <p className="mensaje_Ingredientes">Escoge los ingredientes</p>
@@ -68,7 +59,7 @@ const Ingredientes = () => {
           )}
         </div>
       </section>
-      {/*Apartado de los ingredientes para su selección---------------------- */}
+      {/*Apartado de los ingredientes para su selección----------------------*/}
       <section className="componente_Ingredientes">
         <div className="grid-container_ingredientes">
           {data.ingredientes.map((ingrediente) => (

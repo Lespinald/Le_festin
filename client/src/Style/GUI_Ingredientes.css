@@ -11,14 +11,22 @@ button:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado al pasar el mouse */
 }
 
+.INGREDIENTES {
+    position: absolute;
+    /*background-color: #8bf890;*/
+    top: 85px;
+    left: 1.5%;
+    height: calc(97% - 85px);
+    width: calc(35% - 1.5%);
+}
+
 .componente_busqueda {
     position: absolute;
-    left: 2%;
-    top:  10%;
-    width: 30%;
-    height: 60px;
-    overflow: hidden;
-    /*background-color: #d6d6d6;*/
+    left: 0%;
+    top:  0%;
+    width: 100%;
+    height: 50px;
+    /*background-color: #ffacac;*/
     display: flex;
     justify-content: left;
     align-items: center;
@@ -26,7 +34,7 @@ button:hover{
 
 .barra_busqueda {
     /*display: inline-block;*/
-    position: absolute;
+    position: relative;
     left: 1px;
     width: calc(100% - 7px);
     height: 90%;
@@ -47,14 +55,13 @@ button:hover{
     overflow: visible;
 }
 
-
 .componente_Ingredientes {
-    position: fixed;
+    position: absolute;
     background: #F0EDE8;
-    left: 2%;
-    top:  400px;
-    width: 30%;
-    height: 50%;
+    left: 0%;
+    top:  calc(27% + 55px);
+    width: 100%;
+    height: calc(100% - calc(27% + 55px));
     overflow-y: scroll;
     /*background-color: #dddddd;*/
     display: flex;
@@ -103,21 +110,24 @@ button:hover{
 
 .componente_elegidos {
     position: absolute;
-    left: 2%;
-    top:  160px;
-    width: 30%;
-    height: 200px;
+    /*background-color: #ff9edf;*/
+    left: 0%;
+    top:  50px;
+    width: 100%;
+    height: 27%;
 }
 
 .text_ingredientes_elegidos{
-    position: relative;
+    position: absolute;
     left: 3%;
+    margin-top: 15px;
 }
 
 .componente_elegidos_grid {
-    position: relative;
-    top:  10px;
-    height: 120px;
+    position: absolute;
+    top:  50px;
+    height: calc(100% - 60px);
+    width: calc(100% - 4px);
     overflow-y: scroll;
     /*background-color: #dddddd;*/
     display: flex;

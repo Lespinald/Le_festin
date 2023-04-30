@@ -31,7 +31,7 @@
           "imagen": "https://cdn-icons-png.flaticon.com/512/2156/2156550.png"
       },
       {
-          "nombre": "Polvo de hornear",
+          "nombre": "Levadura",
           "estado": "deseleccionado",
           "imagen": "https://cdn-icons-png.flaticon.com/512/3348/3348061.png"
       },
@@ -53,7 +53,7 @@
       {
           "nombre": "Tomate",
           "estado": "deseleccionado",
-          "imagen": "https://cdn-icons-png.flaticon.com/512/1202/1202125.png"
+          "imagen": "https://cdn-icons-png.flaticon.com/512/1054/1054111.png"
       },
       {
           "nombre": "Manzana",
@@ -61,9 +61,9 @@
           "imagen": "https://images.vexels.com/media/users/3/188899/isolated/preview/b53c80cc51ec7c0d6dd3eec76837cad8-trazo-de-icono-de-manzana.png"
       },
       {
-          "nombre": "Pasta",
+          "nombre": "Carne de res",
           "estado": "deseleccionado",
-          "imagen": "https://cdn-icons-png.flaticon.com/512/5787/5787180.png"
+          "imagen": "https://cdn-icons-png.flaticon.com/512/5745/5745943.png"
       },
       {
           "nombre": "Ajo",
