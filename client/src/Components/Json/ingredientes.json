@@ -1,49 +1,74 @@
 {
-    "ingredientes": [
+  "ingredientes": [
       {
-        "nombre": "Harina de trigo"
+          "nombre": "Harina de trigo",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/2067/2067343.png"
       },
       {
-        "nombre": "Azúcar blanca"
+          "nombre": "Azúcar blanca",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/3703/3703434.png"
       },
       {
-        "nombre": "Mantequilla"
+          "nombre": "Mantequilla",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/2915/2915875.png"
       },
       {
-        "nombre": "Huevos"
+          "nombre": "Huevos",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/3142/3142726.png"
       },
       {
-        "nombre": "Leche"
+          "nombre": "Leche",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/3982/3982755.png"
       },
       {
-        "nombre": "Sal"
+          "nombre": "Sal",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/2156/2156550.png"
       },
       {
-        "nombre": "Polvo de hornear"
+          "nombre": "Polvo de hornear",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/3348/3348061.png"
       },
       {
-        "nombre": "Vainilla"
+          "nombre": "Vainilla",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/6768/6768194.png"
       },
       {
-        "nombre": "Canela"
+          "nombre": "Canela",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/4139/4139334.png"
       },
       {
-        "nombre": "Chocolate"
+          "nombre": "Chocolate",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/3465/3465221.png"
       },
       {
-        "nombre": "Tomate"
+          "nombre": "Tomate",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/1202/1202125.png"
       },
       {
-        "nombre": "Manzana"
+          "nombre": "Manzana",
+          "estado": "deseleccionado",
+          "imagen": "https://images.vexels.com/media/users/3/188899/isolated/preview/b53c80cc51ec7c0d6dd3eec76837cad8-trazo-de-icono-de-manzana.png"
       },
       {
-        "nombre": "Pasta"
+          "nombre": "Pasta",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/5787/5787180.png"
       },
       {
-        "nombre": "Ajo"
-      },
-      {
-        "nombre":"Parangaricutirimicuaro"
+          "nombre": "Ajo",
+          "estado": "deseleccionado",
+          "imagen": "https://cdn-icons-png.flaticon.com/512/6108/6108170.png"
       }
-    ]
-  }
+  ]
+}

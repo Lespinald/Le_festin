@@ -18,7 +18,7 @@ const Ingredientes = () => {
     }
   }
 
-  function deseleccionarIngrediente(value) {
+  function deseleccionarIngrediente(value) {//funcion para deseleccionar, osea elimnar el ingrediente del arrey ingredientes_elegidos
     console.log(value)
     const indice = ingredientes_elegidos.indexOf(value);
     console.log(indice)
@@ -53,14 +53,19 @@ const Ingredientes = () => {
           Ingredientes seleccionados:
         </h2>
         <div className="componente_elegidos_grid">
-          <div className="grid-container_elegidos">
-            {ingredientes_elegidos.map((ingrediente, index) => (
-              <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
-                {ingrediente}
-                <img src="../../public/x.png" alt="imagen" class="imagen-hover"></img>
-              </button>
-            ))}
-          </div>
+          {ingredientes_elegidos.length === 0 && (
+            <p className="mensaje_Ingredientes">Escoge los ingredientes</p>
+          )}
+          {ingredientes_elegidos.length > 0 && (
+            <div className="grid-container_elegidos">
+              {ingredientes_elegidos.map((ingrediente, index) => (
+                <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
+                  {ingrediente}
+                  <img src="../../public/x.png" alt="imagen" class="imagen-hover"></img>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </section>
       {/*Apartado de los ingredientes para su selección---------------------- */}
@@ -69,6 +74,7 @@ const Ingredientes = () => {
           {data.ingredientes.map((ingrediente) => (
             <button key={ingrediente.nombre} className="grid-item_ingrediente" onClick={() => seleccionarIngrediente(ingrediente.nombre)}>
               {ingrediente.nombre}
+              <img src={ingrediente.imagen} className="imagen_Ingrediente"/>
             </button>
           ))}
         </div>
