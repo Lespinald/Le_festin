@@ -77,9 +77,9 @@ const ViewPreguntasSugerencias = () => {
           style={{ display: "flex", flexDirection: "column", marginLeft: "1%" }}
         >
           <select onChange={handleSeleccion} className="typeSelection" value={seleccion}>
-            <option value={""}>Seleccione Una</option>
-            <option value={"P"}>Pregunta</option>
-            <option value={"S"}>Sugerencia</option>
+            <option value={""} style={{fontFamily:"Maven Pro", fontSize:"20px"}}>Seleccione Una</option>
+            <option value={"P"}  style={{fontFamily:"Maven Pro", fontSize:"20px"}}>Pregunta</option>
+            <option value={"S"}  style={{fontFamily:"Maven Pro", fontSize:"20px"}}>Sugerencia</option>
           </select>
           <button className="enviarButton" onClick={handleEnviar}>
             Enviar
