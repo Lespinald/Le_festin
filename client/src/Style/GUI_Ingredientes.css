@@ -46,12 +46,12 @@ button:hover{
 
 
 .componente_Ingredientes {
-    position: absolute;
+    position: fixed;
     background: #dbdbdb86;
     left: 2%;
     top:  400px;
     width: 30%;
-    max-height: 500px;
+    height: 50%;
     overflow-y: auto;
     /*background-color: #dddddd;*/
     display: flex;
@@ -62,7 +62,6 @@ button:hover{
     position: relative;
     display: grid;
     top: 10px;
-    margin-bottom: 100px;
     width: 95%;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
@@ -89,20 +88,27 @@ button:hover{
 }
 
 
-.text_ingredientes_elegidos{
+
+.componente_elegidos {
     position: absolute;
+    left: 2%;
+    top:  160px;
+    width: 30%;
+    height: 200px;
+    /*background-color: #dddddd;*/
+}
+
+.text_ingredientes_elegidos{
+    position: relative;
     left: 3%;
-    top: 170px;
     font-weight: 600;
     font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif;
 }
 
-.componente_elegidos {
-    position: absolute;
-    left: 2%;
-    top:  240px;
-    width: 30%;
+.componente_elegidos_grid {
+    position: relative;
+    top:  10px;
     max-height: 120px;
     overflow-y: auto;
     /*background-color: #dddddd;*/

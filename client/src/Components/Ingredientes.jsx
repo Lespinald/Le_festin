@@ -3,15 +3,15 @@ import "../Style/GUI_Ingredientes.css";
 import data from './Json/ingredientes.json'
 
 const Ingredientes = () => {
-  const [search_ingrediente, set_search_Ingrediente] = useState('');
-  const [ingrediente, set_Ingrediente] = useState('');
-  const [ingredientes_elegidos, set_Ingredientes_Elegidos] = useState([]);
+  const [search_ingrediente, set_search_Ingrediente] = useState('');//string para la busqueda (no tiene uso aún)
+  const [ingrediente, set_Ingrediente] = useState('');//string para ingrediente al que se le da click (no tiene uso aún)
+  const [ingredientes_elegidos, set_Ingredientes_Elegidos] = useState([]);//array de los ingredientes elegidos
 
   console.log(search_ingrediente)
 
-  function agregar_ingredientes(value) {
-    set_Ingrediente(value)
-    if (!ingredientes_elegidos.includes(value)){
+  function seleccionarIngrediente(value) {//funcion para agregar al array ingredientes_elegidos los ingredientes seleccionados, recibe un string value
+    set_Ingrediente(value) //el valor 
+    if (!ingredientes_elegidos.includes(value)){//condicion para que no se repitan ingredientes selccionados
       set_Ingredientes_Elegidos(ingredientes_elegidos.concat(value))
     }
   }
@@ -20,7 +20,8 @@ const Ingredientes = () => {
 
   return (
     <div>
-      <div className="componente_busqueda">
+      {/*Apartado de la barra de busqueda------------------------------------ */}
+      <section className="componente_busqueda">
         <input 
           type="text" 
           placeholder="Buscar ingredientes" 
@@ -33,35 +34,32 @@ const Ingredientes = () => {
           src="lupa_icon.png" 
           className="lupa_icon" 
         />
-      </div>
-      <h2 className="text_ingredientes_elegidos">
-        Ingredientes seleccionados:
-      </h2>
-      <div className="componente_elegidos">
-        <div className="grid-container_elegidos">
-          {ingredientes_elegidos.map((ingrediente, index) => (
-            <div 
-              key={index} 
-              className="grid-item_elegido"
-            >
-              {ingrediente}
-            </div>
-          ))}
+      </section>
+      {/*Apartado de los ingredientes que se seleccionaron------------------- */}
+      <section className="componente_elegidos">
+        <h2 className="text_ingredientes_elegidos">
+          Ingredientes seleccionados:
+        </h2>
+        <div className="componente_elegidos_grid">
+          <div className="grid-container_elegidos">
+            {ingredientes_elegidos.map((ingrediente, index) => (
+              <div key={index} className="grid-item_elegido">
+                {ingrediente}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="componente_Ingredientes">
+      </section>
+      {/*Apartado de los ingredientes para su selección---------------------- */}
+      <section className="componente_Ingredientes">
         <div className="grid-container_ingredientes">
           {data.ingredientes.map((ingrediente) => (
-            <button 
-              key={ingrediente.nombre} 
-              className="grid-item_ingrediente" 
-              onClick={() => agregar_ingredientes(ingrediente.nombre)}
-            >
+            <button key={ingrediente.nombre} className="grid-item_ingrediente" onClick={() => seleccionarIngrediente(ingrediente.nombre)}>
               {ingrediente.nombre}
             </button>
           ))}
         </div>
-      </div>
+      </section>
     </div>
     
   )
