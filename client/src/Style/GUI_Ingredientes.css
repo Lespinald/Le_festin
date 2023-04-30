@@ -1,0 +1,146 @@
+button {
+    cursor: pointer; /* Cambia el cursor a una mano */
+}
+button:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado al pasar el mouse */
+}
+
+.componente_busqueda {
+    position: absolute;
+    left: 2%;
+    top:  100px;
+    width: 30%;
+    height: 60px;
+    overflow: hidden;
+    /*background-color: #d6d6d6;*/
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.barra_busqueda {
+    /*display: inline-block;*/
+    position: absolute;
+    left: 1px;
+    width: calc(100% - 7px);
+    height: 90%;
+    border-radius: 32px;
+    border: #d6e8ea;
+    background-color: #d6e8ea;
+    color: #00000080;
+    font-size: 23.3962px;
+    font-weight: 600;
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    justify-content: center;
+    text-indent: 80px;
+}
+
+.lupa_icon {
+    position: absolute;
+    left: 25px;
+    width: 35px;
+    height: 35px;
+    overflow: visible;
+}
+
+
+.componente_Ingredientes {
+    position: fixed;
+    background: #dbdbdb86;
+    left: 2%;
+    top:  400px;
+    width: 30%;
+    height: 50%;
+    overflow-y: auto;
+    /*background-color: #dddddd;*/
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container_ingredientes {
+    position: relative;
+    display: grid;
+    top: 10px;
+    width: 95%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+  
+.grid-item_ingrediente {
+    background: #F0D678;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 11.6981px;
+    border: #F0D678;
+    height: 200px;
+    color: #000000;
+    font-size: 23.3962px;
+    font-weight: 600;
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+
+.componente_elegidos {
+    position: absolute;
+    left: 2%;
+    top:  160px;
+    width: 30%;
+    height: 200px;
+    /*background-color: #dddddd;*/
+}
+
+.text_ingredientes_elegidos{
+    position: relative;
+    left: 3%;
+    font-weight: 600;
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+}
+
+.componente_elegidos_grid {
+    position: relative;
+    top:  10px;
+    max-height: 120px;
+    overflow-y: auto;
+    /*background-color: #dddddd;*/
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container_elegidos {
+    display: grid;
+    width: 95%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+  
+.grid-item_elegido {
+    position: relative;
+    background: #d6e8ea;
+    padding: 10px;
+    /*text-align: left;
+    /*vertical-align: left;*/
+    border-radius: 11.6981px;
+    border: #d6e8ea;
+    height: 50px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+}
