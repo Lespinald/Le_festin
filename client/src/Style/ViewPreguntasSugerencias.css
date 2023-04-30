@@ -1,0 +1,119 @@
+.pagina{
+    position: absolute;
+    width: 97%;
+    height: 90%;
+    margin-top: 60px;
+    margin-left: 1%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    background-color: #CFE3E6;
+}
+
+.Card{  
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
+    border-radius: 52px;
+
+    width: 96.5%;
+    height: 70%;
+
+    margin-left: 1%;
+    margin-top: 1%;
+
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.head{
+    display: flex;
+}
+
+.title{
+    margin-top:0%;
+    font-family:'Maven Pro';
+    font-size: 68px;
+    font-weight: bold;
+}
+
+.imagenContainer{
+    position: absolute;
+    margin-left:90%;
+    margin-top: 1%;
+}
+
+.imagen{
+    position: absolute;
+    width:40px;
+    height:40px;
+    margin-left:90%;
+    margin-top: 1%;
+}
+
+.imagen:hover{
+    width:35px;
+    height:35px;
+}
+
+.content{
+    overflow: auto;
+    margin-top: -3%;
+    height: 70%;
+    width: 99%; 
+}
+
+.content::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+.lista{
+    font-family: 'Maven Pro';
+    font-size: 30px;
+}
+
+.areaInput{
+    display: flex;
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
+    border-radius: 52px;
+
+    width: 95%;
+    height: 16%;
+
+    margin-left: 1%;
+    margin-top: 1%;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.entradaPregunta{
+    margin-left: 1%;
+    border-radius: 12px;
+    width: 85%;
+}
+
+.typeSelection{
+    margin-top: 2%;
+    width: 130%;
+    height: 40%;
+    border-radius: 15px;
+    border-color: black;
+    background-color: #FFA600;
+
+    font-family: "Maven Pro";
+    font-size: 80%;
+}
+
+.enviarButton{
+    margin-top: 15%;
+    width: 130%;
+    height: 40%;
+    border-radius: 15px;
+    border-color: black;
+    background-color: #FFA600;
+
+    font-family: "Maven Pro";
+    font-size: 80%;
+}

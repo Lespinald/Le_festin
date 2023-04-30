@@ -3,17 +3,6 @@
     margin-top: 100px;
 }
 
-.pagina{
-    position: absolute;
-    width: 97%;
-    height: 90%;
-    margin-top: 60px;
-    margin-left: 1%;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    background-color: aqua;
-}
-
 .Home{
     background-color: #FFCC33;
     position: absolute;
