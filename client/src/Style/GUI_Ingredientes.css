@@ -52,7 +52,7 @@ button:hover{
     top:  400px;
     width: 30%;
     height: 50%;
-    overflow-y: auto;
+    overflow-y: scroll;
     /*background-color: #dddddd;*/
     display: flex;
     justify-content: center;
@@ -66,6 +66,10 @@ button:hover{
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
+
+.componente_Ingredientes::-webkit-scrollbar {
+    width: 0.5em;
+  }
   
 .grid-item_ingrediente {
     background: #F0D678;
@@ -76,7 +80,7 @@ button:hover{
     border: #F0D678;
     height: 200px;
     color: #000000;
-    font-size: 23.3962px;
+    font-size: 20px;
     font-weight: 600;
     font-family: Maven Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif;
@@ -87,8 +91,6 @@ button:hover{
     align-items: flex-end;
 }
 
-
-
 .componente_elegidos {
     position: absolute;
     left: 2%;
@@ -97,6 +99,11 @@ button:hover{
     height: 200px;
     /*background-color: #dddddd;*/
 }
+
+.componente_elegidos_grid::-webkit-scrollbar {
+    width: 0.5em;
+}
+
 
 .text_ingredientes_elegidos{
     position: relative;
@@ -109,16 +116,19 @@ button:hover{
 .componente_elegidos_grid {
     position: relative;
     top:  10px;
-    max-height: 120px;
-    overflow-y: auto;
+    height: 120px;
+    overflow-y: scroll;
     /*background-color: #dddddd;*/
     display: flex;
     justify-content: center;
 }
 
 .grid-container_elegidos {
+    position: relative;
     display: grid;
     width: 95%;
+    margin-top: 8px;
+    margin-bottom: 8px;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
@@ -131,7 +141,7 @@ button:hover{
     /*vertical-align: left;*/
     border-radius: 11.6981px;
     border: #d6e8ea;
-    height: 50px;
+    height: 60px;
     color: #000000;
     font-size: 18px;
     font-weight: 600;
@@ -140,7 +150,28 @@ button:hover{
     overflow-wrap: anywhere;
     hyphens: auto;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
+
+.imagen-hover {
+    position: absolute;
+    display: none;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.grid-item_elegido:hover {
+    color: #00000069;
+    background-color: #ff6262;
+}
+
+.grid-item_elegido:hover .imagen-hover {
+    display: block;
+    opacity: 0.8;
+}
+

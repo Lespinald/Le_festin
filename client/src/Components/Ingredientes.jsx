@@ -6,15 +6,27 @@ const Ingredientes = () => {
   const [search_ingrediente, set_search_Ingrediente] = useState('');//string para la busqueda (no tiene uso aún)
   const [ingrediente, set_Ingrediente] = useState('');//string para ingrediente al que se le da click (no tiene uso aún)
   const [ingredientes_elegidos, set_Ingredientes_Elegidos] = useState([]);//array de los ingredientes elegidos
+  const [seleccionado, setSeleccionado] = useState(false);
 
   console.log(search_ingrediente)
 
   function seleccionarIngrediente(value) {//funcion para agregar al array ingredientes_elegidos los ingredientes seleccionados, recibe un string value
-    set_Ingrediente(value) //el valor 
+    set_Ingrediente(value)
+    setSeleccionado(!seleccionado);
     if (!ingredientes_elegidos.includes(value)){//condicion para que no se repitan ingredientes selccionados
       set_Ingredientes_Elegidos(ingredientes_elegidos.concat(value))
     }
   }
+
+  function deseleccionarIngrediente(value) {
+    console.log(value)
+    const indice = ingredientes_elegidos.indexOf(value);
+    console.log(indice)
+    const nuevaLista = [...ingredientes_elegidos];
+    nuevaLista.splice(indice, 1);
+    set_Ingredientes_Elegidos(nuevaLista);
+  }
+
   console.log(ingrediente)
   console.log(ingredientes_elegidos)
 
@@ -43,9 +55,10 @@ const Ingredientes = () => {
         <div className="componente_elegidos_grid">
           <div className="grid-container_elegidos">
             {ingredientes_elegidos.map((ingrediente, index) => (
-              <div key={index} className="grid-item_elegido">
+              <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
                 {ingrediente}
-              </div>
+                <img src="../../public/x.png" alt="imagen" class="imagen-hover"></img>
+              </button>
             ))}
           </div>
         </div>
