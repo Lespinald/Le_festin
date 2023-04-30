@@ -2,7 +2,7 @@ import React from 'react'
 
 const ViewReceta = () => {
   return (
-    <div>
+    <div className='label'>
       ViewReceta
     </div>
   )
