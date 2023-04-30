@@ -58,6 +58,10 @@ button:hover{
     justify-content: center;
 }
 
+.componente_Ingredientes::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
 .grid-container_ingredientes {
     position: relative;
     display: grid;
@@ -115,6 +119,10 @@ button:hover{
     display: flex;
     justify-content: center;
 }
+
+.componente_elegidos_grid::-webkit-scrollbar {
+    width: 0.5em;
+  }
 
 .grid-container_elegidos {
     display: grid;
