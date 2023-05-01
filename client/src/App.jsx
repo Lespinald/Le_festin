@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import NotfoundPage from "./pages/NotfoundPage";
 import ViewReceta from "./pages/ViewReceta";
 import ViewPreguntasSugerencias from "./pages/ViewPreguntasSugerencias";
+import ViewPerfil from "./pages/ViewPerfil"
 import Banner from "./Components/banner/Banner";
 
 const App = () => {
@@ -20,6 +21,8 @@ const App = () => {
         <Route path="/receta/*" element={<ViewReceta/>}/>
 
         <Route path="/preguntas&sugerencias" element={<ViewPreguntasSugerencias/>}/>
+
+        <Route path="/perfil" element={<ViewPerfil/>}/>
 
         <Route path="/error" element={<NotfoundPage/>}/>
         
