@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import VentanaPrincipal from "./pages/VentanaPrincipal";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import NotfoundPage from "./pages/NotfoundPage";
@@ -8,6 +8,13 @@ import Banner from "./Components/banner/Banner";
 
 const App = () => {
   // En este componente se declaran las rutas y hay un ejemplo con el state error para probar la navegacion 
+  const [backendData, setBackendData] = useState([{}])
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api')
+      .then(response => response.json())
+      .then(users => console.log(users));
+  })
 
   return (
     <>
