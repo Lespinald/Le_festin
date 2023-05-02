@@ -43,13 +43,17 @@ p{
 }
 
 .InfIzq{
-    vertical-align: top;
-    margin-left: 7px;
-    display: inline-block;
+    position: absolute;
+    background: #F0EDE8;
+    left: 0%;
+    top:  calc(27% + 0px);
     width: 30%;
-    height: 100%;
-    background-color:#d8ecec;
-    border-radius: 30px;
+    height: calc(100% - calc(27% + 55px));
+    overflow-y: scroll;
+    /*background-color: #dddddd;*/
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
 }
 .Busqueda{
     font-weight: bold;
@@ -111,3 +115,4 @@ button{
 button:hover{
     background-color: #ddb230;
 }
+

@@ -1,0 +1,21 @@
+{
+    "recetas": [
+        {
+            "titulo": "Changua",
+            "descripcion": "Cocina Boyasense",
+            "imagen": "https://cdn-icons-png.flaticon.com/512/2067/2067343.png"
+        },
+
+        {
+            "titulo": "Pad Thai",
+            "descripcion": "Cocina Tailandesa",
+            "imagen": "https://cdn-icons-png.flaticon.com/512/2067/2067343.png"
+        },
+
+        {
+            "titulo": "Gnocci de pesto",
+            "descripcion": "Cocina Italiana",
+            "imagen": "https://cdn-icons-png.flaticon.com/512/2067/2067343.png"
+        }
+    ]
+  }

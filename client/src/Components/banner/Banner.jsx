@@ -22,6 +22,11 @@ const Banner = () => {
             Preguntas y Sugerencias
           </button>
         </NavLink>
+        <NavLink to="/perfil">
+          <button className="ButtonPerfil">
+            Perfil
+          </button>
+        </NavLink>
     </nav>
   );
 };

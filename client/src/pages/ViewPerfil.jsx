@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useSelector } from 'react-redux'
 import "../Style/ViewPerfil.css";
 import PreviewReceta from "../Components/PreviewReceta";
+import data from "../Components/Json/recetas.json";
 
 
 const ViewPerfil= () => {
+
+    
     return(
         <div>
             <div className="ZonaInferior">
@@ -12,7 +15,6 @@ const ViewPerfil= () => {
                     <div className="Busqueda">
                         <p>Mis Recetas</p>
                     </div>
-                    <PreviewReceta tituloreceta="Changua" descripcionreceta="Hola changua"/>
                 </div>
             </div>
         </div>

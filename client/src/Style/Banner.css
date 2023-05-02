@@ -66,6 +66,17 @@
     color: #FFFFFF;
 }
 
+.ButtonPerfil{
+    position: absolute;
+    background-color: black;
+    display: flex;
+    top: 70px;
+    border: 0px;
+    border-radius: 5%;
+    height: 41px;
+    left: 90%;
+}
+
 .GoogleIconButton{
     position: relative;
     top: 20%;
