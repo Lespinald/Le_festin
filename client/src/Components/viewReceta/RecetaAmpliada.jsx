@@ -50,7 +50,9 @@ const RecetaAmpliada = (props) => {
           </div>
         </div>
         <div className='RecipeContainer'>
-          <RecetaMax receta={props.receta} usuario={props.usuario}/>
+          {/* cambiar por porps.{name} */}
+          <RecetaMax receta={receta} usuario={props.usuario}/>
+          {/* <RecetaMax usuario={props.usuario}/> */}
         </div>
       </div>
     </>

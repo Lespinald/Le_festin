@@ -20,6 +20,7 @@
 }
 .RecipeContainer{
   flex-grow: 1;
+  box-sizing: content-box;
 }
 .IngredientScrollable{
   padding: 0.75rem;

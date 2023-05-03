@@ -1,3 +1,40 @@
-.mainRecetaMax{
-  
+.MainRecetaMax{
+  display: flex;
+  max-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  background-color: #D9D9D9;
+  border-radius: 2rem;
+  padding: 1rem;
+
+  grid-template-columns: 1fr 2fr;
+}
+
+.PanelIzquierdo{
+  max-width: 40%;
+  min-width: 30%;
+}
+
+.TituloReceta{
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 0 0.05rem, 0.05rem 0, 0.05rem 0.05rem, 0 -0.05rem, -0.05rem 0, -0.05rem -0.05rem;
+  margin-bottom: 1rem;
+}
+
+.PanelDerecho{
+  flex-grow: 1;
+}
+
+.TopOptions{
+  font-weight: bold;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.ImagenReceta{
+  border-radius: 1rem;
+  min-width: 100%;
+  padding-top: 100%;
 }
