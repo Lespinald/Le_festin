@@ -79,6 +79,7 @@ button:hover{
     display: grid;
     top: 10px;
     width: 95%;
+    height: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
