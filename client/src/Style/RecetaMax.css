@@ -12,7 +12,7 @@
 }
 
 .PanelIzquierdo{
-  max-width: 40%;
+  max-width: 30%;
   min-width: 30%;
 }
 
@@ -25,16 +25,26 @@
 
 .PanelDerecho{
   flex-grow: 1;
+  margin-left: 1rem;
+  padding: 1rem;
+  font-size: large;
+  font-weight: 600;
 }
 
 .TopOptions{
   font-weight: bold;
   text-align: right;
   margin-top: 1rem;
+  padding: 0 2rem 0 0;
 }
 
 .ImagenReceta{
   border-radius: 1rem;
   min-width: 100%;
   padding-top: 100%;
+}
+
+.TextoReceta{
+  height: 90%;
+  overflow-y: auto;
 }
