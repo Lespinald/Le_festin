@@ -1,11 +1,10 @@
 import React from "react";
-
 import "../../Style/RecetaMax.css"
+import { useSelector } from "react-redux";
 
 const RecetaMax = (props) => {
-
-
-
+  const authentication = useSelector((state) => state.auth.status);
+  console.log(authentication);
   return (
     <div className="MainRecetaMax">
       <div className="PanelIzquierdo">
@@ -33,11 +32,11 @@ const RecetaMax = (props) => {
           <p>
             {props.receta && props.receta.descripcion || "descripción"}
           </p>
-          <div>
+          <div className="PasosLabel">
             Paso a paso de la receta:
           </div>
           <ol>
-            {(props.receta && props.receta.procedimiento)? props.receta.procedimiento.map((e, i) => <li>{e}</li>): ""}
+            {(props.receta && props.receta.procedimiento)? props.receta.procedimiento.map((e, i) => <li key={i}>{e}</li>): ""}
           </ol>
         </div>
       </div>

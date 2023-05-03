@@ -19,7 +19,7 @@
 .TituloReceta{
   font-size: 3.5rem;
   font-weight: bold;
-  text-shadow: 0 0.05rem, 0.05rem 0, 0.05rem 0.05rem, 0 -0.05rem, -0.05rem 0, -0.05rem -0.05rem;
+  text-shadow: 0 0.05rem, 0.05rem 0, 0 -0.05rem, -0.05rem 0, 0.05rem 0.05rem, 0.05rem -0.05rem, -0.05rem 0.05rem, -0.05rem -0.05rem;
   margin-bottom: 1rem;
 }
 
@@ -42,6 +42,10 @@
   border-radius: 1rem;
   min-width: 100%;
   padding-top: 100%;
+}
+
+.PasosLabel{
+  text-shadow: 0 0.001rem, 0.001rem 0, 0 -0.001rem, -0.001rem 0, 0.001rem 0.001rem, 0.01rem -0.001rem, -0.001rem 0.001rem, -0.001rem -0.001rem;
 }
 
 .TextoReceta{

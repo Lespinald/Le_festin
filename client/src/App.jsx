@@ -9,11 +9,11 @@ import Banner from "./Components/banner/Banner";
 const App = () => {
   // En este componente se declaran las rutas y hay un ejemplo con el state error para probar la navegacion 
 
-  useEffect(() => {
-    fetch('http://localhost:5000/api')//Este código obtiene la lista de usuarios de prueba en el json de la API y la muestra en la consola.
-      .then(response => response.json())
-      .then(users => console.log(users));
-  })
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/api')//Este código obtiene la lista de usuarios de prueba en el json de la API y la muestra en la consola.
+  //     .then(response => response.json())
+  //     .then(users => console.log(users));
+  // })
 
   return (
     <>
