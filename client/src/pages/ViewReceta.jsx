@@ -9,7 +9,7 @@ const ViewReceta = () => {
   })
 
   return (
-    <div>
+    <div className='label'>
       <RecetaAmpliada receta={datos.receta} ingredientes={datos.ingredientes} usuario={datos.usuario}/>
     </div>
   )
