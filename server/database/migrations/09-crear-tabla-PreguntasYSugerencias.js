@@ -1,4 +1,4 @@
-const pool = require('../config/database');
+const pool = require('../../config/database');
 
 pool.query(`
 create table if not exists PreguntasYSugerencias(
