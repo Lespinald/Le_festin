@@ -11,7 +11,7 @@ create table if not exists Review(
     CONSTRAINT fk5_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
     );
 `).then(() => {
-  console.log('Tabla de recetas creada');
+  console.log('Tabla de reviews creada');
 }).catch((err) => {
   console.error(err);
 })

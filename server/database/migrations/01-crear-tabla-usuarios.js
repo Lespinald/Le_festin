@@ -7,7 +7,7 @@ create table if not exists Usuarios(
     );
     create unique index ux_usuarios_username on Usuarios(username);
 `).then(() => {
-  console.log('Tabla de recetas creada');
+  console.log('Tabla de usuarios creada');
 }).catch((err) => {
   console.error(err);
 })

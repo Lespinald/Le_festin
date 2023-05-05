@@ -12,7 +12,7 @@ create table if not exists PreguntasYSugerencias(
     );
     
 `).then(() => {
-  console.log('Tabla de recetas creada');
+  console.log('Tabla de preguntas creada');
 }).catch((err) => {
   console.error(err);
 }).finally(() => {

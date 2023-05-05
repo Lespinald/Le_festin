@@ -8,7 +8,7 @@ create table if not exists Favorito(
     CONSTRAINT fk2_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
     );
 `).then(() => {
-  console.log('Tabla de recetas creada');
+  console.log('Tabla de favorito creada');
 }).catch((err) => {
   console.error(err);
 })
