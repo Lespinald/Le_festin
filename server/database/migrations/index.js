@@ -9,7 +9,7 @@ pool.connect((err, client, done) => {
   client.query('BEGIN', (err) => {
     if (err) throw err;
     try {
-      const migrations = fs.readdirSync(migrationsDir).sort();
+      const migrations = fs.readdirSync(migrationsDir).sort((a, b) => a.localeCompare(b));
       migrations.forEach((migration) => {
         const migrationPath = path.join(migrationsDir, migration);
         require(migrationPath);
