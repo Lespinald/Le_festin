@@ -1,7 +1,3 @@
-input{
-    font-family: Roboto;
-    font-size: 20px;;
-}
 h1{
     margin-top: 0px;
 }
@@ -11,97 +7,148 @@ image{
 p{
     text-align: left;
 }
-.BarraSuperior{
-    margin-top: 500px;
-    display: block;
-    width:100%;
-    height: 70px;
-    background-color: #ffcc34;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
 
-}
 .ZonaInferior{
     margin-top: 70px;
     width: 100%;
     margin-bottom: 700px;
-    display: block;
-}
-
-.Titulo{
-    width: 140px;
-    margin-left: 400px;
-    margin-right: 800px;
     display: inline-block;
-    vertical-align:top;
-    font-family: Roboto;
-}
-
-.EleBarrSup{
-    display: inline-block;
-    margin-top: 10px;
 }
 
 .InfIzq{
     position: absolute;
-    background: #F0EDE8;
-    left: 0%;
-    top:  calc(27% + 0px);
-    width: 30%;
-    height: calc(100% - calc(27% + 55px));
+    background: #d6e8ea;
+    left: 2%;
+    top:  calc(10% + 0px);
+    width: 20%;
+    height: 85%;
     overflow-y: scroll;
     /*background-color: #dddddd;*/
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
+    display: block;
+    border-radius: 30px;
 }
-.Busqueda{
-    font-weight: bold;
-    font-size: 30px;
+.InfIzq::-webkit-scrollbar{
+    width: 0.01em;
+}
+.MRUbicacion{
     display: block;
     padding-left: 10px;
     width: 100%;
     height: 50px;
 }
+.MRPretitulo{
+    font-weight: bold;
+    font-size: 30px;
+}
 .MisRecetas{
-    text-align: center;
-    font-family: Roboto;
-    display:block;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    height: 100%;
     width: 90%;
-    background-color: #d9d9d9;
-    border-radius: 40px;
+    background: #e0dcdc;
+    border-radius: 25px;
+    border: #F0D678;
+    height: 200px;
+    color: #000000;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
-.MRTitulo{
-    display: block;
-}
+
 .MRResto{
     display: inline-block;
+    vertical-align: top;
+    padding-left: 10px;
+    border-radius: 40px;
+    font-size: 30px;
 }
-.FotoReceta{
+
+.MRResto2{
     display: inline-block;
     vertical-align: top;
+    padding-left: 10px;
+    border-radius: 40px;
+    font-size: 30px;
+    width: 400px;
+}
+
+.FotoReceta{
+    display: inline-block;
     margin-right: 10px;
 }
-.MRFotoReceta{
-    height: 200px;
-}
+
 .MRTextos{
     vertical-align: top;
     display: inline-block;
     width: 40%;
 }
+.MRImagenes{
+    height: 100px;
+    width: 150px;
+    border-radius: 30px;
+    object-fit: cover;
+}
 
 .InfDer{
-    vertical-align: top;
-    display: inline-block;
-    width: 69%;
-    height: 100%;
-    background-color: rebeccapurple;
+    position: absolute;
+    right: 2%;
+    width: 85%;
+    top:  calc(10% + 0px);
+    width: 74%;
+    height: 70%;
+}
+
+.InfDerSup{
+    background: #e0dcdc;
+    overflow-y: scroll;
+    height: 89%;
+    /*background-color: #dddddd;*/
+    display: block;
+    border-radius: 70px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.InfDerSup::-webkit-scrollbar{
+    width: 0.01em;
+}
+
+.selectReceTrue{
+    margin-left: 20px;
+    display: block;
+}
+.selectReceFalse{
+    margin-left: 100px;
+}
+
+.botonBorrar{
+    width: 40%;
+    background: #e33a1b;
+    border-radius: 40px;
+    border: #F0D678;
+    height: 170px;
+    color: white;
+    font-size: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.botonEditar{
+    width: 40%;
+    background: #ffcc34;
+    border-radius: 40px;
+    border: #F0D678;
+    height: 170px;
+    color: white;
+    font-size: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+.wea{
+    text-align: center;
 }
 
 button{
@@ -112,7 +159,13 @@ button{
     transition: 0.6s;
 }
 
-button:hover{
-    background-color: #ddb230;
+.botonBorrar:hover{
+    background-color: #a12b16;
+}
+.botonEditar:hover{
+    background-color: #d4aa2c;
+}
+.MisRecetas:hover{
+    background-color: #b4b1b1;
 }
 

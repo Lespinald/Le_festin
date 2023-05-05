@@ -9,11 +9,11 @@ function PreviewReceta(props){
             </div>
             <div className="MRResto">
                 <div className="FotoReceta">
-                    <img src="/Le_festin/client/public/Google Icon.png" alt="Hola"/>
+                    <img className="MRImagenes" src="https://vecinavegetariana.com/wp-content/uploads/2022/09/Changua-Colombiana-Colombian-Milk-and-Eggs-Breakfast-Soup-2-1.jpg" alt="Hola"/>
                 </div>
                 <div className="MRTextos">
-                    <h1 style={{fontSize:"20px"}}>Descripción Corta:</h1>
-                    <p>
+                    <h1 style={{fontSize:"15px"}}>Descripción Corta:</h1>
+                    <p style={{fontSize:"10px"}}>
                         {props.descripcionreceta}
                     </p>
                 </div>
