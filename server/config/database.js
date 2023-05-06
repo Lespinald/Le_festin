@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const { Pool } = require('pg');
 
 const pool = new Pool({
@@ -8,4 +9,14 @@ const pool = new Pool({
   port: 5432,
 });
 
-module.exports = pool;
+mongoose.connect(`postgresql://${pool.options.user}:${pool.options.password}@${pool.options.host}:${pool.options.port}/${pool.options.database}`);
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function() {
+  console.log('connected to database');
+});
+
+module.exports = db;
