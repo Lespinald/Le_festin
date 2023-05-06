@@ -2,8 +2,8 @@ const pool = require('../../config/database');
 
 pool.query(`
 CREATE TABLE IF NOT EXISTS Usuarios (
-  ID_usuario VARCHAR(20) PRIMARY KEY,
-  username VARCHAR(15) NOT NULL UNIQUE
+  ID_usuario VARCHAR(100) PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Receta (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Favorito (
 );
 
 CREATE TABLE IF NOT EXISTS Creadas (
-  ID_usuario VARCHAR(20) NOT NULL,
+  ID_usuario VARCHAR(100) NOT NULL,
   ID_receta SERIAL NOT NULL,
   CONSTRAINT fk1_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario),
   CONSTRAINT fk3_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Creadas (
 
 CREATE TABLE IF NOT EXISTS Comentario (
   ID_comentario SERIAL PRIMARY KEY,
-  ID_usuario VARCHAR(20) NOT NULL,
+  ID_usuario VARCHAR(100) NOT NULL,
   ID_receta SERIAL NOT NULL,
   comentario VARCHAR(200),
   CONSTRAINT fk2_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario),
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Comentario (
 
 CREATE TABLE IF NOT EXISTS Review (
   ID_review SERIAL PRIMARY KEY,
-  ID_usuario VARCHAR(20) NOT NULL,
+  ID_usuario VARCHAR(100) NOT NULL,
   ID_receta SERIAL NOT NULL,
   review VARCHAR(200),
   CONSTRAINT fk3_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario),
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS Review (
 
 CREATE TABLE IF NOT EXISTS PreguntasYSugerencias (
   ID_pregunta SERIAL PRIMARY KEY,
-  ID_usuario VARCHAR(20) NOT NULL,
+  ID_usuario VARCHAR(100) NOT NULL,
   textoPregunta VARCHAR(200),
   tipo VARCHAR(1),
   textoRespuesta VARCHAR(200),
