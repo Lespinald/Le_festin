@@ -6,6 +6,7 @@ const getPreguntasSugerencias  = async (req, res) => {
     res.json(response.rows);
 }
 
+
 module.exports = {//aca se exportan los metodos
     getPreguntasSugerencias
 }
