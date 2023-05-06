@@ -1,17 +1,27 @@
-const pool = require('../config/database')
+const pool = require('../config/database')//Importa la base de datos
 
-const getUsers = async (req, res) => {
+//metodos
+const getUsuarios = async (req, res) => {
     const response = await pool.query('SELECT * FROM usuarios');
     res.json(response.rows);
 }
 
-const getNombreUsers = async (req, res) => {
+const getNombreUsuarios = async (req, res) => {
     const response = await pool.query('SELECT username FROM usuarios');
     res.json(response.rows);
 }
 
-module.exports = {
-    getUsers,
-    getNombreUsers
+const crearUsuario = async (req, res) => {
+    const { username } = req.body;
+
+    const response = await pool.query('INSERT INTO usuarios (id_usuario, username) VALUES ($1, $2)', [10, username]);
+    console.log(response);
+    res.send('usuario creado');
+}
+
+module.exports = {//aca se exportan los metodos
+    getUsuarios,
+    getNombreUsuarios,
+    crearUsuario
 }
   

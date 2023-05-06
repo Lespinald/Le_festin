@@ -12,4 +12,4 @@ app.use(bodyParser.json());
 app.use(require('./routes/routes'))
 
 //Start de server
-app.listen(5000, () => { console.log("Server starter on port 5000")})
+app.listen(5000, () => { console.log("Server starter on port 5000, http://localhost:5000/api")})
