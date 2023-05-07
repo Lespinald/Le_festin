@@ -65,7 +65,7 @@ const Ingredientes = (props) => {
               {props.ingredientesSeleccionados.map((ingrediente, index) => (
                 <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
                   {ingrediente}
-                  <img src="../../public/x.png" alt="imagen" class="imagen-hover"></img>
+                  <img src="../../public/x.png" alt="imagen" className="imagen-hover"></img>
                 </button>
               ))}
             </div>
@@ -76,7 +76,7 @@ const Ingredientes = (props) => {
       <section className="componente_Ingredientes">
         <div className="grid-container_ingredientes">
           {ingredientes.map((ingrediente) => (
-            <button key={ingrediente.nombre} className="grid-item_ingrediente" onClick={() => seleccionarIngrediente(ingrediente.nombre)}>
+            <button key={ingrediente.id_ingrediente} className="grid-item_ingrediente" onClick={() => seleccionarIngrediente(ingrediente.nombre)}>
               {ingrediente.nombre}
               <img src={ingrediente.imagen} className="imagen_Ingrediente"/>
             </button>
