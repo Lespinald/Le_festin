@@ -1,10 +1,23 @@
 const pool = require('../../config/database');
 
 pool.query(`
+DROP INDEX IF EXISTS ux_usuarios_username;
+DROP TABLE IF EXISTS IngredienteAsociado;
+DROP TABLE IF EXISTS Favorito;
+DROP TABLE IF EXISTS Creadas;
+DROP TABLE IF EXISTS Comentario;
+DROP TABLE IF EXISTS Review;
+DROP TABLE IF EXISTS PreguntasYSugerencias;
+DROP TABLE IF EXISTS Ingrediente;
+DROP TABLE IF EXISTS Receta;
+DROP TABLE IF EXISTS Usuarios;
+
+
 CREATE TABLE IF NOT EXISTS Usuarios (
   ID_usuario VARCHAR(100) PRIMARY KEY,
   username VARCHAR(50) NOT NULL UNIQUE
 );
+CREATE UNIQUE INDEX IF NOT EXISTS ux_usuarios_username on Usuarios(username);
 
 CREATE TABLE IF NOT EXISTS Receta (
   ID_receta SERIAL PRIMARY KEY,
@@ -68,7 +81,7 @@ CREATE TABLE IF NOT EXISTS PreguntasYSugerencias (
   CONSTRAINT fk4_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario)
 );
 
-CREATE EXTENSION unaccent;
+CREATE EXTENSION IF NOT EXISTS unaccent;
 
 `).then(() => {
   console.log('Tabla de usuarios creada');
