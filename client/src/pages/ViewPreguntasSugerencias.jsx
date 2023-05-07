@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Style/ViewPreguntasSugerencias.css";
 import { datosPreguntas } from "../DataPruebas/Preguntas&Sugerencias";
 import { useSelector } from 'react-redux'
@@ -6,8 +6,17 @@ import { useSelector } from 'react-redux'
 const ViewPreguntasSugerencias = () => {
   const [seleccion, setSeleccion] = useState("");
   const [pregunta, setPregunta] = useState("");
+  const [preguntas, setPreguntas] = useState([])
   const info = useSelector((state) => state.auth);
   
+  useEffect(() => {
+    fetch('http://localhost:5000/api/preguntasSugerencias')//ruta de la api
+    .then(respuesta => respuesta.json())
+    .then(datos => setPreguntas(datos)); // guardar las preguntas en el estado
+  }, [])
+  
+  useEffect(() => {
+  },[preguntas])
 
   const handleSeleccion = (e) => {
     setSeleccion(e.target.value);
@@ -27,7 +36,6 @@ const ViewPreguntasSugerencias = () => {
         respuesta: null,
         userName: "jcarrenoar@unal.edu.co",
       }
-      console.log("🚀 ~ file: ViewPreguntasSugerencias.jsx:30 ~ handleEnviar ~ nuevaPregunta:", nuevaPregunta)
       setPregunta('')
       setSeleccion('')
     }else{
@@ -46,18 +54,18 @@ const ViewPreguntasSugerencias = () => {
         </div>
         <div className="content">
           <ul className="lista">
-            {datosPreguntas.map((element,index) => (
+            {preguntas?.map((element,index) => (
               <li key={index}>
                 <p>
-                  {element.type === "P" ? "Pregunta" : "Sugerencia"}:{" "}
-                  {element.textoPregunta}{" "}
+                  {element.tipo === "P" ? "Pregunta: " : "Sugerencia: "}
+                  {element.textopregunta}
                 </p>
-                {element.type === "P" && (
+                {element.tipo === "P" && (
                   <ul>
                     <li>
-                      {element.respuesta === null
+                      {element.textorespuesta === null
                         ? "Aún no hay respuesta"
-                        : element.respuesta}
+                        : element.textorespuesta}
                     </li>
                   </ul>
                 )}
