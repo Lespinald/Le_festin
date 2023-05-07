@@ -68,7 +68,7 @@ const ViewPerfil= () => {
             <div className="InfDerSup">
               {seleccionReceta && (
                 <div className="selectReceFalse">
-                  <p style={{fontSize:"70px"}}>No has seleccionado ninguna receta, escoge una para visualisarla!</p>
+                  <p style={{fontSize:"70px"}}>No has seleccionado ninguna receta, escoge una para visualizarla!</p>
                 </div>
               )}
 						  {!seleccionReceta &&(
