@@ -5,12 +5,19 @@ import data from './Json/receta.json'
 import VistaMinimaReceta from "./vistaMinimaReceta";
 
 
-const Receta = ({}) => {
+const Receta = (props) => {
   const [recetas, set_Recetas ] = useState([]);
+  // props.ingredientesSeleccionado
 
   useEffect(() => {
-    set_Recetas(data.recetas);
-  }, [])
+    fetch('http://localhost:5000/api/recetas')//ruta de la api
+        .then(response => response.json())
+        .then(datos => set_Recetas(datos)); // guardar todas las recetas
+  }, [props.ingredientesSeleccionado])
+
+  useEffect(() => {
+    // set_Recetas(data.recetas)
+  }, [recetas])
   
   
   // props: ["ingrediente"]

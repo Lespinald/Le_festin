@@ -5,12 +5,11 @@ import '../Style/styleReceta.css'
 const VistaMinimaReceta = (Props) => {
 
     const receta= {
-        ID_receta:Props.ingrediente.ID_receta,
+        ID_receta:Props.ingrediente.id_receta,
         nombre: Props.ingrediente.nombre,
         imagen:Props.ingrediente.imagen,
         descripcion:Props.ingrediente.descripcion,
-        procedimiento:Props.ingrediente.procedimiento,
-        ingredientes:Props.ingrediente.ingredientes,
+        procedimiento:Props.ingrediente.procedimiento
     }
 
   return (

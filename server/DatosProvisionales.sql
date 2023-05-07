@@ -6,8 +6,8 @@ INSERT INTO Usuarios(id_usuario, username) values
 
 --Comando y formato para ingresar datos en la tabla Receta
 INSERT INTO Receta(nombre,descripcion,procedimiento,imagen) values
-('Huevo frito','Delicioso plato pr�ctico y f�cil de elaborar, perfecto para desayunos','1.Colocar cerca de 30g de mantequilla en el sart�n2.Romper el huevo y dejarlo caer sobre la mantequilla3.Dejar que se cocine el huevo cerca de 1 a 2 minutos y retirar','URL'),
-('Salchicha frita','Salchichas fritas con mantequilla ideales para una comida r�pida','1.Colocar cerca de 30g de mantequilla en el sart�n2.Destapar la salcicha y dejarla caer sobre el sart�n, bien sea picada o entera3.Dejar cocinar por cerca de 2 minutos y luego retirar','URL');
+('Huevo frito','Delicioso plato practico y facil de elaborar, perfecto para desayunos','1.Colocar cerca de 30g de mantequilla en el sarten2.Romper el huevo y dejarlo caer sobre la mantequilla3.Dejar que se cocine el huevo cerca de 1 a 2 minutos y retirar','https://cdn-icons-png.flaticon.com/512/2067/2067343.png'),
+('Salchicha frita','Salchichas fritas con mantequilla ideales para una comida rapida','1.Colocar cerca de 30g de mantequilla en el sarten2.Destapar la salcicha y dejarla caer sobre el sarten, bien sea picada o entera3.Dejar cocinar por cerca de 2 minutos y luego retirar','https://cdn-icons-png.flaticon.com/512/2067/2067343.png');
 
 --Comando y formato para ingresar datos en la tabla Ingredientes
 INSERT INTO Ingrediente(nombre, imagen) VALUES
