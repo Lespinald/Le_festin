@@ -102,6 +102,9 @@ button:hover{
     align-items: flex-end;
     width: 100%;
 }
+.grid-item_ingrediente:hover {
+    background: #c7b163;
+}
 
 .imagen_Ingrediente {
     position: absolute;
