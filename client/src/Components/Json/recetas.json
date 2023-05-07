@@ -1,0 +1,33 @@
+{
+    "recetas": [
+        {
+            "titulo": "Changua",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing.",
+            "imagen": "https://www.elespectador.com/resizer/RbgoIIGlZIQAQincIaOqqGF9lzA=/525x350/filters:quality(60):format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/HFA2CSDA7FCE5HO735QQ5ZMMCU.jpg"
+        },
+
+        {
+            "titulo": "Pad Thai",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing.",
+            "imagen": "https://www.simplyrecipes.com/thmb/Y6WvULetSWWIjzcQONSg9n8PFgg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Vegetarian-Pad-Thai-LEAD-2f0142cca68e4f9592381d281a391d59.jpg"
+        },
+
+        {
+            "titulo": "Gnocci de pesto",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing.",
+            "imagen": "https://www.eatwell101.com/wp-content/uploads/2022/06/Creamy-Pesto-Gnocchi-Recipe.jpg"
+        },
+
+        {
+            "titulo": "Gnocci de cum",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing.",
+            "imagen": "https://images.heb.com/is/image/HEBGrocery/recipe-hm-large/gnocchi-in-white-truffle-cream-sauce-recipe.jpg"
+        },
+
+        {
+            "titulo": "Crema de leche",
+            "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing.",
+            "imagen": "https://cdn.colombia.com/gastronomia/2011/08/02/bandeja-paisa-1616.gif"
+        }
+    ]
+  }

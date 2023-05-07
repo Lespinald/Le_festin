@@ -1,0 +1,171 @@
+h1{
+    margin-top: 0px;
+}
+image{
+    margin-bottom: 0px;
+}
+p{
+    text-align: left;
+}
+
+.ZonaInferior{
+    margin-top: 70px;
+    width: 100%;
+    margin-bottom: 700px;
+    display: inline-block;
+}
+
+.InfIzq{
+    position: absolute;
+    background: #d6e8ea;
+    left: 2%;
+    top:  calc(10% + 0px);
+    width: 20%;
+    height: 85%;
+    overflow-y: scroll;
+    /*background-color: #dddddd;*/
+    display: block;
+    border-radius: 30px;
+}
+.InfIzq::-webkit-scrollbar{
+    width: 0.01em;
+}
+.MRUbicacion{
+    display: block;
+    padding-left: 10px;
+    width: 100%;
+    height: 50px;
+}
+.MRPretitulo{
+    font-weight: bold;
+    font-size: 30px;
+}
+.MisRecetas{
+    width: 90%;
+    background: #e0dcdc;
+    border-radius: 25px;
+    border: #F0D678;
+    height: 200px;
+    color: #000000;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.MRResto{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 10px;
+    border-radius: 40px;
+    font-size: 30px;
+}
+
+.MRResto2{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 10px;
+    border-radius: 40px;
+    font-size: 30px;
+    width: 400px;
+}
+
+.FotoReceta{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.MRTextos{
+    vertical-align: top;
+    display: inline-block;
+    width: 40%;
+}
+.MRImagenes{
+    height: 100px;
+    width: 150px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.InfDer{
+    position: absolute;
+    right: 2%;
+    width: 85%;
+    top:  calc(10% + 0px);
+    width: 74%;
+    height: 70%;
+}
+
+.InfDerSup{
+    background: #e0dcdc;
+    overflow-y: scroll;
+    height: 89%;
+    /*background-color: #dddddd;*/
+    display: block;
+    border-radius: 70px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.InfDerSup::-webkit-scrollbar{
+    width: 0.01em;
+}
+
+.selectReceTrue{
+    margin-left: 20px;
+    display: block;
+}
+.selectReceFalse{
+    margin-left: 100px;
+}
+
+.botonBorrar{
+    width: 40%;
+    background: #e33a1b;
+    border-radius: 40px;
+    border: #F0D678;
+    height: 170px;
+    color: white;
+    font-size: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.botonEditar{
+    width: 40%;
+    background: #ffcc34;
+    border-radius: 40px;
+    border: #F0D678;
+    height: 170px;
+    color: white;
+    font-size: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+.wea{
+    text-align: center;
+}
+
+button{
+    border: none;
+    color: #ffcc34 ;
+    background-color: #ffcc34;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.botonBorrar:hover{
+    background-color: #a12b16;
+}
+.botonEditar:hover{
+    background-color: #d4aa2c;
+}
+.MisRecetas:hover{
+    background-color: #b4b1b1;
+}
+
