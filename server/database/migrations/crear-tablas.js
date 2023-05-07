@@ -68,6 +68,8 @@ CREATE TABLE IF NOT EXISTS PreguntasYSugerencias (
   CONSTRAINT fk4_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario)
 );
 
+CREATE EXTENSION unaccent;
+
 `).then(() => {
   console.log('Tabla de usuarios creada');
 }).catch((err) => {

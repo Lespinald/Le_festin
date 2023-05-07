@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Style/GUI_Ingredientes.css";
 import data from './Json/ingredientes.json'
 
 const Ingredientes = () => {
   const [search_ingrediente, set_search_Ingrediente] = useState('');//string para la busqueda (no tiene uso aún)
   const [ingrediente, set_Ingrediente] = useState('');//string para ingrediente al que se le da click (no tiene uso aún)
+  const [ingredientes, set_Ingredientes] = useState([]);// array para almacenar los ingredientes de la base de datos
   const [ingredientes_elegidos, set_Ingredientes_Elegidos] = useState([]);//array de los ingredientes elegidos
   const [seleccionado, setSeleccionado] = useState(false);
 
   console.log(search_ingrediente)
+
+  useEffect(() => {
+    if(search_ingrediente == ""){
+      fetch('http://localhost:5000/api/ingredientes')//ruta de la api
+        .then(response => response.json())
+        .then(datos => set_Ingredientes(datos)); // guardar los ingredientes en el estado
+    }else{
+      fetch('http://localhost:5000/api/ingredientes/busquedaNombre/' + search_ingrediente)//ruta de la api + la busqueda
+      .then(response => response.json())
+      .then(datos => set_Ingredientes(datos)); // guardar los ingredientes en el estado
+    }
+  }, [search_ingrediente]);
 
   function seleccionarIngrediente(value) {//funcion para agregar al array ingredientes_elegidos los ingredientes seleccionados, recibe un string value
     set_Ingrediente(value)
@@ -26,6 +39,7 @@ const Ingredientes = () => {
     nuevaLista.splice(indice, 1);
     set_Ingredientes_Elegidos(nuevaLista);
   }
+
 
   console.log(ingrediente)
   console.log(ingredientes_elegidos)
@@ -62,7 +76,7 @@ const Ingredientes = () => {
       {/*Apartado de los ingredientes para su selección----------------------*/}
       <section className="componente_Ingredientes">
         <div className="grid-container_ingredientes">
-          {data.ingredientes.map((ingrediente) => (
+          {ingredientes.map((ingrediente) => (
             <button key={ingrediente.nombre} className="grid-item_ingrediente" onClick={() => seleccionarIngrediente(ingrediente.nombre)}>
               {ingrediente.nombre}
               <img src={ingrediente.imagen} className="imagen_Ingrediente"/>
