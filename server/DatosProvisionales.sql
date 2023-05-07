@@ -2,12 +2,12 @@
 INSERT INTO Usuarios(id_usuario, username) values
 ('94a7ba35-0b2a-40e6-858b-1bf643d119e9','Davidrg02'),
 ('55de24b1-a86a-4255-a9a2-beafc841ae77','Santigo123'),
-('1cd2c4ad-231d-4630-9f11-c5f09bb4fed4','Juan_2000')
+('1cd2c4ad-231d-4630-9f11-c5f09bb4fed4','Juan_2000');
 
 --Comando y formato para ingresar datos en la tabla Receta
 INSERT INTO Receta(nombre,descripcion,procedimiento,imagen) values
 ('Huevo frito','Delicioso plato pr�ctico y f�cil de elaborar, perfecto para desayunos','1.Colocar cerca de 30g de mantequilla en el sart�n2.Romper el huevo y dejarlo caer sobre la mantequilla3.Dejar que se cocine el huevo cerca de 1 a 2 minutos y retirar','URL'),
-('Salchicha frita','Salchichas fritas con mantequilla ideales para una comida r�pida','1.Colocar cerca de 30g de mantequilla en el sart�n2.Destapar la salcicha y dejarla caer sobre el sart�n, bien sea picada o entera3.Dejar cocinar por cerca de 2 minutos y luego retirar','URL')
+('Salchicha frita','Salchichas fritas con mantequilla ideales para una comida r�pida','1.Colocar cerca de 30g de mantequilla en el sart�n2.Destapar la salcicha y dejarla caer sobre el sart�n, bien sea picada o entera3.Dejar cocinar por cerca de 2 minutos y luego retirar','URL');
 
 --Comando y formato para ingresar datos en la tabla Ingredientes
 INSERT INTO Ingrediente(nombre, imagen) VALUES
@@ -24,16 +24,16 @@ INSERT INTO Ingrediente(nombre, imagen) VALUES
 ('Tomate', 'https://cdn-icons-png.flaticon.com/512/1054/1054111.png'),
 ('Manzana', 'https://images.vexels.com/media/users/3/188899/isolated/preview/b53c80cc51ec7c0d6dd3eec76837cad8-trazo-de-icono-de-manzana.png'),
 ('Carne de res', 'https://cdn-icons-png.flaticon.com/512/5745/5745943.png'),
-('Ajo', 'https://cdn-icons-png.flaticon.com/512/6108/6108170.png')
+('Ajo', 'https://cdn-icons-png.flaticon.com/512/6108/6108170.png');
 
 --Comando y formato para ingresar datos en la tabla IngredienteAsociado
 INSERT INTO IngredienteAsociado(ID_ingrediente,ID_receta) values
 (3,1),
 (4,1),
-(3,2)
+(3,2);
 
 --Comando y formato para ingresar datos en la tabla IngredienteAsociado
 INSERT INTO preguntasysugerencias(id_usuario,textopregunta,tipo,textorespuesta) values
 ('94a7ba35-0b2a-40e6-858b-1bf643d119e9','¿Cómo se realiza la busqueda de ingredientes?','P','Escriba el ingrediente a buscar'),
 ('55de24b1-a86a-4255-a9a2-beafc841ae77','Deberian agregar mas recetas','S',''),
-('94a7ba35-0b2a-40e6-858b-1bf643d119e9','Pueden añadir strudel','P','No es pregunta')
+('94a7ba35-0b2a-40e6-858b-1bf643d119e9','Pueden añadir strudel','P','No es pregunta');
