@@ -1,0 +1,109 @@
+{
+    "recetas": [ 
+        {
+            "ID_receta": 0,
+            "nombre": "Changuaa",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsumsssss",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Changua",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsumsss sss ssssssssss ssssssssssssssssssssssss sssssss ssssffffffffffffffffffffffffffssssssssssssssssssssssssss sssssssssssss sss ssssssssssssssssssssssssssssssssssssaas",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Huevo frito",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Salchicha Frita",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Arroz Frito",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        },
+        {
+            "ID_receta": 0,
+            "nombre": "Comida de ejemplo",
+            "imagen":"https://cdn-icons-png.flaticon.com/512/2067/2067343.png",
+            "descripcion": "lorem ipsum",
+            "procedimiento": "lorem ipsum",
+            "ingredientes": "numbers[]"
+        }
+        
+    ]
+}
