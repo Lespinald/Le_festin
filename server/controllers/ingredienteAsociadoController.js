@@ -11,8 +11,13 @@ const getIngredienteAsociado = async (req, res) => {
     res.json(response.rows);
 }
 
-
+const getIngredientesIdByRecetaID = async (req, res) => {
+    const id = req.params.id;
+    const response = await pool.query(`SELECT iaso.id_ingrediente FROM ingredienteasociado iaso WHERE id_receta='${id}'`);
+    res.json(response.rows);
+}
 
 module.exports = {//aca se exportan los metodos
-    getIngredienteAsociado
+    getIngredienteAsociado,
+    getIngredientesIdByRecetaID
 }
