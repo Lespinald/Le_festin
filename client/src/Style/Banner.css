@@ -35,6 +35,9 @@
 
     color: black;
 }
+.TitleApp:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0); /* Sombreado al pasar el mouse */
+}
 
 .ButtonUser{
     position: absolute;
