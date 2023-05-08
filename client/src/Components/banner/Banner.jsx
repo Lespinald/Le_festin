@@ -14,9 +14,15 @@ const Banner = () => {
   //   setValidate(info?.status === "authenticated");
   // };
 
+  
+
   return (
     <nav className="Home">
-        <p className="TitleApp">Le Festin</p>
+            <NavLink to="/receta">
+          <button className="TitleApp">
+            Le Festin
+          </button>
+        </NavLink>
         <NavLink to="/preguntas&sugerencias">
           <button className="ButtonBeginSesion">
             Preguntas y Sugerencias
