@@ -24,7 +24,7 @@ const App = () => {
         
         <Route path="/receta" element={<VentanaPrincipal/>}/>
 
-        <Route path="/receta/*" element={<ViewReceta/>}/>
+        <Route path="/receta/:recetaid" element={<ViewReceta/>}/>
 
         <Route path="/preguntas&sugerencias" element={<ViewPreguntasSugerencias/>}/>
 

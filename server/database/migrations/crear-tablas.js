@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Receta (
   ID_receta SERIAL PRIMARY KEY,
   nombre VARCHAR(40) NOT NULL,
   descripcion VARCHAR(100) NOT NULL,
-  procedimiento TEXT NOT NULL,
+  procedimiento TEXT[] NOT NULL,
   imagen TEXT
 );
 
