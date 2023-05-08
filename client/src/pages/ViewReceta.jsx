@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import RecetaAmpliada from '../Components/viewReceta/RecetaAmpliada'
 
-import data from '../Components/Json/ingredientes.json'
 import { useParams } from 'react-router-dom'
 
 const ViewReceta = (props) => {
@@ -29,7 +28,7 @@ const ViewReceta = (props) => {
   }, [id])
 
   return (
-    <div className='label'>
+    <div style={{display: 'contents'}}>
       <RecetaAmpliada receta={receta} ingredientes={ingredientes}/>
     </div>
   );
