@@ -1,4 +1,5 @@
 // import React, { useState } from "react";
+import { useState } from "react";
 import "../../Style/Banner.css";
 // import { useDispatch, useSelector } from "react-redux";
 // import { startGoogleSignIn } from "../../store/auth/thunks";
@@ -14,7 +15,8 @@ const Banner = () => {
   //   setValidate(info?.status === "authenticated");
   // };
 
-  
+  const [UserName, setUserName] = useState('Nombre de usuario');
+  //setUserName("Nombre de usuario")
 
   return (
     <nav className="Home">
@@ -23,11 +25,16 @@ const Banner = () => {
             Le Festin
           </button>
         </NavLink>
-        <NavLink to="/preguntas&sugerencias">
-          <button className="ButtonBeginSesion">
-            Preguntas y Sugerencias
-          </button>
-        </NavLink>
+        <a className="imagenQA" href="/preguntas&sugerencias">
+          <img src="./Comment_icon.png" className="image"  />
+        </a>
+        <NavLink to="/perfil">
+      <button className="ButtonPerfil"> 
+        <img src="./icon_guest.png" className="ImageUser"/>
+        
+          {UserName}
+      </button>
+      </NavLink>
     </nav>
   );
 };
