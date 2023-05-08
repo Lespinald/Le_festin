@@ -15,7 +15,9 @@ const RecetaMax = (props) => {
           (props.receta)?
           <div className="ImagenReceta"
           style={{
-            background: `url(${props.receta.imagen}) 50% 50% no-repeat`,
+            backgroundImage: `url(${props.receta.imagen})`,
+            backgroundPosition: '50% 50%',
+            backgroundRepeat: 'no-repeat',
             backgroundSize: "cover"
           }}>
           </div>:

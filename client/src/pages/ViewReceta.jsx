@@ -1,94 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RecetaAmpliada from '../Components/viewReceta/RecetaAmpliada'
 
 import data from '../Components/Json/ingredientes.json'
+import { useParams } from 'react-router-dom'
 
-const ViewReceta = () => {
+const ViewReceta = (props) => {
+  const id = useParams().recetaid;
 
-/*-------------------------------------------------------------------------------------------------------*/
-/*----receta de prueba para visualizacion----------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------*/
-  const [datos, setDatos] = useState({
-    receta: {
-      ID_receta: 0,
-      nombre: "Changua",
-      imagen: "https://www.unacolombianaencalifornia.com/wp-content/uploads/2020/09/Changua.jpg",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-                  "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-                  "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-                  "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-                  " orci porta non. Amet est placerat in egestas erat. que mas bro",
-      procedimiento: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "+
-        "tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec "+
-        "adipiscing. Enim neque volutpat ac tincidunt vitae. Vulputate ut pharetra sit "+
-        "amet aliquam id. Nibh sed pulvinar proin gravida hendrerit lectus a. Leo vel"+
-        " orci porta non. Amet est placerat in egestas erat. que mas bro"
-      ],
-      ingredientes: [0,1,2,3]
-    },
-    usuario: null
-  })
+  const [receta, setReceta] = useState({})
+  const [ingredientes, setIngredientes] = useState([]);
 
-/*-------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------*/
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/recetas/id/${id}`)//ruta de la api
+    .then(response => response.json())
+    .then(datos => setReceta(datos[0]))
+  }, [id])
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/ingredienteAsociado/recetaid/${id}`)//ruta de la api
+    .then(response => response.json())
+    .then(datos => {
+      const arrayIngredientes = []
+      datos.forEach(element => {
+        arrayIngredientes.push(element.id_ingrediente);
+      });
+      setIngredientes(arrayIngredientes);
+    })
+  }, [id])
 
   return (
     <div className='label'>
-      <RecetaAmpliada receta={datos.receta} ingredientes={data.ingredientes} usuario={datos.usuario}/>
+      <RecetaAmpliada receta={receta} ingredientes={ingredientes}/>
     </div>
-  )
+  );
 }
 
 export default ViewReceta
