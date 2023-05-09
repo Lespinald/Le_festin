@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../Style/ViewPreguntasSugerencias.css";
 import { datosPreguntas } from "../DataPruebas/Preguntas&Sugerencias";
 import { useSelector } from 'react-redux'
+import { foro } from "../store/page/page";
+import { Link } from "react-router-dom";
 
 const ViewPreguntasSugerencias = () => {
   const [seleccion, setSeleccion] = useState("");
@@ -48,9 +50,9 @@ const ViewPreguntasSugerencias = () => {
       <div className="Card">
         <div className="head">
           <p className="title">Preguntas o Sugerencias</p>
-          <a className="imagenContainer" href="/receta">
-            <img src="./xButton.png" className="imagen" />
-          </a>
+          <Link to={"/receta"} className="imagenContainer">
+              <img src="./xButton.png" className="imagen" />
+          </Link>
         </div>
         <div className="content">
           <ul className="lista">

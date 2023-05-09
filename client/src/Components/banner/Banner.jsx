@@ -1,40 +1,65 @@
-// import React, { useState } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../Style/Banner.css";
-// import { useDispatch, useSelector } from "react-redux";
-// import { startGoogleSignIn } from "../../store/auth/thunks";
+import { useDispatch, useSelector } from "react-redux";
+import { startGoogleSignIn } from "../../store/auth/thunks";
 import { Link, NavLink } from 'react-router-dom';
 
 const Banner = () => {
-  // const dispatch = useDispatch();
-  // const info = useSelector((state) => state.auth);
-  // const [Validate, setValidate] = useState(true);
+  const dispatch = useDispatch();
+  const info = useSelector((state) => state.auth);
+  // const page = useSelector((state) => state.page);
+  
+  const BeginSesion = async () => {
+    await dispatch(startGoogleSignIn());
+  };
 
-  // const BeginSesion = async () => {
-  //   await dispatch(startGoogleSignIn());
-  //   setValidate(info?.status === "authenticated");
-  // };
 
-  const [UserName, setUserName] = useState('Nombre de usuario');
+  const Register = async () => {
+    //Funcion verificar si ya existe para condicionar
+    await dispatch(startGoogleSignIn());
+  };
+  
+  
+
+  const [UserName, setUserName] = useState('');
   //setUserName("Nombre de usuario")
 
   return (
     <nav className="Home">
-            <NavLink to="/receta">
-          <button className="TitleApp">
-            Le Festin
+      <NavLink to="/receta">
+        <button className="TitleApp">
+          Le Festin
+        </button>
+      </NavLink>
+      <NavLink to={'/preguntas&sugerencias'}>
+        <a className="imagenQA">
+          <img src="./Comment_icon.png" className="image"  />
+        </a>      
+      </NavLink>
+      { info?.status !== "authenticated" ?
+      <div>
+        <button className="ButtonBeginSesion" onClick={BeginSesion}>
+          <img src="./Google Icon.png" className="GoogleIconButton"/>
+          <p className="TitleButton"> Iniciar Sesión </p>
+        </button>
+        <button className="ButtonRegister" onClick={Register}>
+          Registrarse
+        </button>
+      </div> : 
+      <div>
+        <NavLink to={"/favoritos"}>
+          <a className="imagenFV">
+            <img src="./FavoritiesIcon.png" className="image"  />
+          </a>
+        </NavLink>
+        <NavLink to="/perfil">
+          <button className="divIconoAuthenticated"> 
+            <img src="./icon_guest.png" className="ImageUser"/>
+            <p className="displayNameUser">{info?.displayName}</p>  
           </button>
         </NavLink>
-        <a className="imagenQA" href="/preguntas&sugerencias">
-          <img src="./Comment_icon.png" className="image"  />
-        </a>
-        <NavLink to="/perfil">
-      <button className="ButtonPerfil"> 
-        <img src="./icon_guest.png" className="ImageUser"/>
-        
-          {UserName}
-      </button>
-      </NavLink>
+      </div>
+      }
     </nav>
   );
 };

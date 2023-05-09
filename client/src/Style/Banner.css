@@ -43,10 +43,17 @@
 
 
 .imagenQA .image {
-    position: relative;
+    position: absolute;
     width: 54px;
     height: 42px;
-    left: 70%;
+    right: 45%;
+    top: 58%;
+}
+.imagenFV .image {
+    position: absolute;
+    width: 40px;
+    height: 42px;
+    right: 38%;
     top: 58%;
 }
 
@@ -67,31 +74,9 @@
 
 
 
-.ButtonBeginSesion{
-    position: absolute;
-    display: flex;
-    background-color: #FFA600;
-    border: 0px;
-    border-radius: 0.5rem;
-    height: 41px;
-    left: 66.96%;
-    right: 3.1%;
-    top: 70px;
-    width: 200px;
-    height: 41px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 15px;
-    line-height: 45px;
-
-    color: #FFFFFF;
-}
-
 .ButtonPerfil{
     position: absolute;
-    display: flex;
+    display: grid;
     top: 56%;
     border: 0px;
     border-radius: 5%;
@@ -114,41 +99,80 @@
     position: relative;
     top: 20%;
     left: 10%;
-    width:30px;
-    height:30px;
+    width:10%;
+    height:70%;
 }
 
 .TitleButton{
     position: relative;
-    top: -10%;
+    top: -70%;
     left: 15%;
 }
 
 .ButtonRegister{
     position: absolute;
-    display: flex;
+    display: grid   ;
     background-color: #FFA600;
     border: 0px;
-    border-radius: 5%;
-    height: 41px;
-    left: 66.96%;
-    right: 3.1%;
-    top: 5px;
-    width: 200px;
+    border-radius: 0.5rem;
+    top: 57%;
+    right: 5%;
+    width: 17%;
     height: 41px;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 900;
-    font-size: 15px;
+    font-size: 150%;
+    line-height: 45px;
+    
+    color: #FFFFFF;
+}
+
+.ButtonBeginSesion{
+    position: absolute;
+    display: flex;
+    background-color: #FFA600;
+    border: 0px;
+    border-radius: 0.5rem;
+    height: 41px;
+    right: 23.1%;
+    top: 57%;
+    width: 20%;
+    height: 41px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 150%;
     line-height: 45px;
 
     color: #FFFFFF;
 }
 
-.ButtonRegister:hover{
-    background-color: #E57602;
-    width: 429.22px;
-    height: 86.2px;
-    left: 20px;
+.divIconoAuthenticated{
+    position: absolute;
+    overflow-y: hidden; /* ocultamos cualquier texto que se desborde */
+    display: flex;
+    text-align: justify;
+    width: 25%;
+    height: 40%;
+    top: 57%;
+    right: 7%;
+}
+
+
+.displayNameUser {
+    position: absolute;
+    top: -40%;
+    left: 25%;
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 45px;
+    width: 70%; /* agregamos un ancho para que el texto sepa hasta dónde llegar */
+    overflow: hidden; /* ocultamos cualquier texto que se desborde */
+    text-overflow: ellipsis; 
 }
