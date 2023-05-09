@@ -16,15 +16,9 @@ const ViewReceta = (props) => {
   }, [id])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/ingredienteAsociado/recetaid/${id}`)//ruta de la api
+    fetch(`http://localhost:5000/api/ingredienteAsociado/recetaid/list/${id}`)//ruta de la api
     .then(response => response.json())
-    .then(datos => {
-      const arrayIngredientes = []
-      datos.forEach(element => {
-        arrayIngredientes.push(element.id_ingrediente);
-      });
-      setIngredientes(arrayIngredientes);
-    })
+    .then(datos => setIngredientes(datos))
   }, [id])
 
   return (

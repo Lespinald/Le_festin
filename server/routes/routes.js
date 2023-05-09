@@ -5,7 +5,7 @@ const router = express.Router();
 const { getUsuarios, getNombreUsuarios, crearUsuario } = require('../controllers/usuariosController');
 const { getRecetas, getRecetasById } = require('../controllers/recetasController');
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
-const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
+const { getIngredienteAsociado, getIngredientesIdByRecetaID, getIngredientesByRecetaID } = require('../controllers/ingredienteAsociadoController')
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
 
 
@@ -39,6 +39,7 @@ ingredientesRouter.get('/list/:list', getIngredientesByIdList);
 router.use('/api/ingredienteAsociado', ingredienteAsociadoRouter);
 ingredienteAsociadoRouter.get('', getIngredienteAsociado);
 ingredienteAsociadoRouter.get('/recetaid/:id', getIngredientesIdByRecetaID);
+ingredienteAsociadoRouter.get('/recetaid/list/:id', getIngredientesByRecetaID);
 //------------------Preguntas y Sugerencias
 router.use('/api/preguntasSugerencias', preguntasSugerenciasRouter);
 preguntasSugerenciasRouter.get('', getPreguntasSugerencias);

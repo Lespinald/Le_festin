@@ -17,7 +17,19 @@ const getIngredientesIdByRecetaID = async (req, res) => {
     res.json(response.rows);
 }
 
+const getIngredientesByRecetaID = async (req, res) => {
+    const id = req.params.id;
+    const response = await pool.query(
+        `SELECT i.id_ingrediente as id_ingrediente, nombre, imagen
+        FROM ingrediente i INNER JOIN ingredienteasociado asio
+        ON asio.id_ingrediente=i.id_ingrediente
+        WHERE id_receta='${id}'`
+    );
+    res.json(response.rows);
+}
+
 module.exports = {//aca se exportan los metodos
     getIngredienteAsociado,
-    getIngredientesIdByRecetaID
+    getIngredientesIdByRecetaID,
+    getIngredientesByRecetaID
 }
