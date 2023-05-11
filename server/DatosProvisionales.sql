@@ -24,7 +24,8 @@ INSERT INTO Ingrediente(nombre, imagen) VALUES
 ('Tomate', 'https://cdn-icons-png.flaticon.com/512/1054/1054111.png'),
 ('Manzana', 'https://images.vexels.com/media/users/3/188899/isolated/preview/b53c80cc51ec7c0d6dd3eec76837cad8-trazo-de-icono-de-manzana.png'),
 ('Carne de res', 'https://cdn-icons-png.flaticon.com/512/5745/5745943.png'),
-('Ajo', 'https://cdn-icons-png.flaticon.com/512/6108/6108170.png');
+('Ajo', 'https://cdn-icons-png.flaticon.com/512/6108/6108170.png'),
+('Salchicha', 'https://cdn-icons-png.flaticon.com/512/684/684750.png');
 
 --Comando y formato para ingresar datos en la tabla IngredienteAsociado
 INSERT INTO IngredienteAsociado(ID_ingrediente,ID_receta) values
