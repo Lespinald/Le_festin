@@ -19,9 +19,18 @@ const crearUsuario = async (req, res) => {
     res.send('usuario creado');
 }
 
+const vefificarUsuario = async (req, res) => {
+    const id_usuario = req.params.id;
+    const response = await pool.query(`SELECT COUNT(*) as existe_usuario FROM Usuarios WHERE id_usuario = '${id_usuario}';`)
+    console.log(response.rows)
+    const existeUsuario = response.rows[0].existe_usuario > 0;
+    res.send(existeUsuario)//retorna true o false si existe o no
+}
+
 module.exports = {//aca se exportan los metodos
     getUsuarios,
     getNombreUsuarios,
-    crearUsuario
+    crearUsuario,
+    vefificarUsuario
 }
   
