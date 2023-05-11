@@ -15,14 +15,14 @@ const Banner = () => {
     dispatch(chekingCredentials())
     const result = await signInWithGoogle()
     dispatch(login(result))
-    fetch(`http://localhost:5000/api/usuarios/id/${result?.uid}`)//ruta de la api
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-      if(datos.length === 0){
-        dispatch(logout())
-        alert("Usuario no esta registrado")
-      }
-    }); // guardar las preguntas en el estado
+    // fetch(`http://localhost:5000/api/usuarios/id/${result?.uid}`)//ruta de la api
+    // .then(respuesta => respuesta.json())
+    // .then(datos => {
+    //   if(datos.length === 0){
+    //     dispatch(logout())
+    //     alert("Usuario no esta registrado")
+    //   }
+    // }); // guardar las preguntas en el estado
   };
   
   
@@ -31,14 +31,14 @@ const Banner = () => {
     dispatch(chekingCredentials())
     const result = await signInWithGoogle()
     dispatch(login(result))
-    fetch(`http://localhost:5000/api/usuarios/id/${result?.uid}`)//ruta de la api
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-      if(datos.length !== 0){
-        dispatch(logout())
-        alert("Usuario ya esta registrado")
-      }
-    }); 
+    // fetch(`http://localhost:5000/api/usuarios/id/${result?.uid}`)//ruta de la api
+    // .then(respuesta => respuesta.json())
+    // .then(datos => {
+    //   if(datos.length !== 0){
+    //     dispatch(logout())
+    //     alert("Usuario ya esta registrado")
+    //   }
+    // }); 
     // guardar las preguntas en el estado
   };
   
