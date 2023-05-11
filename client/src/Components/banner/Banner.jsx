@@ -3,6 +3,8 @@ import "../../Style/Banner.css";
 import { useDispatch, useSelector } from "react-redux";
 import { startGoogleSignIn } from "../../store/auth/thunks";
 import { Link, NavLink } from 'react-router-dom';
+import { chekingCredentials, login, logout } from "../../store/auth/authslice";
+import { signInWithGoogle } from "../../firebase/providers";
 
 const Banner = () => {
   const dispatch = useDispatch();
@@ -10,13 +12,34 @@ const Banner = () => {
   // const page = useSelector((state) => state.page);
   
   const BeginSesion = async () => {
-    await dispatch(startGoogleSignIn());
+    dispatch(chekingCredentials())
+    const result = await signInWithGoogle()
+    dispatch(login(result))
+    fetch(`http://localhost:5000/api/usuarios/id/${result?.uid}`)//ruta de la api
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+      if(datos.length === 0){
+        dispatch(logout())
+        alert("Usuario no esta registrado")
+      }
+    }); // guardar las preguntas en el estado
   };
-
-
+  
+  
   const Register = async () => {
     //Funcion verificar si ya existe para condicionar
-    await dispatch(startGoogleSignIn());
+    dispatch(chekingCredentials())
+    const result = await signInWithGoogle()
+    dispatch(login(result))
+    fetch(`http://localhost:5000/api/usuarios/id/${result?.uid}`)//ruta de la api
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+      if(datos.length !== 0){
+        dispatch(logout())
+        alert("Usuario ya esta registrado")
+      }
+    }); 
+    // guardar las preguntas en el estado
   };
   
   
