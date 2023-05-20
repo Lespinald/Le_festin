@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import RecetaMax from './RecetaMax'
+import Comentarios from '../Comentarios'
 
 import '../../Style/RecetaAmpliada.css'
 import '../../Style/GUI_Ingredientes.css'
@@ -38,6 +39,9 @@ const RecetaAmpliada = (props) => {
         </div>
         <div className='RecipeContainer'>
           <RecetaMax receta={props.receta || null} usuario={props.usuario || null}/>
+        </div>
+        <div className='ComentariosContainer'>
+          <Comentarios/>
         </div>
       </div>
     </>

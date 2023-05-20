@@ -7,6 +7,8 @@ const { getRecetas, getRecetasById , getRecetasbyIngredientes } = require('../co
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
 const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
+const {} = require('../controllers/comentariosController');
+const {} = require('../controllers/reviewController');
 
 
 //se definen los objetos de enrutamiento-----------------------------

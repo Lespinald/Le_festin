@@ -5,6 +5,7 @@ import NotfoundPage from "./pages/NotfoundPage";
 import ViewReceta from "./pages/ViewReceta";
 import ViewPreguntasSugerencias from "./pages/ViewPreguntasSugerencias";
 import ViewPerfil from "./pages/ViewPerfil"
+import PublicaReceta from "./pages/PublicarReceta"
 import Banner from "./Components/banner/Banner";
 
 const App = () => {
@@ -29,6 +30,8 @@ const App = () => {
         <Route path="/preguntas&sugerencias" element={<ViewPreguntasSugerencias/>}/>
 
         <Route path="/perfil" element={<ViewPerfil/>}/>
+
+        <Route path="/publicarReceta" element={<PublicaReceta/>}/>
 
         <Route path="/error" element={<NotfoundPage/>}/>
         
