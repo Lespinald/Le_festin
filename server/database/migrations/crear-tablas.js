@@ -21,10 +21,12 @@ CREATE UNIQUE INDEX IF NOT EXISTS ux_usuarios_username on Usuarios(username);
 
 CREATE TABLE IF NOT EXISTS Receta (
   ID_receta SERIAL PRIMARY KEY,
+  ID_usuario VARCHAR(100) NOT NULL,
   nombre VARCHAR(40) NOT NULL,
   descripcion VARCHAR(100) NOT NULL,
   procedimiento TEXT[] NOT NULL,
-  imagen TEXT
+  imagen TEXT,
+  CONSTRAINT fk4_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario)
 );
 
 CREATE TABLE IF NOT EXISTS Ingrediente (
