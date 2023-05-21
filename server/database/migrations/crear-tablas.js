@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS Comentario (
   ID_comentario SERIAL PRIMARY KEY,
   ID_usuario VARCHAR(100) NOT NULL,
   ID_receta SERIAL NOT NULL,
-  comentario VARCHAR(200),
+  comentario INTEGER CHECK (comentario BETWEEN 1 AND 5),
   CONSTRAINT fk2_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario),
   CONSTRAINT fk4_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
 );
