@@ -7,6 +7,8 @@ import ViewPreguntasSugerencias from "./pages/ViewPreguntasSugerencias";
 import ViewPerfil from "./pages/ViewPerfil"
 import PublicaReceta from "./pages/PublicarReceta"
 import Banner from "./Components/banner/Banner";
+import AppPriv from "./AppPriv";
+import AppPublic from "./AppPublic";
 
 const App = () => {
   // En este componente se declaran las rutas y hay un ejemplo con el state error para probar la navegacion 
@@ -19,28 +21,12 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
-        <Banner/>
-        <Routes>
+      <Routes>
+        <Route path="/my/*" element={<AppPriv/>}/>
         
-        <Route path="/receta" element={<VentanaPrincipal/>}/>
+        <Route path="/*" element={<AppPublic/>}/>
 
-        <Route path="/receta/:recetaid" element={<ViewReceta/>}/>
-
-        <Route path="/preguntas&sugerencias" element={<ViewPreguntasSugerencias/>}/>
-
-        <Route path="/perfil" element={<ViewPerfil/>}/>
-
-        <Route path="/publicarReceta" element={<PublicaReceta/>}/>
-
-        <Route path="/error" element={<NotfoundPage/>}/>
-        
-        <Route path="*" element={<NotfoundPage/>}/>
-
-        <Route path="/" element={<Navigate to="/receta"/>}/>
-
-        </Routes>
-      </BrowserRouter>
+      </Routes>
     </>
   );
 };

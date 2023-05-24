@@ -98,15 +98,15 @@
 .GoogleIconButton{
     position: relative;
     top: 20%;
-    left: 10%;
-    width:10%;
+    left: 5%;
+    width:15%;
     height:70%;
 }
 
 .TitleButton{
     position: relative;
     top: -70%;
-    left: 15%;
+    left: 10%;
 }
 
 .ButtonRegister{
