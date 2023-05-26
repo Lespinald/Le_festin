@@ -91,6 +91,9 @@ const Banner = () => {
             <p className="displayNameUser">{info?.displayName}</p>  
           </button>
         </NavLink>
+        <button onClick={() => dispatch(logout())}>
+            <img src="https://cdn.onlinewebfonts.com/svg/img_277163.png" className="ImageLogOut"/>
+        </button>
       </div>
       }
     </nav>
