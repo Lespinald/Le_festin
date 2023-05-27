@@ -22,7 +22,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS ux_usuarios_username on Usuarios(username);
 CREATE TABLE IF NOT EXISTS Receta (
   ID_receta SERIAL PRIMARY KEY,
   nombre VARCHAR(40) NOT NULL,
-  descripcion VARCHAR(100) NOT NULL,
+  descripcion VARCHAR(1000) NOT NULL,
   procedimiento TEXT[] NOT NULL,
   imagen TEXT
 );
