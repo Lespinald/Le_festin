@@ -12,22 +12,25 @@ const PublicaReceta = () => {
             <div>
               <h2>Titulo:</h2>
               <form>
-                <input type='text' placeholder='Nombre de la receta' className='inputbox'></input>
+                <input type='text' placeholder='Nombre de la receta' className='inputbox-titulo'></input>
               </form>
             </div>
             <div className='addReceta'>
               <h2>Imagen:</h2>
               <div>
-                <img src='https://raw.githubusercontent.com/Lespinald/lespinald.github.io/main/client/public/añadirReceta.png?token=GHSAT0AAAAAACCMB6S4YBY4PLUZJ2NYZEYQZDREJPA' alt='imagen-añadir'></img>
+                <button className='botonReceta'>
+                  <img src='/client/public/xButton.png' alt='imagen-añadir'></img>
+                </button>
               </div>
             </div>
             <div className='displayColumn'>
               <div className='escogerIngredientes'>
                 <h2>Ingredientes:</h2>
-                <button>Escoger</button>
+                <button className='botonEscoger'>Escoger</button>
               </div>
-              <div>
-                <input type='textarea' placeholder='Selecciona los ingredientes' className='inputbox' disabled></input>
+              <div className='seleccionIngredientes'>
+                <p>Selecciona los</p>
+                <p>ingredientes</p>
               </div>
             </div>
           </div>
@@ -35,16 +38,19 @@ const PublicaReceta = () => {
             <div>
               <h2>Descripción:</h2>
                 <form>
-                  <input type='textarea' className='inputbox' placeholder='Escribe una descripción breve para tu receta' ></input>
+                  <input type='textarea' className='inputbox-Descripcion' placeholder='Escribe una descripción breve para tu receta' ></input>
                 </form>
             </div>
             <div>
               <h2>Paso a paso:</h2>
                 <form>
-                  <input type='textarea' className='inputbox' placeholder='Describe los pasos que son necesarios para esta receta'></input>
+                  <textarea className='inputbox-Pasos' placeholder='Describe los pasos que son necesarios para esta receta'></textarea>
                 </form>
             </div>
           </div>
+        </div>
+        <div className='titulo'>
+          <button className='botonPublicar'>Publicar</button>
         </div>
       </div>
     </div>

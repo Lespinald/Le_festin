@@ -4,7 +4,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import NotfoundPage from "./pages/NotfoundPage";
 import ViewReceta from "./pages/ViewReceta";
 import ViewPreguntasSugerencias from "./pages/ViewPreguntasSugerencias";
-import GUIReceta from "./pages/PublicarReceta"
 import ViewPerfil from "./pages/ViewPerfil"
 import PublicaReceta from "./pages/PublicarReceta"
 import Banner from "./Components/banner/Banner";
@@ -23,7 +22,6 @@ const AppPublic = () => {
 
         <Route path="/" element={<Navigate to="/receta"/>}/>
 
-        <Route path="/pruebaGuiReceta" element={<GUIReceta/>}/>
 
         </Routes>
     </>

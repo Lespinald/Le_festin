@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
+
 .displayColumn{
   display: flex;
   flex-direction: column;
@@ -24,7 +26,18 @@
 }
 h1{
   font-size: 70px;
-  font-weight: bold;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+h2{
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: 700;
+}
+p{
+  margin: 0px;
+  font-weight: 600;
+  font-size: 30px;
 }
 .zonaInferior{
   display: flex;
@@ -34,25 +47,105 @@ h1{
   display: flex;
   flex-direction: column;
   width: 30%;
-  margin: 10px;
+  margin: 15px;
 }
+.addReceta{
+  margin-bottom: 20px;
+}
+/*--------------------------------------Botones------------------------------------------*/
+.botonReceta{
+  background-color: white;
+  width: 89%;
+  height: 120px;
+  border-radius: 20px;
+  color: black;
+  border-style: none;
+  border-radius: 30px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+.botonEscoger{
+  background-color: #ffa600;
+  color: white;
+  height: 35px;
+  width: 150px;
+  font-size: larger;
+  font-weight: 700;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.botonPublicar{
+  background-color: #ffa600;
+  color: white;
+  height: 100px;
+  width: 300px;
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+/*---------------------------------------------------------------------------------------*/
 .escogerIngredientes{
   display: flex;
+  align-items: center;
+}
+.seleccionIngredientes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #757575;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  width: 89%;
+  height: 100px;
 }
 .infDer{
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin: 10px;
+  margin: 15px;
 }
 
 .divPrueba{
-  width: 40px;
+  width: 400px;
   height: 40px;
   background-color: palevioletred;
   border: 4px solid;
   border-color: black;
 }
-.inputbox{
-  width: 100%;
+/*--------------------------------------------------Inputs texto---------------------------------*/
+.inputbox-titulo{
+  font-size: 30px;
+  font-weight: 600;
+  width: 85%;
+  height: 45px;
+  border-style: none;
+  border-radius: 30px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  padding-left: 20px;
 }
+.inputbox-Descripcion{
+  font-size: 30px;
+  font-weight: 600;
+  width: 85%;
+  height: 100px;
+  border-style: none;
+  border-radius: 30px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  padding-left: 20px;
+}
+
+.inputbox-Pasos{
+  font-size: 30px;
+  font-weight: 600;
+  width: 85%;
+  height: 263px;
+  border-style: none;
+  border-radius: 30px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  padding-left: 20px;
+  padding-top: 5px;
+}
+/*-----------------------------------------------------------------------------------------------*/
