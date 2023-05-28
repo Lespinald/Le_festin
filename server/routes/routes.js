@@ -7,7 +7,8 @@ const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas } =
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
 const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
-const {getComentarios} = require ('../controllers/comentariosController');
+const {getComentarios, postComentario} = require ('../controllers/comentariosController');
+
 
 //se definen los objetos de enrutamiento-----------------------------
 const usuariosRouter = express.Router();
@@ -49,6 +50,6 @@ preguntasSugerenciasRouter.get('', getPreguntasSugerencias);
 //------------------Comentarios
 router.use('/api/comentarios', comentariosRouter);
 comentariosRouter.get('', getComentarios);
-
+comentariosRouter.post('/crearComentario',postComentario);
 //se exportan las rutas(router)-----------------------------------
 module.exports = router;
