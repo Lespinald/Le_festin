@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
 .label{
     position: absolute;
     margin-top: 4rem;
@@ -29,9 +30,9 @@
     width: 200px;
     height: 41px;
 
-    font-family: 'Inter';
+    font-family: Maven pro;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 35px;
     line-height: 45px;
 
@@ -101,11 +102,12 @@
     left: 5%;
     width:15%;
     height:70%;
+    object-fit: contain;
 }
 
 .TitleButton{
     position: relative;
-    top: -70%;
+    top: -10%;
     left: 10%;
 }
 

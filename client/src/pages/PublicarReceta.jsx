@@ -19,7 +19,7 @@ const PublicaReceta = () => {
               <h2>Imagen:</h2>
               <div>
                 <button className='botonReceta'>
-                  <img src='/client/public/xButton.png' alt='imagen-añadir'></img>
+                  <img src='../../public/añadirReceta.png' alt='imagen-añadir'></img>
                 </button>
               </div>
             </div>
