@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Style/ViewPerfil.css";
-import data from '../Components/Json/recetas.json'
+import data from '../Json/recetas.json'
 
 
 const ViewPerfil= () => {
@@ -100,7 +100,6 @@ const ViewPerfil= () => {
   )
   
 }
-console.log("---------------------------------------------------------------------------------------------------")
 
 
 export default ViewPerfil

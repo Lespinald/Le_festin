@@ -98,15 +98,15 @@
 .GoogleIconButton{
     position: relative;
     top: 20%;
-    left: 10%;
-    width:10%;
+    left: 5%;
+    width:15%;
     height:70%;
 }
 
 .TitleButton{
     position: relative;
     top: -70%;
-    left: 15%;
+    left: 10%;
 }
 
 .ButtonRegister{
@@ -164,7 +164,7 @@
 
 .displayNameUser {
     position: absolute;
-    top: -40%;
+    top: -50%;
     left: 25%;
     color: black;
     font-family: 'Inter';
@@ -175,4 +175,13 @@
     width: 70%; /* agregamos un ancho para que el texto sepa hasta dónde llegar */
     overflow: hidden; /* ocultamos cualquier texto que se desborde */
     text-overflow: ellipsis; 
+}
+
+.ImageLogOut{
+    position: absolute;
+    top: 60%;
+    right: 4%;
+    width: 2%;
+    height: 30%;
+
 }

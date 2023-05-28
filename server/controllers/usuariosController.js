@@ -12,11 +12,16 @@ const getNombreUsuarios = async (req, res) => {
 }
 
 const crearUsuario = async (req, res) => {
-    const { id_usuario, username } = req.body;
-
-    const response = await pool.query('INSERT INTO usuarios (id_usuario, username) VALUES ($1,$2)', [id_usuario, username]);
-    console.log(response);
-    res.send('usuario creado');
+    try {
+        const { id_usuario, username } = req.body;
+    
+        const response = await pool.query('INSERT INTO usuarios (id_usuario, username) VALUES ($1,$2)', [id_usuario, username]);
+        console.log(response);
+        res.send('usuario creado');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al agregar usuario');
+    }
 }
 
 const vefificarUsuario = async (req, res) => {

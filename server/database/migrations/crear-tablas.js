@@ -22,7 +22,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS ux_usuarios_username on Usuarios(username);
 CREATE TABLE IF NOT EXISTS Receta (
   ID_receta SERIAL PRIMARY KEY,
   nombre VARCHAR(40) NOT NULL,
-  descripcion VARCHAR(100) NOT NULL,
+  descripcion VARCHAR(1000) NOT NULL,
   procedimiento TEXT[] NOT NULL,
   imagen TEXT
 );
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS Comentario (
   ID_comentario SERIAL PRIMARY KEY,
   ID_usuario VARCHAR(100) NOT NULL,
   ID_receta SERIAL NOT NULL,
-  comentario VARCHAR(200),
+  comentario INTEGER CHECK (comentario BETWEEN 1 AND 5),
   CONSTRAINT fk2_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario),
   CONSTRAINT fk4_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
 );

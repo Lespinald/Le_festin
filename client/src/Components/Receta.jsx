@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../Style/styleReceta.css'
 import RecetaVentanPrincipal from './RecetaVentanPrincipal'
-import data from './Json/receta.json'
 import VistaMinimaReceta from "./VistaMinimaReceta";
 
 

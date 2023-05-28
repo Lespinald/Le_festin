@@ -25,6 +25,12 @@
   flex-grow: 1;
   box-sizing: content-box;
 }
+.ComentariosContainer{
+  
+}
+.ReviewContainer{
+
+}
 .IngredientScrollable{
   padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 

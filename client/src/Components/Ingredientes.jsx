@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../Style/GUI_Ingredientes.css";
-import data from './Json/ingredientes.json'
 
 const Ingredientes = (props) => {
   const [search_ingrediente, set_search_Ingrediente] = useState('');//string para la busqueda (no tiene uso aún)
