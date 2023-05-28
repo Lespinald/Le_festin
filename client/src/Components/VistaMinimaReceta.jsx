@@ -24,8 +24,8 @@ const VistaMinimaReceta = (Props) => {
         <div className="grid-container-content-info">
             <img src={receta.imagen} className="imagen_Recetas"/>
             <div className='descriptionVistaPrincipal'>
-                <p> Descripcion:</p>
-                <p> {receta.descripcion}</p>
+                <p style={{fontSize:"20px"}}> Descripción:</p>
+                <p style={{fontSize:"20px",paddingRight:"20px"}}> {receta.descripcion}</p>
             </div>
         </div>              
     </button>
