@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
+
+.grid-item_comentario{
+    position: relative;
+    background: #F0D678;
+    border-radius: 25px;
+    border: #F0D678;
+    height: max-content;
+    width: 100%;
+    overflow: hidden;
+}
+
+.TituloComentario{
+    color:black;
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 10px;
+    text-align: left;
+    position: relative;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ParrafoComentario{
+    color:black;
+    font-weight: normal;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    top: 20px;
+    max-height: max-content;
+    text-overflow: ellipsis;
+    margin-bottom: 30px;
+}
+
+.IngresarComentario{
+    position: relative;
+    background: #F0D678;
+    border-radius: 25px;
+    border: #F0D678;
+    height: 110px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#form{
+    width: 85%;
+    height: 70%;
+    border-radius: 1.2rem;
+    border: none;
+    outline:none;
+    font-size:x-large;
+    margin: 10px;
+    padding-left: 22px;
+    padding-top: 15px;
+    padding-right: 5px;
+    resize: none;
+}
+
+#addButton{
+    height: 85%;
+    width: 10%;
+    margin: 10px;
+    border-radius: 1.2rem;
+    border: none;
+    outline:none;
+    font-size:xx-large;
+    background-color: #FFA600;
+    color: white;   
+    position: absolute;
+    
+}
