@@ -4,9 +4,8 @@
   display: flex;
   box-sizing: border-box;
   width: fit-content;
-  height: 100%;
-  max-height: 87vh;
-  margin-right: 0.5rem;
+  width: 100%;
+  margin-right: 0.3rem;
   background-color: #CFE3E6;
   border-radius: 1.2rem;
   padding: 1rem;
@@ -22,11 +21,11 @@
   max-height: 100%;
 }
 .RecipeContainer{
-  flex-grow: 1;
-  box-sizing: content-box;
+  
 }
 .ComentariosContainer{
-  
+  position: relative;
+  margin-top: 2000px;
 }
 .ReviewContainer{
 
