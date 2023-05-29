@@ -7,7 +7,7 @@ const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas } =
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
 const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
-const {getComentarios, postComentario} = require ('../controllers/comentariosController');
+const { getComentarios, postComentario, getComentariosbyReceta } = require ('../controllers/comentariosController');
 const { getPromedioReviewByRecetaID, postReview, getReviewsAll } = require('../controllers/reviewController');
 
 
@@ -52,6 +52,7 @@ preguntasSugerenciasRouter.get('', getPreguntasSugerencias);
 //------------------Comentarios
 router.use('/api/comentarios', comentariosRouter);
 comentariosRouter.get('', getComentarios);
+comentariosRouter.get('/recetaid/:id_receta', getComentariosbyReceta);
 comentariosRouter.post('/crearComentario',postComentario);
 //------------------Reviews
 router.use('/api/review', reviewsRouter);
