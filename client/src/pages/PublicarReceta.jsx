@@ -38,7 +38,7 @@ const PublicaReceta = () => {
             <div>
               <h2>Descripción:</h2>
                 <form>
-                  <input type='textarea' className='inputbox-Descripcion' placeholder='Escribe una descripción breve para tu receta' ></input>
+                  <textarea type='textarea' className='inputbox-Descripcion' placeholder='Escribe una descripción breve para tu receta' ></textarea>
                 </form>
             </div>
             <div>

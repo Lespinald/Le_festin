@@ -5,8 +5,7 @@
   flex-direction: column;
 }
 .label{
-  width: 1800px;
-  max-width: calc(100% - 20px);
+  width: calc(100% - 50px);
   height: 800px;
   padding: 10px;
 }
@@ -46,7 +45,7 @@ p{
 .infIzq{
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 35%;
   margin: 15px;
 }
 .addReceta{
@@ -61,7 +60,7 @@ p{
   color: black;
   border-style: none;
   border-radius: 30px;
-  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 }
 .botonEscoger{
   background-color: #ffa600;
@@ -117,36 +116,38 @@ p{
 }
 /*--------------------------------------------------Inputs texto---------------------------------*/
 .inputbox-titulo{
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   width: 85%;
-  height: 45px;
+  height: 65px;
   border-style: none;
   border-radius: 30px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
   padding-left: 20px;
 }
 .inputbox-Descripcion{
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
-  width: 85%;
+  width: calc(100% - 50px);
   height: 100px;
   border-style: none;
   border-radius: 30px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
   padding-left: 20px;
+  padding-top: 20px;
+  resize: none;
 }
 
 .inputbox-Pasos{
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
-  width: 85%;
-  height: 263px;
+  width: calc(100% - 50px);
+  height: 245px;
   border-style: none;
   border-radius: 30px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
   padding-left: 20px;
-  padding-top: 5px;
+  padding-top: 20px;
   resize: none;
 }
 /*-----------------------------------------------------------------------------------------------*/
