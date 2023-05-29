@@ -9,6 +9,7 @@ import PublicaReceta from "./pages/PublicarReceta"
 import Banner from "./Components/banner/Banner";
 import AppPriv from "./AppPriv";
 
+
 const AppPublic = () => {
   return (
     <>
@@ -21,6 +22,9 @@ const AppPublic = () => {
         <Route path="/preguntas&sugerencias" element={<ViewPreguntasSugerencias/>}/>
 
         <Route path="/" element={<Navigate to="/receta"/>}/>
+
+        <Route path="/pruebagui" element={<PublicaReceta/>}/>
+
 
         </Routes>
     </>

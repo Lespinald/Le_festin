@@ -60,7 +60,7 @@ const Banner = () => {
     <nav className="Home">
       <NavLink to="/receta">
         <button className="TitleApp">
-          Le Festin
+          LE FESTIN
         </button>
       </NavLink>
       <NavLink to={'/preguntas&sugerencias'}>
