@@ -28,7 +28,7 @@ const ViewReceta = (props) => {
 
   return (
     <div className='label' style={{height: "calc(100% - 100px)"}}>
-      <RecetaAmpliada receta={receta} ingredientes={ingredientes}/>
+      <RecetaAmpliada receta={receta} ingredientes={ingredientes} id={id}/>
     </div>
   );
 }
