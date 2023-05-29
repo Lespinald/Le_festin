@@ -60,11 +60,11 @@ const IngredientesPublicarReceta = (props) => {
             <p className="mensaje_Ingredientes-p">Escoge los ingredientes</p>
           )}
           {props.ingredientesSeleccionados.length > 0 && (
-            <div className="grid-container_elegidos-p">
+            <div className="grid-container_elegidos">
               {props.ingredientesSeleccionados.map((ingrediente, index) => (
-                <button key={index} className="grid-item_elegido-p" onClick={() => deseleccionarIngrediente(ingrediente)}>
+                <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
                   {ingrediente}
-                  <img src="../../public/x.png" alt="imagen" className="imagen-hover-p"></img>
+                  <img src="../../public/x.png" alt="imagen" className="imagen-hover"></img>
                 </button>
               ))}
             </div>
