@@ -11,7 +11,6 @@ const Comentarios = (props) => {
             .then(datos => set_Comentarios(datos))
     }
     ) 
-    console.log(Comentarios)
     return(
         <>
             <div style={{margin: "0 1rem 0 0"}}><h2>Comentarios</h2></div>
