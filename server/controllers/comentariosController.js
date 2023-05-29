@@ -8,7 +8,12 @@ const getComentarios = async(req, res) =>{
 
 const getComentariosbyReceta = async(req, res) => {
     const id_receta = req.params.id_receta;
-    const response = await pool.query(`SELECT * FROM comentario WHERE id_receta='${id_receta}'`);
+    const response = await pool.query(`
+    SELECT u.username, c.comentario 
+    FROM comentario c
+    INNER JOIN usuarios u ON c.id_usuario = u.id_usuario
+    WHERE id_receta='${id_receta}'
+    `);
     res.json(response.rows);
 }
 
