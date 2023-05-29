@@ -23,6 +23,7 @@
 }
 .RecipeAndComentariosContainer{
   height: fit-content;
+  max-height: 70px;
 }
 .ComentariosContainer{
   position: relative;
