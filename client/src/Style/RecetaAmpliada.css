@@ -20,12 +20,12 @@
   width: min-content;
   max-height: 100%;
 }
-.RecipeContainer{
-  
+.RecipeAndComentariosContainer{
+  height: fit-content;
 }
 .ComentariosContainer{
   position: relative;
-  margin-top: 2000px;
+  left: 0px;
 }
 .ReviewContainer{
 
