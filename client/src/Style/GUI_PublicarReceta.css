@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
 
+
+
 .displayColumn{
   display: flex;
   flex-direction: column;
 }
 .label{
   width: calc(100% - 50px);
-  height: 800px;
+  height: 900px;
   padding: 10px;
 }
 .contGeneral{
@@ -60,7 +62,6 @@ p{
   color: black;
   border-style: none;
   border-radius: 30px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 }
 .botonEscoger{
   background-color: #ffa600;
@@ -79,7 +80,6 @@ p{
   width: 300px;
   font-size: 50px;
   font-weight: 700;
-  margin-top: 10px;
   margin-left: 10px;
   border-radius: 10px;
 }
@@ -88,18 +88,7 @@ p{
   display: flex;
   align-items: center;
 }
-.seleccionIngredientes{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: #757575;
-  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
-  width: 89%;
-  height: 100px;
-}
+
 .infDer{
   display: flex;
   flex-direction: column;
@@ -142,7 +131,7 @@ p{
   font-size: 25px;
   font-weight: 600;
   width: calc(100% - 50px);
-  height: 245px;
+  height: 286px;
   border-style: none;
   border-radius: 30px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
@@ -150,4 +139,112 @@ p{
   padding-top: 20px;
   resize: none;
 }
-/*-----------------------------------------------------------------------------------------------*/
+/*-----------------------------------------Ingredientes------------------------------------------------------*/
+
+.ventana-emergente {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo desenfocado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-ventana {
+  position: absolute;
+  height: 90%;
+  width: 40%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.boton-cerrar{
+  position: absolute;
+  background-color: rgba(117, 117, 117, 0);
+  left: 85%;
+}
+
+.seleccionIngredientes{
+  position: relative;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 30px;
+  width: 89%;
+  height: 200px;
+}
+
+.componente_elegidos_grid1 {
+  position: absolute;
+  height: calc(100% - 60px);
+  width: calc(100% - 4px);
+  overflow-y: scroll;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;    
+  border: 2px solid #dbdbdb86;
+  border-radius: 20px;
+}
+
+.mensaje_Ingredientes {
+  color: #0000004f;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.componente_elegidos_grid::-webkit-scrollbar {
+  width: 0.01em;
+}
+
+.grid-container_elegidos {
+  position: relative;
+  display: grid;
+  width: 95%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid-item_elegido {
+  position: relative;
+  background: #d6e8ea;
+  padding: 10px;
+  /*text-align: left;
+  /*vertical-align: left;*/
+  border-radius: 11.6981px;
+  border: #d6e8ea;
+  height: 60px;
+  color: #000000;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.imagen-hover {
+  position: absolute;
+  display: none;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item_elegido:hover {
+  color: #00000069;
+  background-color: #ff6262;
+}
+
+.grid-item_elegido:hover .imagen-hover {
+  display: block;
+  opacity: 0.8;
+}
