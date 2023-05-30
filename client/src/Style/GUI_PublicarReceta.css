@@ -25,21 +25,6 @@
   align-items: center;
   justify-content: center;
 }
-h1{
-  font-size: 70px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-h2{
-  margin-left: 20px;
-  font-size: 30px;
-  font-weight: 700;
-}
-p{
-  margin: 0px;
-  font-weight: 600;
-  font-size: 30px;
-}
 .zonaInferior{
   display: flex;
   flex-direction: row;

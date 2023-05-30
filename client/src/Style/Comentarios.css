@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
-
 .grid-item_comentario{
     position: relative;
     background: #F0D678;
@@ -17,18 +15,15 @@
     top: 10px;
     text-align: left;
     position: relative;
-    font-weight: 500;
     font-style: normal;
 }
 
 .ParrafoComentario{
     color:black;
-    font-weight: normal;
     text-align: left;
     margin-left: 20px;
     margin-right: 20px;
     position: relative;
-    top: 20px;
     max-height: max-content;
     text-overflow: ellipsis;
     margin-bottom: 30px;

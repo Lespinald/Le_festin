@@ -1,0 +1,40 @@
+.Review{
+    position: relative;
+    background-color: rgba(137, 43, 226, 0);
+    display: flex;
+    height: 100%;
+}
+
+.star-rating-container{
+    background-color: rgba(127, 255, 212, 0);
+    height: 100%;
+}
+
+.star-image {
+    height: 100%;
+}
+  
+.promedio-container{
+    background-color: rgba(0, 255, 255, 0);
+    display: flex;
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+.boton-container{
+    margin-left: 20px;
+    background-color: rgba(165, 42, 42, 0);
+    width: 150px;
+    display: flex;
+}
+
+.boton-calificar{
+    background-color: #FFA600;
+    width: 100%;
+    border-radius: 30px;
+    color: white;
+    font-size: 30px;
+}
