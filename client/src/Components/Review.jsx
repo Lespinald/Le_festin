@@ -61,7 +61,7 @@ const Review = (props) => {
             <div className="star-rating-container">
                 {[...Array(MAX_RATING)].map((_, index) => (
                     <span key={index}>
-                        <img src={index < roundedRating ? '../../public/Star_Filled.png' : '../../public/Star.png'} alt="star" className="star-image"/>
+                        <img src={index < Math.floor(roundedRating) ? '../../public/Star_Filled.png' : '../../public/Star.png'} alt="star" className="star-image"/>
                     </span>
                 ))}
             </div>
