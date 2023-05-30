@@ -39,11 +39,11 @@ const RecetaAmpliada = (props) => {
             }
           </div>
         </div>
-        <div className='RecipeContainer'>
+        <div className='RecipeAndComentariosContainer'>
           <RecetaMax receta={props.receta || null} usuario={props.usuario || null}/>
+          <div className='ComentariosContainer'>
+          <Comentarios id={props.id}/>
         </div>
-        <div className='ComentariosContainer'>
-          <Comentarios/>
         </div>
         <div className='ReviewContainer'>
           <Review/>

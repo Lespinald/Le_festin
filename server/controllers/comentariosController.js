@@ -6,6 +6,17 @@ const getComentarios = async(req, res) =>{
     res.json(response.rows);
 }
 
+const getComentariosbyReceta = async(req, res) => {
+    const id_receta = req.params.id_receta;
+    const response = await pool.query(`
+    SELECT u.username, c.comentario 
+    FROM comentario c
+    INNER JOIN usuarios u ON c.id_usuario = u.id_usuario
+    WHERE id_receta='${id_receta}'
+    `);
+    res.json(response.rows);
+}
+
 const postComentario = async(req, res) =>{
     try{
             const{ id_usuario, id_receta, comentario}=req.body;
@@ -21,7 +32,10 @@ const postComentario = async(req, res) =>{
 
 
 
+
+
 module.exports = {// se exportan los métodos
     getComentarios,
+    getComentariosbyReceta,
     postComentario
 }
