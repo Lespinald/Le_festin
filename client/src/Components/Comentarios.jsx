@@ -16,24 +16,31 @@ const Comentarios = (props) => {
     }
     )
     const CrearComentario = async () => {
-        fetch(`http://localhost:5000/api/comentarios/crearComentario`,{
-            method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-        body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id , comentario: Comentario})
-        })
-        .then(respuesta => {
-            if(respuesta.ok){
-                alert("Comentario publicado")
-    
-            }else if(id_usuario==null){
-                alert("Debes iniciar sesión para comentar")
-            }else{
-                alert("No se pudo publicar el comentario")
-            }
-        }).catch(error =>
-            alert(error.message))
+        if(Comentario != ''){
+            fetch(`http://localhost:5000/api/comentarios/crearComentario`,{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+            body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id , comentario: Comentario})
+            })
+            .then(respuesta => {
+                if(respuesta.ok){
+                    alert("Comentario publicado")
+                    form.value = "";
+                    form.placeholder = "Ingrese su comentario aquí (Máximo 200 Caractéres)";
+                    set_Comentario('')
+        
+                }else if(id_usuario==null){
+                    alert("Debes iniciar sesión para comentar")
+                }else{
+                    alert("No se pudo publicar el comentario")
+                }
+            }).catch(error =>
+                alert(error.message))
+        }else{
+            alert("El comentario no puede estar vacío")
+        }
     }
     return(
         <>
