@@ -1,16 +1,40 @@
 import React, { useEffect, useState } from "react";
 import '../Style/Comentarios.css'
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 const Comentarios = (props) => {
+    const info = useSelector((state) => state.auth)
+    const id_usuario = info?.uid
+    const [Comentario,set_Comentario] = useState('');
     const [Comentarios,set_Comentarios] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/api/comentarios/recetaid/${props.id}`)
             .then(response => response.json())
             .then(datos => set_Comentarios(datos))
     }
-    ) 
+    )
+    const CrearComentario = async () => {
+        fetch(`http://localhost:5000/api/comentarios/crearComentario`,{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+        body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id , comentario: Comentario})
+        })
+        .then(respuesta => {
+            if(respuesta.ok){
+                alert("Comentario publicado")
+    
+            }else if(id_usuario==null){
+                alert("Debes iniciar sesión para comentar")
+            }else{
+                alert("No se pudo publicar el comentario")
+            }
+        }).catch(error =>
+            alert(error.message))
+    }
     return(
         <>
             <div style={{margin: "0 1rem 0 0"}}><h2>Comentarios</h2></div>
@@ -28,8 +52,8 @@ const Comentarios = (props) => {
                 }
             </div>
             <div className="IngresarComentario">
-                <textarea type="text" id="form" placeholder="Ingrese su comentario aquí"/>
-                <button id="addButton">
+                <textarea type="text" id="form" placeholder="Ingrese su comentario aquí (Máximo 200 Caractéres)" onChange={(e) => {set_Comentario(e.target.value)}}/>
+                <button id="addButton" onClick={CrearComentario}>
                     Comentar
                 </button>
             </div>
