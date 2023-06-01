@@ -4,12 +4,6 @@
     font-weight: 600;
 }*/
 
-button {
-    cursor: pointer; /* Cambia el cursor a una mano */
-}
-button:hover{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado al pasar el mouse */
-}
 
 
 .componente_Recetas {

@@ -50,7 +50,7 @@ const Comentarios = (props) => {
                 Comentarios.map(
                     (e, i) => (<div key={i}>
                     <div className="grid-item_comentario">
-                        <div className="TituloComentario"><p>{e.username}</p></div>
+                        <div className="TituloComentario"><h2>{e.username}</h2></div>
                         <div className="ParrafoComentario"><p>{e.comentario}</p></div>
                     </div>
                     <div style={{marginTop: "0.75rem"}}></div>
