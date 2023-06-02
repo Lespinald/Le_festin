@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../Style/GUI_PublicarReceta.css";
 import IngredientesPublicarReceta from "../Components/IngredientesPublicarReceta";
+import { Link } from "react-router-dom";
+
 
 const PublicaReceta = () => {
   const [mostrarVentana, setMostrarVentana] = useState(false);
@@ -32,6 +34,9 @@ const PublicaReceta = () => {
   return (
     <div className='label'>
       <div className='contGeneral'>
+        <Link to={"/receta"} className="imagenContainer">
+          <img src="../../public/xButton.png" className="imagen" />
+        </Link>
         <div className='titulo'>
           <h1>Publicar Receta</h1>
         </div>

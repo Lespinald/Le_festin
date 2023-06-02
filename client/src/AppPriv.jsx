@@ -22,7 +22,7 @@ const AppPriv = () => {
     <>
       <Routes>
         <Route path="perfil" element={<ViewPerfil />} />
-        <Route path="publicarReceta" element={<PublicaReceta />} />
+        <Route path="publicarReceta" element={<PublicaReceta/>}/>
         <Route path="favoritos" element={<PublicaReceta />} />
         <Route path="/*" element={<Navigate to="/my/perfil"/>}/>
       </Routes>

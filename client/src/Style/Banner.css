@@ -53,10 +53,17 @@
     position: absolute;
     width: 40px;
     height: 42px;
-    right: 38%;
+    right: 40%;
     top: 58%;
 }
 
+.imagenPublicar .image {
+    position: absolute;
+    width: 40px;
+    height: 42px;
+    right: 35%;
+    top: 58%;
+}
 
 .ButtonUser{
     position: absolute;
@@ -160,6 +167,7 @@
     height: 40%;
     top: 57%;
     right: 7%;
+    border-radius: 15px;
 }
 
 

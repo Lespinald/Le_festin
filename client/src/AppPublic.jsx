@@ -23,7 +23,6 @@ const AppPublic = () => {
 
         <Route path="/" element={<Navigate to="/receta"/>}/>
 
-        <Route path="/pruebagui" element={<PublicaReceta/>}/>
 
 
         </Routes>

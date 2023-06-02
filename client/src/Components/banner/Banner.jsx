@@ -58,12 +58,12 @@ const Banner = () => {
 
   return (
     <nav className="Home">
-      <NavLink to="/receta">
+      <NavLink to="/receta" title="Página principal">
         <button className="TitleApp">
           LE FESTIN
         </button>
       </NavLink>
-      <NavLink to={'/preguntas&sugerencias'}>
+      <NavLink to={'/preguntas&sugerencias'} title="Preguntas y sugerencias">
         <a className="imagenQA">
           <img src="../../public/Comment_icon.png" className="image"  />
         </a>      
@@ -79,19 +79,23 @@ const Banner = () => {
         </button>
       </div> : 
       <div>
-        <NavLink to="
-        voritos">
-          <a className="imagenFV">
-            <img src="../../public/FavoritiesIcon.png" className="image"  />
+        <NavLink to="/my/publicarReceta" title="Publicar receta">
+          <a className="imagenPublicar">
+            <img src="../../public/plus.png" className="image" />
           </a>
         </NavLink>
-        <NavLink to="/my/perfil">
+        <NavLink to="voritos" title="Mis favoritos">
+          <a className="imagenFV">
+            <img src="../../public/FavoritiesIcon.png" className="image" />
+          </a>
+        </NavLink>
+        <NavLink to="/my/perfil" title="Mis recetas">
           <button className="divIconoAuthenticated"> 
             <img src="../../public/icon_guest.png" className="ImageUser"/>
             <p className="displayNameUser">{info?.displayName}</p>  
           </button>
-        </NavLink>
-        <button onClick={() => dispatch(logout())}>
+        </NavLink> 
+        <button onClick={() => dispatch(logout())} title="Cerrar sesión">
             <img src="https://cdn.onlinewebfonts.com/svg/img_277163.png" className="ImageLogOut"/>
         </button>
       </div>
