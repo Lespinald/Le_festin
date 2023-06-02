@@ -48,7 +48,7 @@ const IngredientesPublicarReceta = (props) => {
       {/*Apartado de la barra de busqueda------------------------------------ */}
       <section className="componente_busqueda-p">
         <input type="text" placeholder="Buscar ingredientes" className="barra_busqueda-p" onChange={(e) => {set_search_Ingrediente(e.target.value)}} />
-        <img src="lupa_icon.png" className="lupa_icon-p" />
+        <img src="../../../public/lupa_icon.png" className="lupa_icon-p" />
       </section>
       {/*Apartado de los ingredientes que se seleccionaron------------------- */}
       <section className="componente_elegidos-p">
