@@ -29,7 +29,8 @@ const postReview = async(req, res) => {
     res.status(500).send('Error al añadir review');
   }
 }
- //para verificar si una persona ya califico una receta
+
+//para verificar si una persona ya califico una receta
 const verificarReview = async(req, res) => {
   const id_usuario = req.params.id_usuario;
   const id_receta = req.params.id_receta;
@@ -50,9 +51,19 @@ const verificarReview = async(req, res) => {
   }
 }
 
+const getReviewByUserRecetaID = async(req, res) => {
+  const id_usuario = req.params.id_usuario;
+  const id_receta = req.params.id_receta;
+
+  const response = await pool.query('SELECT review FROM review WHERE id_usuario = $1 AND id_receta = $2', [id_usuario, id_receta]);
+
+  res.json(response.rows);
+}
+
 module.exports = {//aca se exportan los metodos
   getPromedioReviewByRecetaID,
   postReview,
   getReviewsAll,
-  verificarReview
+  verificarReview,
+  getReviewByUserRecetaID
 }
