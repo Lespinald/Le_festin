@@ -15,7 +15,7 @@ const ViewReceta = (props) => {
   }, [id])
 
   useEffect(() => {
-    fetch(`https://lefestin.onrender.com/ingredienteAsociado/recetaid/${id}`)//ruta de la api
+    fetch(`https://lefestin.onrender.com/api/ingredienteAsociado/recetaid/${id}`)//ruta de la api
     .then(response => response.json())
     .then(datos => {
       const arrayIngredientes = []
