@@ -12,7 +12,7 @@ const ViewPreguntasSugerencias = () => {
   const info = useSelector((state) => state.auth);
   
   useEffect(() => {
-    fetch('http://localhost:5000/api/preguntasSugerencias')//ruta de la api
+    fetch('https://lefestin.onrender.com/api/preguntasSugerencias')//ruta de la api
     .then(respuesta => respuesta.json())
     .then(datos => setPreguntas(datos)); // guardar las preguntas en el estado
   }, [])

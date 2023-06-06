@@ -13,12 +13,12 @@ const Receta = (props) => {
   useEffect(() => {
     if(ingredientesSeleccionados.length === 0){
       console.log("Arreglo vacio")
-      fetch('http://localhost:5000/api/recetas')//ruta de la api
+      fetch('https://lefestin.onrender.com/api/recetas')//ruta de la api
       .then(response => response.json())
       .then(datos => set_Recetas(datos)); // guardar todas las recetas
     }else{
       console.log("Arreglo con ingredientes")
-      fetch(`http://localhost:5000/api/recetas/ingredientes/${objetoJson}`)//ruta de la api
+      fetch(`https://lefestin.onrender.com/api/recetas/ingredientes/${objetoJson}`)//ruta de la api
       .then(response => response.json())
       .then(datos => set_Recetas(datos));
     }

@@ -37,7 +37,7 @@ const PublicaReceta = () => {
   const publishRecipe = () =>{
     setProcedimiento("{"+procedimiento+"}")
     alert(procedimiento)
-    fetch(`http://localhost:5000/api/recetas/createRecetas`,{
+    fetch(`https://lefestin.onrender.com/api/recetas/createRecetas`,{
       method: 'POST',
       headers:{
           'Content-Type': 'application/json'

@@ -61,7 +61,7 @@ const Review = (props) => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/review/promedio/id/${id_receta}`)
+        fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
         .then(response => response.json())
         .then(data => {
             const avgNumber = parseFloat(data[0].avg);
@@ -72,7 +72,7 @@ const Review = (props) => {
     const calificarReceta = () => {
         
 
-        fetch(`http://localhost:5000/api/review/crearReview`,{
+        fetch(`https://lefestin.onrender.com/api/review/crearReview`,{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -93,11 +93,11 @@ const Review = (props) => {
     }
 
     const verificacionReview = () => {
-        fetch(`http://localhost:5000/api/review/verificar/${id_usuario}/${id_receta}`)
+        fetch(`https://lefestin.onrender.com/api/review/verificar/${id_usuario}/${id_receta}`)
         .then(response => response.json())
         .then(datos => setVerificacion(datos));
         
-        fetch(`http://localhost:5000/api/review/usuarioRecetaID/${id_usuario}/${id_receta}`)
+        fetch(`https://lefestin.onrender.com/api/review/usuarioRecetaID/${id_usuario}/${id_receta}`)
         .then(response => response.json())
         .then(data => {
             const review = parseFloat(data[0].review);

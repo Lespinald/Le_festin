@@ -9,13 +9,13 @@ const ViewReceta = (props) => {
   const [ingredientes, setIngredientes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/recetas/id/${id}`)//ruta de la api
+    fetch(`https://lefestin.onrender.com/api/recetas/id/${id}`)//ruta de la api
     .then(response => response.json())
     .then(datos => setReceta(datos[0]))
   }, [id])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/ingredienteAsociado/recetaid/${id}`)//ruta de la api
+    fetch(`https://lefestin.onrender.com/ingredienteAsociado/recetaid/${id}`)//ruta de la api
     .then(response => response.json())
     .then(datos => {
       const arrayIngredientes = []

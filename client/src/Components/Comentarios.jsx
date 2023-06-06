@@ -10,14 +10,14 @@ const Comentarios = (props) => {
     const [Comentario,set_Comentario] = useState('');
     const [Comentarios,set_Comentarios] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/api/comentarios/recetaid/${props.id}`)
+        fetch(`https://lefestin.onrender.com/api/comentarios/recetaid/${props.id}`)
             .then(response => response.json())
             .then(datos => set_Comentarios(datos))
     }
     )
     const CrearComentario = async () => {
         if(Comentario != ''){
-            fetch(`http://localhost:5000/api/comentarios/crearComentario`,{
+            fetch(`https://lefestin.onrender.com/api/comentarios/crearComentario`,{
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json'

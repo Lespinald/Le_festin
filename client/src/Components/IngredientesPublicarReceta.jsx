@@ -11,11 +11,11 @@ const IngredientesPublicarReceta = (props) => {
 
   useEffect(() => {
     if(search_ingrediente == ""){
-      fetch('http://localhost:5000/api/ingredientes')//ruta de la api
+      fetch('https://lefestin.onrender.com/api/ingredientes')//ruta de la api
         .then(response => response.json())
         .then(datos => set_Ingredientes(datos)); // guardar los ingredientes en el estado
     }else{
-      fetch('http://localhost:5000/api/ingredientes/busquedaNombre/' + search_ingrediente)//ruta de la api + la busqueda
+      fetch('https://lefestin.onrender.com/api/ingredientes/busquedaNombre/' + search_ingrediente)//ruta de la api + la busqueda
       .then(response => response.json())
       .then(datos => set_Ingredientes(datos)); // guardar los ingredientes en el estado
     }
