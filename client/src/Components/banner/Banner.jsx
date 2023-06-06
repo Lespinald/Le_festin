@@ -65,13 +65,13 @@ const Banner = () => {
       </NavLink>
       <NavLink to={'/preguntas&sugerencias'} title="Preguntas y sugerencias">
         <a className="imagenQA">
-          <img src="../../public/Comment_icon.png" className="image"  />
+          <img src="Comment_icon.png" className="image"  />
         </a>      
       </NavLink>
       { info?.status !== "authenticated" ?
       <div>
         <button className="ButtonBeginSesion" onClick={BeginSesion}>
-          <img src="../../public/Google Icon.png" className="GoogleIconButton"/>
+          <img src="Google Icon.png" className="GoogleIconButton"/>
           <p className="TitleButton"> Iniciar Sesión </p>
         </button>
         <button className="ButtonRegister" onClick={Register}>
@@ -81,17 +81,17 @@ const Banner = () => {
       <div>
         <NavLink to="/my/publicarReceta" title="Publicar receta">
           <a className="imagenPublicar">
-            <img src="../../public/plus.png" className="image" />
+            <img src="plus.png" className="image" />
           </a>
         </NavLink>
         <NavLink to="voritos" title="Mis favoritos">
           <a className="imagenFV">
-            <img src="../../public/FavoritiesIcon.png" className="image" />
+            <img src="FavoritiesIcon.png" className="image" />
           </a>
         </NavLink>
         <NavLink to="/my/perfil" title="Mis recetas">
           <button className="divIconoAuthenticated"> 
-            <img src="../../public/icon_guest.png" className="ImageUser"/>
+            <img src="icon_guest.png" className="ImageUser"/>
             <p className="displayNameUser">{info?.displayName}</p>  
           </button>
         </NavLink> 
