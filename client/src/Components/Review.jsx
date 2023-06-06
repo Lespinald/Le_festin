@@ -81,7 +81,7 @@ const Review = (props) => {
         })
         .then(respuesta => {
             if(respuesta.ok){
-                alert("Calificaste esta receta con" + selectedStars)
+                alert("Calificaste esta receta con " + selectedStars)
             }else if(id_usuario==null){
                 alert("Debes iniciar sesión para calificar")
             }else{
