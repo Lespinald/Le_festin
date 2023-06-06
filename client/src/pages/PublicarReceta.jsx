@@ -56,7 +56,7 @@ const PublicaReceta = () => {
     <div className='label'>
       <div className='contGeneral'>
         <Link to={"/receta"} className="imagenContainer">
-          <img src="../../public/xButton.png" className="imagen" />
+          <img src="xButton.png" className="imagen" />
         </Link>
         <div className='titulo'>
           <h1>Publicar Receta</h1>
@@ -92,7 +92,7 @@ const PublicaReceta = () => {
                       {ingredientesSeleccionados.map((ingrediente, index) => (
                         <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
                           {ingrediente}
-                          <img src="../../public/x.png" alt="imagen" className="imagen-hover"></img>
+                          <img src="x.png" alt="imagen" className="imagen-hover"></img>
                         </button>
                       ))}
                     </div>

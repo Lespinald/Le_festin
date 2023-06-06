@@ -64,7 +64,7 @@ const Ingredientes = (props) => {
               {props.ingredientesSeleccionados.map((ingrediente, index) => (
                 <button key={index} className="grid-item_elegido" onClick={() => deseleccionarIngrediente(ingrediente)}>
                   {ingrediente}
-                  <img src="../../public/x.png" alt="imagen" className="imagen-hover"></img>
+                  <img src="x.png" alt="imagen" className="imagen-hover"></img>
                 </button>
               ))}
             </div>
