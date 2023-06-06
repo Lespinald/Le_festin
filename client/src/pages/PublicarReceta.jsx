@@ -2,24 +2,27 @@ import React, { useEffect, useState } from "react";
 import "../Style/GUI_PublicarReceta.css";
 import IngredientesPublicarReceta from "../Components/IngredientesPublicarReceta";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const PublicaReceta = () => {
+  const info = useSelector((state) => state.auth);
+  const id_usuario = info?.uid;
+
   const [mostrarVentana, setMostrarVentana] = useState(false);
   const [ingredientesSeleccionados, setIngredientesSeleccionados] = useState([]);
 
+  const [nombre, setNombre] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [procedimiento, setProcedimiento] = useState("");
+  const [imagen, setImagen] = useState("");
+ 
   const abrirVentana = () => {
     setMostrarVentana(true);
   }
 
   const cerrarVentana = () =>{
     setMostrarVentana(false);
-  }
-
-  function seleccionarIngrediente(value) {//funcion para agregar al array ingredientesSeleccionados los ingredientes seleccionados, recibe un string value
-    if (!ingredientesSeleccionados.includes(value)){//condicion para que no se repitan ingredientes selccionados
-      setIngredientesSeleccionados(ingredientesSeleccionados.concat(value))
-    }
   }
 
   function deseleccionarIngrediente(value) {//funcion para deseleccionar, osea elimnar el ingrediente del arrey ingredientesSeleccionados
@@ -29,6 +32,24 @@ const PublicaReceta = () => {
     const nuevaLista = [...ingredientesSeleccionados];
     nuevaLista.splice(indice, 1);
     setIngredientesSeleccionados(nuevaLista);
+  }
+
+  const publishRecipe = () =>{
+    setProcedimiento("{"+procedimiento+"}")
+    alert(procedimiento)
+    fetch(`http://localhost:5000/api/recetas/createRecetas`,{
+      method: 'POST',
+      headers:{
+          'Content-Type': 'application/json'
+      }, body: JSON.stringify({ id_usuario: id_usuario, nombre: nombre, descripcion: descripcion, procedimiento: procedimiento, imagen: imagen, ingredientes: ingredientesSeleccionados})
+    })
+    .then(respuesta => {
+      if(respuesta.ok){
+        alert("Receta publicada");
+      }else{
+        alert("No se puedo publicar la receta");
+      }
+    })
   }
 
   return (
@@ -45,15 +66,15 @@ const PublicaReceta = () => {
             <div>
               <h2>Titulo:</h2>
               <form>
-                <input type='text' placeholder='Nombre de la receta' className='inputbox-titulo'></input>
+                <input type='text' placeholder='Nombre de la receta' className='inputbox-titulo' onChange={(e) => {setNombre(e.target.value)}}></input>
               </form>
             </div>
             <div className='addReceta'>
               <h2>Imagen:</h2>
               <div>
-                <button className='botonReceta'>
-                  <img src='../../public/añadirReceta.png' alt='imagen-añadir'></img>
-                </button>
+                <form>
+                  <input type='text' placeholder='Link imagen' className='inputbox-titulo' onChange={(e) => {setImagen(e.target.value)}}></input>
+                </form>
               </div>
             </div>
             <div className='displayColumn'>
@@ -84,18 +105,18 @@ const PublicaReceta = () => {
             <div>
               <h2>Descripción:</h2>
                 <form>
-                  <textarea type='textarea' className='inputbox-Descripcion' placeholder='Escribe una descripción breve para tu receta' ></textarea>
+                  <textarea type='textarea' className='inputbox-Descripcion' placeholder='Escribe una descripción breve para tu receta' onChange={(e) => {setDescripcion(e.target.value)}}></textarea>
                 </form>
             </div>
             <div>
               <h2>Paso a paso:</h2>
                 <form>
-                  <textarea className='inputbox-Pasos' placeholder='Describe los pasos que son necesarios para esta receta'></textarea>
+                  <textarea className='inputbox-Pasos' placeholder='Describe los pasos que son necesarios para esta receta' onChange={(e) => {setProcedimiento(e.target.value)}}></textarea>
                 </form>
             </div>
           </div>
         </div>
-        <div className='titulo'>
+        <div className='titulo' onClick={publishRecipe}>
           <button className='botonPublicar'>Publicar</button>
         </div>
         {mostrarVentana && (
