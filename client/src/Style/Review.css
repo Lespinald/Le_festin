@@ -117,9 +117,10 @@
 }
 
 .container-socialnet{
-    margin-left: 25%;
+    background-color: #ffa60000;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .boton-social{/* Boton redes sociales con caracteristicas para tomar la imagen de web*/
     margin-left: 30%;
@@ -150,7 +151,7 @@
     margin-left: 10% ;
     margin-right: 10%;
     right: 0;
-    cursor: pointer;
+    cursor: text;
     background: #b6b5b5be;
     color: #000000;
     border: none;
