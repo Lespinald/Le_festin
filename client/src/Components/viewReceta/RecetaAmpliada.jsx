@@ -15,7 +15,7 @@ const RecetaAmpliada = (props) => {
   const ingredientesId = props.ingredientes;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/ingredientes/list/${ingredientesId.join(",")}`)
+    fetch(`https://lefestin.onrender.com/api/ingredientes/list/${ingredientesId.join(",")}`)
     .then(response => response.json())
     .then(datos => setIngredientes(datos));
   }, [ingredientesId])
