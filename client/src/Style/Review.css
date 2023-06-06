@@ -91,7 +91,7 @@
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
-.boton-compartir{
+.boton-compartir{/* Boton compartir con caracteristicas para tomar la imagen de web*/
     margin-left: 0%;
     margin-right: 0%;
     border: none;
@@ -121,7 +121,7 @@
     display: flex;
     align-items: center;
 }
-.boton-social{
+.boton-social{/* Boton redes sociales con caracteristicas para tomar la imagen de web*/
     margin-left: 30%;
     margin-right: 30%;
     border: none;
@@ -136,7 +136,7 @@
     margin: 0 5px;
     text-align: center;
 }
-.boton-social:nth-child(1){
+.boton-social:nth-child(1){ /*seleccionar el background del color del icono*/
     background-color: #25D366;
 }
 .boton-social:nth-child(2){
@@ -145,7 +145,7 @@
 .boton-social:nth-child(3){
     background-color: #1DA1F2;
 }
-.link-container{
+.link-container{ /*contenedor del link */
     align-items: center;
     margin-left: 10% ;
     margin-right: 10%;
@@ -158,7 +158,7 @@
     font-size: 20px;
     border-radius: 20px;
 }
-.link{
+.link{/* Link propiamente dicho*/
     margin-left: 5px;
     line-height: 40px;
     color: #000;

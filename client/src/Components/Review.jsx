@@ -10,8 +10,8 @@ const Review = (props) => {
     const info = useSelector((state) => state.auth)
     const id_usuario = info?.uid
     const id_receta = props.id
-    const linkUrl = encodeURI(window.location.href);
-    const msg = 'Deberías ver esta receta :D';
+    const linkUrl = encodeURI(window.location.href);/*Link de la pagina al subir a un host se copia el link actual*/
+    const msg = 'Deberías ver esta receta :D'; /*Plantilla de texto al compartir*/ 
 
 
     const MAX_RATING = 5;
@@ -22,10 +22,10 @@ const Review = (props) => {
     const [mostrarVentanaCompartir, setMostrarVentanaCompartir] = useState(false);
     const [verificacion, setVerificacion] = useState();
 
-    const copyCompartir = ()=>{
+    const copyCompartir = ()=>{ /*Copiar al portapapeles el link*/
         navigator.clipboard.writeText(linkUrl)
     }
-    const compartirFB = ()=>{
+    const compartirFB = ()=>{ /*compartir en facebook*/
 
         window.open(`https://www.facebook.com/share.php?u=${linkUrl}`)
     }
@@ -59,13 +59,6 @@ const Review = (props) => {
         }
     };
 
-    const ShareFb = () =>{
-        const link = encodeURI(window.location.href);
-        const title =encodeURIComponent(document.querySelector('title').textContent);
-
-        const fb =document.querySelector('.facebook');
-        fb.href = 'https://www.facebook.com/share.php?u=${link}';
-    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/review/promedio/id/${id_receta}`)
