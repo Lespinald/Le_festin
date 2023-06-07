@@ -206,7 +206,13 @@
   }
 
 .star-rating-container-ventana{
-    background-color: rgba(127, 219, 255, 0);
+    position: relative;
+    background-color: rgb(127, 219, 255);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .star-image-selector {
@@ -215,7 +221,6 @@
 
 .star-image-selector:hover {
     cursor: pointer;
-    height: 80%;
-    width: 19%;
+    height: 90%;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
