@@ -207,7 +207,7 @@
 
 .star-rating-container-ventana{
     position: relative;
-    background-color: rgb(127, 219, 255);
+    background-color: rgba(127, 219, 255, 0);
     height: 100px;
     width: 100%;
     display: flex;
