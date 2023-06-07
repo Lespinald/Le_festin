@@ -111,7 +111,7 @@ const Review = (props) => {
             <div className="star-rating-container">
                 {[...Array(MAX_RATING)].map((_, index) => (
                     <span key={index}>
-                        <img src={index < Math.floor(roundedRating) ? "Star_Filled.png" : "Star.png"} alt="star" className="star-image"/>
+                        <img src={index < Math.floor(roundedRating) ? "https://www.svgrepo.com/show/13695/star.svg" : "https://cdn-icons-png.flaticon.com/512/118/118669.png"} alt="star" className="star-image"/>
                     </span>
                 ))}
             </div>
@@ -140,7 +140,7 @@ const Review = (props) => {
                                 {[...Array(MAX_RATING)].map((_, index) => (
                                     <img
                                     key={index}
-                                    src={index < selectedStars ? "Star_Filled.png" : "Star.png"}
+                                    src={index < selectedStars ? "https://www.svgrepo.com/show/13695/star.svg" : "https://cdn-icons-png.flaticon.com/512/118/118669.png"}
                                     alt="star"
                                     className="star-image-selector"
                                     onClick={() => handleStarClick(index)}
