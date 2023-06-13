@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS IngredienteAsociado (
 );
 
 CREATE TABLE IF NOT EXISTS Favorito (
-  ID_ingrediente SERIAL NOT NULL,
+  ID_usuario VARCHAR(100) NOT NULL,
   ID_receta SERIAL NOT NULL,
-  CONSTRAINT fk1_ingrediente FOREIGN KEY (ID_ingrediente) REFERENCES Ingrediente (ID_ingrediente),
+  CONSTRAINT fk1_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario),
   CONSTRAINT fk2_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
 );
 
