@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-export const authSlice = createSlice({
+export const pageSlice = createSlice({
     name:'page',
     initialState:{
         ubicacion:'INICIO'
@@ -18,4 +18,4 @@ export const authSlice = createSlice({
     }
 });
 
-export const { foro,favoritos,perfil } = authSlice.actions;    
+export const { foro,favoritos,perfil } = pageSlice.actions;    

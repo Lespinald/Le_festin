@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Style/ViewPerfil.css";
 import data from '../Json/recetas.json'
+import { useSelector } from "react-redux";
 
 
 const ViewPerfil= () => {

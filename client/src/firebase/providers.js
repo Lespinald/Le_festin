@@ -8,11 +8,14 @@ const googleProvider = new GoogleAuthProvider();
 export const signInWithGoogle = async() => {
     try{
         const result = await signInWithPopup(firebaseAuth,googleProvider)
-        const {displayName,email,uid} = result?.user;        
+        const {displayName,email,uid,photoURL} = result?.user;        
+        const { creationTime } = result?.user?.metadata;
         return{
             displayName,
             email,
-            uid
+            uid,
+            photoURL,
+            creationTime
         }
     }catch (error){
         const errorMessage = error?.message

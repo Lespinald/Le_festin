@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { startGoogleSignIn } from "../../store/auth/thunks";
 import { Link, NavLink } from 'react-router-dom';
 import { chekingCredentials, login, logout } from "../../store/auth/authslice";
+import { guardar } from '../../store/infoUsuario/authslice';
 import { signInWithGoogle } from "../../firebase/providers";
 
 const Banner = () => {
@@ -15,13 +16,17 @@ const Banner = () => {
   const BeginSesion = async () => {
     dispatch(chekingCredentials())
     const result = await signInWithGoogle()
-    fetch(`https://lefestin.onrender.com/api/usuarios/verificar/${result.uid}`)
+    console.log("🚀 ~ file: Banner.jsx:19 ~ BeginSesion ~ result:", result)
+    fetch(`https://lefestin.onrender.com/api/usuarios/verificar/${result?.uid}`)
     .then(respuesta => respuesta.json())
     .then(datos => {
-      if(datos){
+        if(datos){
+        dispatch(guardar(result))
         dispatch(login(result))
       }else{
         alert("El usuario no está registrado.")
+        // dispatch(guardar({uid:result.user.uid,email:result.user.email,fecha:result.user.metadata.creationTime,displayName:result.user.displayName,photoUrl:result.user.photoURL,errorMessage:null}))
+        dispatch(guardar(result))
         dispatch(logout())
       }
     }); 

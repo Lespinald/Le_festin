@@ -41,7 +41,7 @@ const PublicaReceta = () => {
       method: 'POST',
       headers:{
           'Content-Type': 'application/json'
-      }, body: JSON.stringify({ id_usuario: id_usuario, nombre: nombre, descripcion: descripcion, procedimiento: procedimiento, imagen: imagen, ingredientes: ingredientesSeleccionados})
+      }, body: JSON.stringify({ id_usuario: id_usuario, nombre: nombre, descripcion: descripcion, procedimiento: procedimiento, imagen: imagen, ingredientes: ingredientesSeleccionados, vistas: 0, puntaje: 0})
     })
     .then(respuesta => {
       if(respuesta.ok){

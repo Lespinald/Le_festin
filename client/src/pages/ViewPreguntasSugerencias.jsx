@@ -10,6 +10,8 @@ const ViewPreguntasSugerencias = () => {
   const [pregunta, setPregunta] = useState("");
   const [preguntas, setPreguntas] = useState([])
   const info = useSelector((state) => state.auth);
+  const photo = useSelector((state) => state.info.photoURL);
+  console.log("🚀 ~ file: ViewPerfil.jsx:15 ~ ViewPerfil ~ photo:", photo)
   
   useEffect(() => {
     fetch('https://lefestin.onrender.com/api/preguntasSugerencias')//ruta de la api
