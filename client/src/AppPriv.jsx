@@ -8,6 +8,7 @@ import ViewPerfil from "./pages/ViewPerfil"
 import PublicaReceta from "./pages/PublicarReceta"
 import Banner from "./Components/banner/Banner";
 import { useSelector } from "react-redux";
+import VentanaFavoritos from "./pages/VentanaFavoritos";
 
 const AppPriv = () => {
 
