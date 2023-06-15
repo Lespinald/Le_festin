@@ -89,7 +89,7 @@ const Banner = () => {
             <img src="plus.png" className="image" />
           </a>
         </NavLink>
-        <NavLink to="voritos" title="Mis favoritos">
+        <NavLink to="/my/favoritos" title="Mis favoritos">
           <a className="imagenFV">
             <img src="FavoritiesIcon.png" className="image" />
           </a>
