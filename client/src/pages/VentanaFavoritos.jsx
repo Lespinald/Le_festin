@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Ingredientes from '../Components/Ingredientes'
+import Receta from '../Components/Receta'
 
 const VentanaFavoritos = () => {
+  const [ingredientesSeleccionados, setIngredientesSeleccionados, Titulo] = useState([]);
   return (
     <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      VentanaFavoritos
+      <Ingredientes ingredientesSeleccionados={ingredientesSeleccionados} setIngredientesSeleccionados={setIngredientesSeleccionados}/>
+      <Receta ingredientesSeleccionados={ingredientesSeleccionados} Titulo={"Favoritos"}/>
     </div>
   )
 }

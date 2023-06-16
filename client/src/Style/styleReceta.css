@@ -3,10 +3,11 @@
       'Liberation Sans', sans-serif;
     font-weight: 600;
 }*/
-
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
 
 
 .componente_Recetas {
+    padding-top: 30px;
     position: absolute;
     background:  #d6e8ea;
     left: 0%;
@@ -15,8 +16,13 @@
     height: 100%;
     overflow-y: scroll;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
     border-radius: 20px;
+}
+.componente_Recetas>div>h1{
+    font-weight: 700;
 }
 
 .componente_Recetas::-webkit-scrollbar {
@@ -29,7 +35,7 @@
     background-color: #d6e8ea;
     top: 85px;
     left: 36%;
-    height: calc(97% - 85px);
+    height: calc(95% - 85px);
     width: calc(63% - 1.5%);
     border-radius: 20px;
 }
