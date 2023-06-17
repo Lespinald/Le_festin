@@ -3,7 +3,7 @@ import Ingredientes from '../Components/Ingredientes'
 import RecetaPrueba from '../Components/RecetaPrueba'
 
 const VentanaFavoritos = () => {
-  const [ingredientesSeleccionados, setIngredientesSeleccionados, Titulo] = useState([]);
+  const [ingredientesSeleccionados, setIngredientesSeleccionados] = useState([]);
   return (
     <div>
       <Ingredientes ingredientesSeleccionados={ingredientesSeleccionados} setIngredientesSeleccionados={setIngredientesSeleccionados}/>

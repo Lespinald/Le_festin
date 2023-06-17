@@ -21,9 +21,28 @@
     align-items: center;
     border-radius: 20px;
 }
+.zonaSuperior{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
 .componente_Recetas>div>h1{
     font-weight: 700;
+    margin-bottom: 0px;
+    width: 50%;
 }
+
+.busquedaReceta, .busquedaReceta::placeholder{
+    background-color: #FFCC33;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 10px;
+    height: 40px;
+}
+
 
 .componente_Recetas::-webkit-scrollbar {
     width: 0.01em;

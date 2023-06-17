@@ -32,10 +32,11 @@ const RecetaPrueba = (props) => {
     <div className="RECETAS">
 
       <section className="componente_Recetas">
-        <div>
+        <div className="zonaSuperior">
           <h1 className="weaprueba">
             {titulo}  
           </h1>
+          <input type="text" placeholder="Busca una receta" className="busquedaReceta"></input>
         </div>
         <div className="grid-container_Recetas">
           {recetas.map((element,index) => (

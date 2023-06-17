@@ -7,7 +7,6 @@ import VistaMinimaReceta from "./VistaMinimaReceta";
 const Receta = (props) => {
   const [recetas, set_Recetas ] = useState([]);
   const ingredientesSeleccionados = props.ingredientesSeleccionados;
-  const titulo = props.Titulo;
   const objetoJson = JSON.stringify(ingredientesSeleccionados);
 
 
@@ -32,11 +31,6 @@ const Receta = (props) => {
     <div className="RECETAS">
 
       <section className="componente_Recetas">
-        <div>
-          <h1 className="weaprueba">
-            {titulo}  
-          </h1>
-        </div>
         <div className="grid-container_Recetas">
           {recetas.map((element,index) => (
             <VistaMinimaReceta ingrediente={element} key={index}/>
