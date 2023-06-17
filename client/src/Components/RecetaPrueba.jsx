@@ -36,7 +36,10 @@ const RecetaPrueba = (props) => {
           <h1 className="weaprueba">
             {titulo}  
           </h1>
-          <input type="text" placeholder="Busca una receta" className="busquedaReceta"></input>
+          <section className="divBuscarReceta">
+            <img src="../../public/lupa_icon.png"></img>
+            <input type="text" placeholder="Busca una receta" className="busquedaReceta"></input>
+          </section>
         </div>
         <div className="grid-container_Recetas">
           {recetas.map((element,index) => (
