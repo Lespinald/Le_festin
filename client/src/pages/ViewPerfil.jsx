@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Style/ViewPerfil.css";
 import data from '../Json/recetas.json'
 import { useSelector } from "react-redux";
 
 
 const ViewPerfil= () => {
+
+  const uid = useSelector((state) => state.info.uid);
+  const fecha = useSelector((state) => state.info.fecha);
+  const email = useSelector((state) => state.info.email);
+  const displayName = useSelector((state) => state.info.displayName);
+  const photoURL = useSelector((state) => state.info.photoURL);
+  console.log("🚀 ~ file: ViewPerfil.jsx:13 ~ ViewPerfil ~ photoURL:", photoURL)
+  // console.log("🚀 ~ file: ViewPerfil.jsx:10 ~ ViewPerfil ~ info:", info)
 
   var tieneRecetas= true;
   if(data.recetas[0]===undefined){
@@ -13,6 +21,8 @@ const ViewPerfil= () => {
 
 	const [recetas_elegidos, set_receta] = useState([]);
 	const [seleccionReceta, setSeleccionReceta]=useState(true);
+  const [recetas, setRecetas] = useState(0);
+  const [favoritos, setFavoritos] = useState(0);
 
 	function seleccionarReceta(value){
     const tumadre = []
@@ -20,12 +30,27 @@ const ViewPerfil= () => {
     set_receta(value)
     setSeleccionReceta(false)
 	}
+
   function deselectReceta(){
-    setSeleccionReceta(false)
+    setSeleccionReceta(true)
     const tumadre = []
     set_receta(tumadre)
   }
   console.log(recetas_elegidos)
+
+  useEffect(() => {
+    console.log("here")
+    fetch(`https://lefestin.onrender.com/api/usuarios/cantidadFavoritos/${uid}`)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+      setFavoritos(datos)
+    }); 
+    fetch(`https://lefestin.onrender.com/api/usuarios/cantidadRecetas/${uid}`)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+      setRecetas(datos)
+    }); 
+  },[])
 
   return(
     <div>
@@ -37,7 +62,7 @@ const ViewPerfil= () => {
           </div>
           <div className="InfDer">
             <div className="InfDerSup">
-              <p style={{marginTop:"10px", marginLeft:"10px"}}>Añada una receta pai</p>
+              <p style={{marginTop:"10px", marginLeft:"10px"}}>Añade una receta</p>
             </div>
           </div>
         </div>
@@ -69,12 +94,30 @@ const ViewPerfil= () => {
             <div className="InfDerSup">
               {seleccionReceta && (
                 <div className="selectReceFalse">
-                  <p style={{fontSize:"70px"}}>No has seleccionado ninguna receta, escoge una para visualizarla!</p>
+                  <div>
+                  <img src={photoURL} style={{width:'20vw', height: '30vh'}}/>
+                      {/* <img src="icon_guest.png" className="ImageUser"/> */}
+
+                  </div>
+                  <div>
+                    <ol style={{fontSize:'5vh'}}>{displayName}</ol>
+                    <ol>Correo: {email}</ol>
+                    <ol>Creado: {fecha}</ol>
+                    <ol>Recetas: {recetas}recetas</ol>
+                    <ol>Favoritos: {favoritos} recetas</ol>
+                  </div>
                 </div>
               )}
 						  {!seleccionReceta &&(
                 <div className="InfDerSup">
-                  <h1 style={{fontSize:"60px", paddingLeft:"19px"}}>{recetas_elegidos.titulo}</h1>
+                  <div style={{display:"flex"}}>
+                    <h1 style={{fontSize:"60px", paddingLeft:"19px"}}>{recetas_elegidos.titulo}</h1>
+                    <div style={{position:'absolute', right:'10%', top:'10%'}} onClick={() => deselectReceta()}>
+                      <svg className="BackButton" width="5vw" height="5vw" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 27L26 9M9 9L26 27M18 2C26.8366 2 34 9.16344 34 18C34 26.8366 26.8366 34 18 34C9.16344 34 2 26.8366 2 18C2 9.16344 9.16344 2 18 2Z" stroke="black" strokeWidth="2.5"/>
+                      </svg>
+                    </div>
+                  </div>
                   <div className="MRResto">
                     <img className= "MRResto2" src={recetas_elegidos.imagen}/>
                     <p style={{width:"60%"}}className="MRResto2">{recetas_elegidos.descripcion}</p>
@@ -99,7 +142,7 @@ const ViewPerfil= () => {
       )}
     </div>
   )
-  
+
 }
 
 

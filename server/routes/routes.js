@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //importan los metodos de los controladores----------------------------
-const { getUsuarios, getNombreUsuarios, crearUsuario, vefificarUsuario } = require('../controllers/usuariosController');
+const { getUsuarios, getNombreUsuarios, crearUsuario, vefificarUsuario, cantidadRecetasFavoritasUsuario, cantidadRecetasUsuario } = require('../controllers/usuariosController');
 const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas } = require('../controllers/recetasController');
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
 const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
@@ -31,6 +31,8 @@ usuariosRouter.get('', getUsuarios);
 usuariosRouter.get('/nombres', getNombreUsuarios);
 usuariosRouter.post('/crear', crearUsuario);
 usuariosRouter.get('/verificar/:id', vefificarUsuario);
+usuariosRouter.get('/cantidadRecetas/:id', cantidadRecetasUsuario);
+usuariosRouter.get('/cantidadFavoritos/:id', cantidadRecetasFavoritasUsuario);
 //------------------Recetas
 router.use('/api/recetas', recetasRouter);
 recetasRouter.get('', getRecetas);

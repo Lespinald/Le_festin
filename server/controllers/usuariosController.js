@@ -32,9 +32,25 @@ const vefificarUsuario = async (req, res) => {
     res.send(existeUsuario)//retorna true o false si existe o no
 }
 
+const cantidadRecetasFavoritasUsuario = async (req, res) => {
+    const id_usuario = req.params.id;
+    const response = await pool.query(`SELECT COUNT(*) AS cantidad_recetas FROM favorito WHERE id_usuario = '${id_usuario}';`)
+    console.log(response.rows)
+    res.send(response.rows[0].existe_usuario)//retorna true o false si existe o no
+}
+
+const cantidadRecetasUsuario = async (req, res) => {
+    const id_usuario = req.params.id;
+    const response = await pool.query(`SELECT COUNT(*) AS cantidad_recetas FROM creadas WHERE id_usuario = '${id_usuario}';`)
+    console.log(response.rows)
+    res.send(response.rows[0].existe_usuario)//retorna true o false si existe o no
+}
+
 module.exports = {//aca se exportan los metodos
     getUsuarios,
     getNombreUsuarios,
+    cantidadRecetasFavoritasUsuario,
+    cantidadRecetasUsuario,
     crearUsuario,
     vefificarUsuario
 }
