@@ -7,7 +7,7 @@ const postFavoritos = async(req, res) =>{
         const{ id_usuario, id_receta} = req.body;
         
         const response = await pool.query('INSERT INTO favorito (id_usuario, id_receta) VALUES ($1,$2)', [id_usuario, id_receta]);
-        console.log(response);
+        console.log("postFAV: ",response);
         res.send('receta añadida como favorita');
     }catch(error){
         console.error(error);
