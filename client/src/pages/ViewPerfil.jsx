@@ -37,7 +37,6 @@ const ViewPerfil= () => {
   }
 
   useEffect(() => {
-    console.log("here")
     fetch(`https://lefestin.onrender.com/api/usuarios/cantidadFavoritos/${uid}`)
     .then(respuesta => {
       return respuesta.json()
