@@ -18,6 +18,7 @@ const Review = (props) => {
     const [rating, setRating] = useState(0);
     const roundedRating = rating.toFixed(1); // Redondear 1 decimal
     const [mostrarVentana, setMostrarVentana] = useState(false);
+    const [favorito, setFavorito] = useState(false);
     const [selectedStars, setSelectedStars] = useState(1);
     const [mostrarVentanaCompartir, setMostrarVentanaCompartir] = useState(false);
     const [verificacion, setVerificacion] = useState();
@@ -59,8 +60,51 @@ const Review = (props) => {
         }
     };
 
+    const handleFavClick = () => {
+        setFavorito((prevState) => !prevState)
+    }
 
     useEffect(() => {
+        console.log("cambio")
+        if(favorito){
+            console.log("agregar a fav")
+            fetch(`https://lefestin.onrender.com/api/favoritos/crear/${id_usuario}/${id_receta}`,{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id})
+            })
+            .then(respuesta => {
+                alert(respuesta)
+            })
+            .catch(error =>
+                alert(error.message))
+        }else{
+            console.log("desfavoritizar")
+            fetch(`https://lefestin.onrender.com/api/favoritos/borrar/${id_usuario}/${id_receta}`,{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id})
+            })
+            .then(respuesta => {
+                alert(respuesta)
+            })
+            .catch(error =>
+                alert(error.message))
+        }
+        },[favorito])
+        
+        useEffect(() => {
+        fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data)
+            setFavorito(data)
+        });
+        console.log("🚀 ~ file: Review.jsx:94 ~ useEffect ~ setFavorito:", favorito)
         fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
         .then(response => response.json())
         .then(data => {
@@ -70,8 +114,7 @@ const Review = (props) => {
     },[])
 
     const calificarReceta = () => {
-        
-
+    
         fetch(`https://lefestin.onrender.com/api/review/crearReview`,{
             method: 'POST',
             headers:{
@@ -124,6 +167,15 @@ const Review = (props) => {
                 <button className="boton-calificar" onClick={abrirVentana}>
                     Calificar
                 </button>
+            </div>
+
+            <div style={{position:'relative',left:'1vw', top:'1vh'}} onClick={handleFavClick}>
+                {favorito ? <svg xmlns="http://www.w3.org/2000/svg" width="42" height="36" viewBox="0 0 42 36" fill="none">
+                    <path d="M2 11.0476C1.99999 16.0238 21 34.119 21 34.119C21 34.119 40 16.0238 40 11.0476C40 6.07143 35.4762 2 30.5 2C25.5238 2 21 11.0476 21 11.0476C21 11.0476 16.4762 2 11.0476 2C5.61905 2 2.00001 6.07143 2 11.0476Z" fill="#E80404" stroke="black" stroke-width="2.71429"/>
+                </svg>:
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="37" viewBox="0 0 42 37" fill="none">
+                    <path d="M21 34.2381C21 34.2381 1.99999 16.1428 2 11.1666C2.00001 6.19045 5.61905 2.11902 11.0476 2.11902C16.4762 2.11902 21 11.1666 21 11.1666C21 11.1666 25.5238 2.11902 30.5 2.11902C35.4762 2.11902 40 6.19045 40 11.1666C40 16.1428 21 34.2381 21 34.2381Z" fill="#D9D9D9" stroke="black" stroke-width="2.71429"/>
+                </svg>}
             </div>
             {mostrarVentana && (
                 <div className="ventana-emergente-review">
