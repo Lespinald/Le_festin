@@ -16,9 +16,11 @@ const Banner = () => {
   const BeginSesion = async () => {
     dispatch(chekingCredentials())
     const result = await signInWithGoogle()
-    console.log("🚀 ~ file: Banner.jsx:19 ~ BeginSesion ~ result:", result)
     fetch(`https://lefestin.onrender.com/api/usuarios/verificar/${result?.uid}`)
-    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+      console.log("🚀 ~ file: Banner.jsx:22 ~ BeginSesion ~ respuesta:", respuesta)
+      return respuesta.json()
+    })
     .then(datos => {
         if(datos){
         dispatch(guardar(result))

@@ -36,14 +36,15 @@ const cantidadRecetasFavoritasUsuario = async (req, res) => {
     const id_usuario = req.params.id;
     const response = await pool.query(`SELECT COUNT(*) AS cantidad_recetas FROM favorito WHERE id_usuario = '${id_usuario}';`)
     console.log(response.rows)
-    res.send(response.rows[0].existe_usuario)//retorna true o false si existe o no
+    res.send(response.rows)//retorna true o false si existe o no
 }
 
 const cantidadRecetasUsuario = async (req, res) => {
     const id_usuario = req.params.id;
     const response = await pool.query(`SELECT COUNT(*) AS cantidad_recetas FROM creadas WHERE id_usuario = '${id_usuario}';`)
     console.log(response.rows)
-    res.send(response.rows[0].existe_usuario)//retorna true o false si existe o no
+    console.log("🚀 ~ file: usuariosController.js:46 ~ cantidadRecetasUsuario ~ response:", response)
+    res.send(response.rows)//retorna true o false si existe o no
 }
 
 module.exports = {//aca se exportan los metodos
