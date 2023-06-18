@@ -61,7 +61,9 @@ const Review = (props) => {
     };
 
     const handleFavClick = () => {
-        setFavorito((prevState) => !prevState)
+        if(id_usuario){
+            setFavorito((prevState) => !prevState)
+        }
     }
 
     useEffect(() => {
