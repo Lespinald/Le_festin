@@ -68,7 +68,7 @@ const Review = (props) => {
 
     useEffect(() => {
         console.log("cambio")
-        if(favorito){
+        if(favorito && id_usuario){
             console.log("agregar a fav")
             fetch(`https://lefestin.onrender.com/api/favoritos/crear/${id_usuario}/${id_receta}`,{
                 method: 'POST',
@@ -78,7 +78,8 @@ const Review = (props) => {
                 body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id})
             })
             .then(respuesta => {
-                alert(respuesta)
+                console.log("🚀 ~ file: Review.jsx:100 ~ useEffect ~ respuesta:", respuesta.json())
+                setFavorito(true)
             })
             .catch(error =>
                 alert(error.message))
@@ -92,21 +93,25 @@ const Review = (props) => {
                 body: JSON.stringify({ id_usuario: id_usuario, id_receta: props.id})
             })
             .then(respuesta => {
-                alert(respuesta)
+                console.log("🚀 ~ file: Review.jsx:100 ~ useEffect ~ respuesta:", respuesta.json())
+                setFavorito(false)
             })
             .catch(error =>
                 alert(error.message))
         }
-        },[favorito])
+        },[favorito,id_usuario])
         
     useEffect(() => {
-        fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data)
-            setFavorito(data)
-        });
-        console.log("🚀 ~ file: Review.jsx:94 ~ useEffect ~ setFavorito:", favorito)
+        if(id_usuario){
+            console.log("here")
+            fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data[0].existe_receta)
+                setFavorito(data[0].existe_receta)
+            });
+            console.log("🚀 ~ file: Review.jsx:94 ~ useEffect ~ setFavorito:", favorito)
+        }
         fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
         .then(response => response.json())
         .then(data => {
