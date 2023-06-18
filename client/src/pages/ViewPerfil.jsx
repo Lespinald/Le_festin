@@ -11,7 +11,6 @@ const ViewPerfil= () => {
   const email = useSelector((state) => state.info.email);
   const displayName = useSelector((state) => state.info.displayName);
   const photoURL = useSelector((state) => state.info.photoURL);
-  console.log("🚀 ~ file: ViewPerfil.jsx:13 ~ ViewPerfil ~ photoURL:", photoURL)
   // console.log("🚀 ~ file: ViewPerfil.jsx:10 ~ ViewPerfil ~ info:", info)
 
   var tieneRecetas= true;
@@ -36,23 +35,20 @@ const ViewPerfil= () => {
     const tumadre = []
     set_receta(tumadre)
   }
-  console.log(recetas_elegidos)
 
   useEffect(() => {
     console.log("here")
     fetch(`https://lefestin.onrender.com/api/usuarios/cantidadFavoritos/${uid}`)
     .then(respuesta => {
-      console.log("🚀 ~ file: ViewPerfil.jsx:45 ~ useEffect ~ respuesta:", respuesta)
       return respuesta.json()
     })
     .then(datos => {
-      console.log("🚀 ~ file: ViewPerfil.jsx:54 ~ useEffect ~ datos:", datos)
-      setFavoritos(datos)
+      setFavoritos(datos[0].cantidad_recetas)
     }); 
     fetch(`https://lefestin.onrender.com/api/usuarios/cantidadRecetas/${uid}`)
     .then(respuesta => respuesta.json())
     .then(datos => {
-      setRecetas(datos)
+      setRecetas(datos[0].cantidad_recetas)
     }); 
   },[])
 
@@ -107,8 +103,8 @@ const ViewPerfil= () => {
                     <ol style={{fontSize:'5vh'}}>{displayName}</ol>
                     <ol>Correo: {email}</ol>
                     <ol>Creado: {fecha}</ol>
-                    <ol>Recetas: 0{}recetas</ol>
-                    <ol>Favoritos: {} recetas</ol>
+                    <ol>Recetas: {recetas} recetas</ol>
+                    <ol>Favoritos: {favoritos} recetas</ol>
                   </div>
                 </div>
               )}

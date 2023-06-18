@@ -18,8 +18,6 @@ const Banner = () => {
     const result = await signInWithGoogle()
     fetch(`https://lefestin.onrender.com/api/usuarios/verificar/${result?.uid}`)
     .then(respuesta => {
-      console.log("🚀 ~ file: Banner.jsx:22 ~ BeginSesion ~ respuesta:", respuesta)
-      console.log("🚀 ~ file: Banner.jsx:23 ~ BeginSesion ~ respuesta.json():", respuesta.json())
       return respuesta.json()
     })
     .then(datos => {
