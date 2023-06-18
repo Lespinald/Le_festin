@@ -106,7 +106,7 @@ const Review = (props) => {
             console.log("here")
             fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
             .then(response => {
-                console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response.json())
+                console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response)
                 return response.json()
             })
             .then(data => {
