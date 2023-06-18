@@ -105,10 +105,13 @@ const Review = (props) => {
         if(id_usuario){
             console.log("here")
             fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
-            .then(response => response.json())
+            .then(response => {
+                console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response.json())
+                return response.json()
+            })
             .then(data => {
-                console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data[0].existe_receta)
-                setFavorito(data[0].existe_receta)
+                console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data)
+                setFavorito(data.existe_receta)
             });
             console.log("🚀 ~ file: Review.jsx:94 ~ useEffect ~ setFavorito:", favorito)
         }
