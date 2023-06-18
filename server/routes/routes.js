@@ -67,7 +67,7 @@ reviewsRouter.get('/usuarioRecetaID/:id_usuario/:id_receta', getReviewByUserRece
 //------------------Favoritos
 router.use('/api/favoritos', favoritosRouter);
 favoritosRouter.post('/crear/:id_usuario/:id_receta', postFavoritos);
-favoritosRouter.post('/borrar/:id_usuario/:id_receta', deleteFavoritos);
+favoritosRouter.delete('/borrar/:id_usuario/:id_receta', deleteFavoritos);
 reviewsRouter.get('/verificar/:id_usuario/:id_receta', verificarFavoritos);
 //se exportan las rutas(router)-----------------------------------
 module.exports = router;

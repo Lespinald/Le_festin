@@ -83,7 +83,7 @@ const Review = (props) => {
         }else{
             console.log("desfavoritizar")
             fetch(`https://lefestin.onrender.com/api/favoritos/borrar/${id_usuario}/${id_receta}`,{
-                method: 'POST',
+                method: 'DELETE',
                 headers:{
                     'Content-Type': 'application/json'
                 },
@@ -97,7 +97,7 @@ const Review = (props) => {
         }
         },[favorito])
         
-        useEffect(() => {
+    useEffect(() => {
         fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
         .then(response => response.json())
         .then(data => {
