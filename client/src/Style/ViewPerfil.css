@@ -118,6 +118,7 @@ p{
     display: block;
 }
 .selectReceFalse{
+    display: flex;
     margin-left: 100px;
 }
 
