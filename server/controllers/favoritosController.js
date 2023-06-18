@@ -19,7 +19,7 @@ const deleteFavoritos = async(req, res) =>{
     try{
         const{ id_usuario, id_receta} = req.body;
         
-        const response = await pool.query(`DELETE FROM favoritos WHERE id_receta = '${id_receta}' AND id_usuario = '${id_usuario}';`);
+        const response = await pool.query(`DELETE FROM favorito WHERE id_receta = '${id_receta}' AND id_usuario = '${id_usuario}';`);
         console.log(response);
         res.send('receta eliminada como favorita');
     }catch(error){
