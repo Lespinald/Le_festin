@@ -116,13 +116,14 @@ const Review = (props) => {
             })
             .then(data => {
                 console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data)
-                setFavorito(data.existe_receta)
-                fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
-                .then(response => response.json())
-                .then(data => {
-                    const avgNumber = parseFloat(data[0].avg);
-                    console.log(avgNumber)
-                    setRating(avgNumber);});
+                // setFavorito(data.existe_receta)
+            });
+            fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
+            .then(response => response.json())
+            .then(data => {
+                const avgNumber = parseFloat(data[0].avg);
+                console.log(avgNumber)
+                setRating(avgNumber);
             });
         }else{
             fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
