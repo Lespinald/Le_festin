@@ -109,7 +109,12 @@ const Review = (props) => {
     useEffect(() => {
         if(id_usuario){
             console.log("here")
-            fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
+            fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`,{
+                method: 'GET',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+            })
             .then(response => {
                 console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response.json())
                 return response.json()
