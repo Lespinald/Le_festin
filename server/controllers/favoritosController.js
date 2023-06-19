@@ -34,9 +34,29 @@ const verificarFavoritos = async(req, res) =>{
     res.send(response.rows);
 }
 
+const favoritosByIngredientes = async(req, res) =>{
+    const ingredientes1 = JSON.parse(req.params.ingredientes);
+    console.log(ingredientes1)
+    const string = ingredientes1.join("','");//aca se convierten en cadena para la query
+    const ingredientes = "'" + string + "'";
+    const id_usuario = req.params.id_usuario;
+    const response = await pool.query(`
+    SELECT r.*
+    FROM Receta r
+    INNER JOIN IngredienteAsociado ia ON r.ID_receta = ia.ID_receta
+    INNER JOIN Ingrediente i ON ia.ID_ingrediente = i.ID_ingrediente
+    INNER JOIN Favorito f ON r.ID_receta = f.ID_receta
+    WHERE f.ID_usuario = '${id_usuario}'
+    AND i.nombre IN ('${ingredientes}')
+    
+    `)
+    res.json(response.rows)
+}
+
 
 module.exports = {// se exportan los métodos
     postFavoritos,
     deleteFavoritos,
-    verificarFavoritos
+    verificarFavoritos,
+    favoritosByIngredientes
 }

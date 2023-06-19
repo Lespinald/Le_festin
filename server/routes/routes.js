@@ -9,7 +9,7 @@ const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../cont
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
 const { getComentarios, postComentario, getComentariosbyReceta } = require ('../controllers/comentariosController');
 const { getPromedioReviewByRecetaID, postReview, getReviewsAll, verificarReview, getReviewByUserRecetaID } = require('../controllers/reviewController');
-const { postFavoritos, verificarFavoritos, deleteFavoritos } = require ('../controllers/favoritosController')
+const { postFavoritos, verificarFavoritos, deleteFavoritos,favoritosByIngredientes } = require ('../controllers/favoritosController')
 
 //se definen los objetos de enrutamiento-----------------------------
 const usuariosRouter = express.Router();
@@ -69,5 +69,6 @@ router.use('/api/favoritos', favoritosRouter);
 favoritosRouter.post('/crear/:id_usuario/:id_receta', postFavoritos);
 favoritosRouter.delete('/borrar/:id_usuario/:id_receta', deleteFavoritos);
 reviewsRouter.get('/verificar/:id_usuario/:id_receta', verificarFavoritos);
+favoritosRouter.get('/favoritosByIngredientes/:ingredientes/:id_usuario', favoritosByIngredientes);
 //se exportan las rutas(router)-----------------------------------
 module.exports = router;
