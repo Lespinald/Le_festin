@@ -66,7 +66,7 @@ reviewsRouter.get('/verificar/:id_usuario/:id_receta', verificarReview);
 reviewsRouter.get('/usuarioRecetaID/:id_usuario/:id_receta', getReviewByUserRecetaID);
 //------------------Favoritos
 router.use('/api/favoritos', favoritosRouter);
-reviewsRouter.get('/verificar/:id_usuario/:id_receta', getVerificarFavoritos);
+favoritosRouter.get('/verificar/:id_usuario/:id_receta', getVerificarFavoritos);
 favoritosRouter.post('/crear/:id_usuario/:id_receta', postFavoritos);
 favoritosRouter.delete('/borrar/:id_usuario/:id_receta', deleteFavoritos);
 //se exportan las rutas(router)-----------------------------------
