@@ -63,13 +63,13 @@ const Review = (props) => {
     const handleFavClick = () => {
         if(id_usuario){
             setFavorito((prevState) => !prevState)
-            // cambiarEstado()
+            cambiarEstado()
         }
     }
 
     const cambiarEstado = () => {
         console.log("cambio")
-        if(favorito && id_usuario){
+        if(!favorito){
             console.log("agregar a fav")
             fetch(`https://lefestin.onrender.com/api/favoritos/crear/${id_usuario}/${id_receta}`,{
                 method: 'POST',
@@ -108,24 +108,23 @@ const Review = (props) => {
         
     useEffect(() => {
         if(id_usuario){
-            console.log("here")
             fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
             .then(response => {
-                console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response.json())
                 return response.json()
             })
             .then(data => {
-                console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data.existe_receta)
-                // setFavorito(data.existe_receta)
-            });
-            fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
-            .then(response => response.json())
-            .then(data => {
-                const avgNumber = parseFloat(data[0].avg);
-                console.log(avgNumber)
-                setRating(avgNumber);
+                console.log("🚀 ~ file: Review.jsx:88 ~ useEffect ~ data:", data)
+                setFavorito(data)
+                fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
+                .then(response => response.json())
+                .then(data => {
+                    const avgNumber = parseFloat(data[0].avg);
+                    console.log(avgNumber)
+                    setRating(avgNumber);
+                });
             });
         }else{
+            console.log("here en else")
             fetch(`https://lefestin.onrender.com/api/review/promedio/id/${id_receta}`)
             .then(response => response.json())
             .then(data => {
@@ -238,7 +237,7 @@ const Review = (props) => {
             )}
             <div className="boton-container-compartir">
                 <button className="boton-compartir" onClick={abrirVentanaCompartir}>
-                    <i class="fas fa-share-alt"></i>
+                    <i className="fas fa-share-alt"></i>
                 </button>
             </div>
             {mostrarVentanaCompartir && (
@@ -253,17 +252,17 @@ const Review = (props) => {
                         </div>
                         <div className="container-socialnet">
                             <button className="boton-social" onClick={compartirWhatsapp} >
-                            <i class="fab fa-whatsapp"></i>
+                            <i className="fab fa-whatsapp"></i>
                             </button>
                             <button className="boton-social" onClick={compartirFB}>
-                            <i class="fab fa-facebook-f"></i>
+                            <i className="fab fa-facebook-f"></i>
                             </button>
                             <button className="boton-social" onClick={compartirTwitter}>
-                            <i class="fab fa-twitter"></i>
+                            <i className="fab fa-twitter"></i>
                             </button>
                         </div>
                         <div className="link-container">
-                            <p class="link">{linkUrl}</p>
+                            <p className="link">{linkUrl}</p>
                         </div>
                         <div className="container-boton-copiar">
                             <button className="copy-btn" onClick={copyCompartir}><span>Copiar</span></button>
