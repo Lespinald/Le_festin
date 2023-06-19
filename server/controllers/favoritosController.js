@@ -26,19 +26,42 @@ const deleteFavoritos = async(req, res) =>{
     }
 }
 
-const getVerificarFavoritos = async(req, res) =>{
-    const id_usuario = req.params.id_usuario;
-    const id_receta = req.params.id_receta;
-    console.log("antes del query")
-    const response = await pool.query(`SELECT COUNT(*) AS existe_receta FROM favorito WHERE id_receta = '${id_receta}' AND id_usuario = '${id_usuario}'`);
-    console.log("🚀 ~ file: favoritosController.js:34 ~ verificarFavoritos ~ response.rows:", response)
-    const respuesta = response.rows[0].existe_receta > 0;
-    res.send(respuesta);
+const verificarFavoritos = async(req, res) =>{
+    const{ id_usuario, id_receta} = req.body;
+    
+    const response = await pool.query(`SELECT COUNT(*) AS existe_receta FROM favorito WHERE id_receta = '${id_receta}' AND id_usuario = '${id_usuario}';`);
+    console.log("🚀 ~ file: favoritosController.js:34 ~ verificarFavoritos ~ response.rows:", response.rows[0].existe_receta)
+    res.send(response.rows);
 }
 
+const favoritosByIngredientes = async (req, res) => {
+    const ingredientes1 = JSON.parse(req.params.ingredientes);
+    console.log(ingredientes1);
+    
+    const placeholders = ingredientes1.map((_, index) => `$${index + 1}`).join(", ");
+    const id_usuario = req.params.id_usuario;
+    
+    const query = `
+      SELECT DISTINCT r.*
+      FROM Receta r
+      INNER JOIN IngredienteAsociado ia ON r.ID_receta = ia.ID_receta
+      INNER JOIN Ingrediente i ON ia.ID_ingrediente = i.ID_ingrediente
+      INNER JOIN Favorito f ON r.ID_receta = f.ID_receta
+      WHERE i.nombre IN (${placeholders})
+      AND f.ID_usuario = $${ingredientes1.length + 1}
+      GROUP BY r.ID_receta
+    `;
+    
+    const values = [...ingredientes1, id_usuario];
+    const response = await pool.query(query, values);
+    res.json(response.rows);
+  };
+  
+  
 
 module.exports = {// se exportan los métodos
     postFavoritos,
     deleteFavoritos,
-    getVerificarFavoritos
+    verificarFavoritos,
+    favoritosByIngredientes
 }

@@ -9,7 +9,7 @@ const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../cont
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
 const { getComentarios, postComentario, getComentariosbyReceta } = require ('../controllers/comentariosController');
 const { getPromedioReviewByRecetaID, postReview, getReviewsAll, verificarReview, getReviewByUserRecetaID } = require('../controllers/reviewController');
-const { postFavoritos, getVerificarFavoritos, deleteFavoritos } = require ('../controllers/favoritosController')
+const { postFavoritos, verificarFavoritos, deleteFavoritos,favoritosByIngredientes } = require ('../controllers/favoritosController')
 
 //se definen los objetos de enrutamiento-----------------------------
 const usuariosRouter = express.Router();
@@ -66,8 +66,9 @@ reviewsRouter.get('/verificar/:id_usuario/:id_receta', verificarReview);
 reviewsRouter.get('/usuarioRecetaID/:id_usuario/:id_receta', getReviewByUserRecetaID);
 //------------------Favoritos
 router.use('/api/favoritos', favoritosRouter);
-favoritosRouter.get('/verificar/:id_usuario/:id_receta', getVerificarFavoritos);
 favoritosRouter.post('/crear/:id_usuario/:id_receta', postFavoritos);
 favoritosRouter.delete('/borrar/:id_usuario/:id_receta', deleteFavoritos);
+reviewsRouter.get('/verificar/:id_usuario/:id_receta', verificarFavoritos);
+favoritosRouter.get('/favoritosByIngredientes/:ingredientes/:id_usuario', favoritosByIngredientes);
 //se exportan las rutas(router)-----------------------------------
 module.exports = router;

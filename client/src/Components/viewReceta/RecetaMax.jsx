@@ -6,6 +6,7 @@ import Review from '../Review'
 
 const RecetaMax = (props) => {
   const authentication = useSelector((state) => state.auth.status);
+  console.log(authentication);
   return (
     <div className="MainRecetaMax">
       <div className="PanelIzquierdo">

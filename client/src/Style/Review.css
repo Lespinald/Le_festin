@@ -224,3 +224,36 @@
     height: 90%;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
+
+.heartCheckbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .heartIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('heart.png'); /* Reemplaza 'heart.png' con la ruta de tu imagen de corazón */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .heartCheckbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .heartCheckbox input[type="checkbox"]:checked + .heartIcon {
+    background-image: url('filled_heart.png'); /* Reemplaza 'filled_heart.png' con la ruta de tu imagen de corazón rellenado */
+  }
+  
