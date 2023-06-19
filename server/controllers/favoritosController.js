@@ -34,25 +34,30 @@ const verificarFavoritos = async(req, res) =>{
     res.send(response.rows);
 }
 
-const favoritosByIngredientes = async(req, res) =>{
+const favoritosByIngredientes = async (req, res) => {
     const ingredientes1 = JSON.parse(req.params.ingredientes);
-    console.log(ingredientes1)
-    const string = ingredientes1.join("','");//aca se convierten en cadena para la query
-    const ingredientes = "'" + string + "'";
-    const id_usuario = req.params.id_usuario;
-    const response = await pool.query(`
-    SELECT r.*
-    FROM Receta r
-    INNER JOIN IngredienteAsociado ia ON r.ID_receta = ia.ID_receta
-    INNER JOIN Ingrediente i ON ia.ID_ingrediente = i.ID_ingrediente
-    INNER JOIN Favorito f ON r.ID_receta = f.ID_receta
-    WHERE f.ID_usuario = '${id_usuario}'
-    AND i.nombre IN ('${ingredientes}')
+    console.log(ingredientes1);
     
-    `)
-    res.json(response.rows)
-}
-
+    const placeholders = ingredientes1.map((_, index) => `$${index + 1}`).join(", ");
+    const id_usuario = req.params.id_usuario;
+    
+    const query = `
+      SELECT DISTINCT r.*
+      FROM Receta r
+      INNER JOIN IngredienteAsociado ia ON r.ID_receta = ia.ID_receta
+      INNER JOIN Ingrediente i ON ia.ID_ingrediente = i.ID_ingrediente
+      INNER JOIN Favorito f ON r.ID_receta = f.ID_receta
+      WHERE i.nombre IN (${placeholders})
+      AND f.ID_usuario = $${ingredientes1.length + 1}
+      GROUP BY r.ID_receta
+    `;
+    
+    const values = [...ingredientes1, id_usuario];
+    const response = await pool.query(query, values);
+    res.json(response.rows);
+  };
+  
+  
 
 module.exports = {// se exportan los métodos
     postFavoritos,
