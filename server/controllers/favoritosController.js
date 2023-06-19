@@ -29,7 +29,7 @@ const deleteFavoritos = async(req, res) =>{
 const verificarFavoritos = async(req, res) =>{
     const{ id_usuario, id_receta} = req.body;
     console.log("here controlador")
-    const response = await pool.query(`SELECT EXISTS (SELECT 1 FROM favorito WHERE id_receta = '${id_receta}' AND id_usuario = '${id_usuario}') AS existe_receta;`);
+    const response = await pool.query(`SELECT EXISTS (SELECT 1 FROM favorito WHERE id_receta = $1 AND id_usuario = $2) AS existe_receta`,[id_usuario, id_receta]);
     console.log("🚀 ~ file: favoritosController.js:34 ~ verificarFavoritos ~ response.rows:", response.rows)
     const respuesta = response.rows;
     res.send(respuesta);
