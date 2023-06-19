@@ -63,10 +63,11 @@ const Review = (props) => {
     const handleFavClick = () => {
         if(id_usuario){
             setFavorito((prevState) => !prevState)
+            // cambiarEstado()
         }
     }
 
-    useEffect(() => {
+    const cambiarEstado = () => {
         console.log("cambio")
         if(favorito && id_usuario){
             console.log("agregar a fav")
@@ -99,14 +100,18 @@ const Review = (props) => {
             .catch(error =>
                 alert(error.message))
         }
-        },[favorito,id_usuario])
+    }
+
+    useEffect(() => {
+        console.log("🚀 ~ file: Review.jsx:68 ~ handleFavClick ~ setFavorito:", favorito)
+    },[favorito])
         
     useEffect(() => {
         if(id_usuario){
             console.log("here")
             fetch(`https://lefestin.onrender.com/api/favoritos/verificar/${id_usuario}/${id_receta}`)
             .then(response => {
-                console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response)
+                console.log("🚀 ~ file: Review.jsx:109 ~ useEffect ~ response:", response.json())
                 return response.json()
             })
             .then(data => {

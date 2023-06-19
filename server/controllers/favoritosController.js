@@ -31,7 +31,8 @@ const verificarFavoritos = async(req, res) =>{
     
     const response = await pool.query(`SELECT COUNT(*) AS existe_receta FROM favorito WHERE id_receta = '${id_receta}' AND id_usuario = '${id_usuario}';`);
     console.log("🚀 ~ file: favoritosController.js:34 ~ verificarFavoritos ~ response.rows:", response.rows[0].existe_receta)
-    res.send(response.rows);
+    const respuesta = response.rows;
+    res.send(respuesta);
 }
 
 
