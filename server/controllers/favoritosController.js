@@ -26,7 +26,7 @@ const deleteFavoritos = async(req, res) =>{
     }
 }
 
-const verificarFavoritos = async(req, res) =>{
+const getVerificarFavoritos = async(req, res) =>{
     const{ id_usuario, id_receta} = req.body;
     console.log("here controlador")
     const response = await pool.query(`SELECT EXISTS (SELECT 1 FROM favorito WHERE id_receta = $1 AND id_usuario = $2) AS existe_receta`,[id_usuario, id_receta]);
@@ -39,5 +39,5 @@ const verificarFavoritos = async(req, res) =>{
 module.exports = {// se exportan los métodos
     postFavoritos,
     deleteFavoritos,
-    verificarFavoritos
+    getVerificarFavoritos
 }
