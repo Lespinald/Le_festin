@@ -13,7 +13,7 @@ const Receta = (props) => {
   useEffect(() => {
     if(ingredientesSeleccionados.length === 0){
       console.log("Arreglo vacio")
-      fetch('https://lefestin.onrender.com/api/recetas')//ruta de la api
+      fetch('https://lefestin.onrender.com/api/recetas/recomendadas')//ruta de la api
       .then(response => response.json())
       .then(datos => set_Recetas(datos)); // guardar todas las recetas
     }else{

@@ -79,10 +79,11 @@ const getRecetasRecomendadas = async (req, res) => {
     fechaAnterior.setDate(fechaAnterior.getDate() - 1);
 
     const response = await pool.query(`
-        SELECT *
-        FROM Visualizaciones
-        WHERE fecha = $1
-        ORDER BY visualizaciones DESC
+        SELECT r.*
+        FROM Visualizaciones v
+        JOIN Receta r ON v.id_receta = r.id_receta
+        WHERE v.fecha = $1
+        ORDER BY v.visualizaciones DESC
         LIMIT 5;
     `, [fechaAnterior]);
 
