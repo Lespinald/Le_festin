@@ -81,6 +81,13 @@ CREATE TABLE IF NOT EXISTS PreguntasYSugerencias (
   CONSTRAINT fk4_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuarios (ID_usuario)
 );
 
+CREATE TABLE IF NOT EXISTS Visualizaciones (
+  ID_receta SERIAL NOT NULL,
+  fecha DATE NOT NULL,
+  visualizaciones INTEGER NOT NULL,
+  CONSTRAINT fk5_receta FOREIGN KEY (ID_receta) REFERENCES Receta (ID_receta)
+)
+
 CREATE EXTENSION IF NOT EXISTS unaccent;
 
 `).then(() => {
