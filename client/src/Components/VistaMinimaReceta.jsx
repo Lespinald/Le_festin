@@ -16,6 +16,16 @@ const VistaMinimaReceta = (Props) => {
 
     const handlerClick = () => {
         navigate(`/receta/${receta.ID_receta}`)
+
+         fetch(`https://lefestin.onrender.com/api/visualizaciones/update`,{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            }, body: JSON.stringify({ id_receta: receta.ID_receta })
+            })
+            .then(respuesta => {
+                console.log("+1 vista");
+            });
     }
 
   return (
