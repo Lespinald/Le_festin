@@ -11,7 +11,6 @@ p{
 .ZonaInferior{
     margin-top: 70px;
     width: 100%;
-    margin-bottom: 700px;
     display: inline-block;
 }
 
@@ -45,7 +44,7 @@ p{
     background: #e0dcdc;
     border-radius: 25px;
     border: #F0D678;
-    height: 200px;
+    height: fit-content;
     color: #000000;
     font-size: 20px;
     display: inline-block;
@@ -66,25 +65,23 @@ p{
 .MRResto2{
     display: inline-block;
     vertical-align: top;
-    padding-left: 10px;
-    border-radius: 40px;
+    margin: 0rem 0rem 1rem 1rem;
     font-size: 30px;
-    width: 400px;
+    max-height: 20rem;
 }
 
 .FotoReceta{
     display: inline-block;
-    margin-right: 10px;
+    width: 100%;
 }
 
 .MRTextos{
     vertical-align: top;
     display: inline-block;
-    width: 40%;
+    margin: 0.5rem
 }
 .MRImagenes{
     height: 100px;
-    width: 150px;
     border-radius: 30px;
     object-fit: cover;
 }
@@ -95,13 +92,14 @@ p{
     width: 85%;
     top:  calc(10% + 0px);
     width: 74%;
-    height: 70%;
+    height: 85%;
 }
 
 .InfDerSup{
     background: #e0dcdc;
     overflow-y: scroll;
-    height: 89%;
+    height: 100%;
+    box-sizing: border-box;
     /*background-color: #dddddd;*/
     display: block;
     border-radius: 70px;
@@ -123,16 +121,12 @@ p{
 }
 
 .botonBorrar{
-    width: 40%;
     background: #e33a1b;
-    border-radius: 40px;
+    border-radius: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
     border: #F0D678;
-    height: 170px;
     color: white;
-    font-size: 70px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    font-size: 2rem;
     text-align: center;
 }
 
