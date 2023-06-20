@@ -79,7 +79,7 @@ const favoritosByIngredientes = async (req, res) => {
 module.exports = {// se exportan los métodos
     postFavoritos,
     deleteFavoritos,
-    verificarFavoritos,
+    getVerificarFavoritos,
     favoritosByIngredientes,
     getFavoritos
 }

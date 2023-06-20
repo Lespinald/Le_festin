@@ -9,7 +9,7 @@ const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../cont
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
 const { getComentarios, postComentario, getComentariosbyReceta } = require ('../controllers/comentariosController');
 const { getPromedioReviewByRecetaID, postReview, getReviewsAll, verificarReview, getReviewByUserRecetaID } = require('../controllers/reviewController');
-const { postFavoritos, verificarFavoritos, deleteFavoritos,favoritosByIngredientes, getFavoritos } = require ('../controllers/favoritosController');
+const { postFavoritos, getVerificarFavoritos, deleteFavoritos,favoritosByIngredientes, getFavoritos } = require ('../controllers/favoritosController');
 
 
 //se definen los objetos de enrutamiento-----------------------------
