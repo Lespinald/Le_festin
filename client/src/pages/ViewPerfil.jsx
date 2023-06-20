@@ -31,7 +31,7 @@ const ViewPerfil= () => {
   }
 
   const borrarReceta = () => {
-    fetch(`http://localhost:5000/api/recetas/deleteByRecetaId/${recetas_elegidos.id_receta}`,
+    fetch(`https://lefestin.onrender.com/api/recetas/deleteByRecetaId/${recetas_elegidos.id_receta}`,
     {
       method: 'DELETE'
     });
@@ -44,7 +44,7 @@ const ViewPerfil= () => {
       setRecetas(datos[0].cantidad_recetas)
       
       if(datos[0].cantidad_recetas > 0){
-        fetch(`http://localhost:5000/api/recetas/recetasByUsuarioId/${uid}`)
+        fetch(`https://lefestin.onrender.com/api/recetas/recetasByUsuarioId/${uid}`)
         .then(res => res.json())
         .then(datos => {
           setListaCreadas(datos)
@@ -68,7 +68,7 @@ const ViewPerfil= () => {
       setRecetas(datos[0].cantidad_recetas)
       
       if(datos[0].cantidad_recetas > 0){
-        fetch(`http://localhost:5000/api/recetas/recetasByUsuarioId/${uid}`)
+        fetch(`https://lefestin.onrender.com/api/recetas/recetasByUsuarioId/${uid}`)
         .then(res => res.json())
         .then(datos => {
           setListaCreadas(datos)
@@ -106,9 +106,6 @@ const ViewPerfil= () => {
                     </p>
                 	</div>
             		</div>
-                <button className="botonBorrar" onClick={borrarReceta}>
-                  <p style={{margin:"0", textAlign:"center"}}>Eliminar</p>
-                </button>
               </button>
             ))}
           </section>
