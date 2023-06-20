@@ -20,7 +20,7 @@ const RecetaFavoritos = (props) => {
   useEffect(() => {
     if(ingredientesSeleccionados.length === 0){
       console.log("Arreglo vacio");
-      fetch(`http://localhost:5000/api/favoritos/obtener/${uid}`)//ruta de la api para obtener favoritos
+      fetch(`https://lefestin.onrender.com/api/favoritos/obtener/${uid}`)//ruta de la api para obtener favoritos
       .then(response => response.json())
       .then(datos => set_Recetas(datos)); // guardar todos los ids favoritos
 
@@ -28,7 +28,7 @@ const RecetaFavoritos = (props) => {
       console.log("Arreglo con ingredientes")
       console.log(objetoJson);
       console.log(uid)
-      fetch(`http://localhost:5000/api/favoritos/favoritosByIngredientes/${objetoJson}/${uid}`)//ruta de la api
+      fetch(`https://lefestin.onrender.com/api/favoritos/favoritosByIngredientes/${objetoJson}/${uid}`)//ruta de la api
       .then(response => response.json())
       .then(datos => set_Recetas(datos));
     }
