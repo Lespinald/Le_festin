@@ -3,13 +3,15 @@ const router = express.Router();
 
 //importan los metodos de los controladores----------------------------
 const { getUsuarios, getNombreUsuarios, crearUsuario, vefificarUsuario, cantidadRecetasFavoritasUsuario, cantidadRecetasUsuario } = require('../controllers/usuariosController');
+
 const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas, getRecetasRecomendadas } = require('../controllers/recetasController');
+const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas, getRecetasByIdUsuario, deleteRecetasById, getRecetasRecomendadas} = require('../controllers/recetasController');
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
 const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
 const { getPreguntasSugerencias } = require('../controllers/preguntasySugerenciasController');
 const { getComentarios, postComentario, getComentariosbyReceta } = require ('../controllers/comentariosController');
 const { getPromedioReviewByRecetaID, postReview, getReviewsAll, verificarReview, getReviewByUserRecetaID } = require('../controllers/reviewController');
-const { postFavoritos, verificarFavoritos, deleteFavoritos,favoritosByIngredientes } = require ('../controllers/favoritosController')
+const { postFavoritos, getVerificarFavoritos, deleteFavoritos,favoritosByIngredientes, getFavoritos } = require ('../controllers/favoritosController');
 const { getVisualizaciones, postVisualizacion, updateVisualization } = require('../controllers/visualizaciones');
 
 //se definen los objetos de enrutamiento-----------------------------
@@ -42,6 +44,8 @@ recetasRouter.get('/id/:id', getRecetasById);
 recetasRouter.get('/ingredientes/:ingredientes', getRecetasbyIngredientes);
 recetasRouter.post('/createRecetas', createRecetas);
 recetasRouter.get('/recomendadas', getRecetasRecomendadas);
+recetasRouter.get('/recetasByUsuarioId/:id_usuario', getRecetasByIdUsuario);
+recetasRouter.delete('/deleteByRecetaId/:id_receta', deleteRecetasById);
 //------------------Ingredientes
 router.use('/api/ingredientes', ingredientesRouter);
 ingredientesRouter.get('', getIngredientes);
@@ -71,12 +75,15 @@ reviewsRouter.get('/usuarioRecetaID/:id_usuario/:id_receta', getReviewByUserRece
 router.use('/api/favoritos', favoritosRouter);
 favoritosRouter.post('/crear/:id_usuario/:id_receta', postFavoritos);
 favoritosRouter.delete('/borrar/:id_usuario/:id_receta', deleteFavoritos);
-reviewsRouter.get('/verificar/:id_usuario/:id_receta', verificarFavoritos);
+favoritosRouter.get('/verificar/:id_usuario/:id_receta', getVerificarFavoritos);
 favoritosRouter.get('/favoritosByIngredientes/:ingredientes/:id_usuario', favoritosByIngredientes);
-//------------------Calificaciones
+favoritosRouter.get('/obtener/:uid', getFavoritos);
+//------------------Visualizaciones
 router.use('/api/visualizaciones', visualizacionesRouter);
 visualizacionesRouter.get('', getVisualizaciones);
 visualizacionesRouter.post('/crear', postVisualizacion);
 visualizacionesRouter.post('/update', updateVisualization);
+
+
 //se exportan las rutas(router)-----------------------------------
 module.exports = router;

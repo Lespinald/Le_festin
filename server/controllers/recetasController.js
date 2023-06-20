@@ -72,6 +72,7 @@ const createRecetas = async (req, res) => {
     }
 }
 
+
 const getRecetasRecomendadas = async (req, res) => {
 
     const fechaAnterior = new Date();
@@ -88,11 +89,49 @@ const getRecetasRecomendadas = async (req, res) => {
     res.json(response.rows);
 }
 
+const getRecetasByIdUsuario = async(req, res) => {
+    const id_usuario = req.params.id_usuario;
+    const response = await pool.query(`SELECT r.*
+    FROM Receta r
+    INNER JOIN Creadas c ON r.ID_receta = c.ID_receta
+    WHERE c.ID_usuario = '${id_usuario}'`);
+    res.json(response.rows);
+}
+
+const deleteRecetasById = async(req, res) => {
+    try {
+        const id_receta = req.params.id_receta;
+        const response = await pool.query(`
+        DELETE FROM IngredienteAsociado
+        WHERE ID_receta = '${id_receta}';
+        DELETE FROM Favorito
+        WHERE ID_receta = '${id_receta}';
+        DELETE FROM Creadas
+        WHERE ID_receta = '${id_receta}';
+        DELETE FROM Comentario
+        WHERE ID_receta = '${id_receta}';
+        DELETE FROM Review
+        WHERE ID_receta = '${id_receta}';
+        DELETE FROM Receta
+        WHERE ID_receta = '${id_receta}';
+        `)
+        res.send('Receta eliminada correctamente');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al eliminar receta');
+    }
+    
+}
+
+
+
   
 module.exports = {//aca se exportan los metodos
     getRecetas, 
     getRecetasById,
     getRecetasbyIngredientes,
     createRecetas,
-    getRecetasRecomendadas
+    getRecetasRecomendadas,
+    getRecetasByIdUsuario,
+    deleteRecetasById
 }
