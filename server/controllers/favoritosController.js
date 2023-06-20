@@ -60,9 +60,26 @@ const favoritosByIngredientes = async (req, res) => {
   };
 
 
+  const getFavoritos = async(req, res) =>{
+    try{
+        const id_usuario = req.params.uid;
+        const response = await pool.query(
+        `select receta.*
+        from receta
+        join favorito on receta.id_receta= favorito.id_receta where id_usuario='${id_usuario}'`
+        );
+        res.json(response.rows);
+    }catch(error){
+        console.error(error);
+        res.status(500).send('Error al añadir favorita')
+    }
+}
+
+
 module.exports = {// se exportan los métodos
     postFavoritos,
     deleteFavoritos,
-    getVerificarFavoritos,
-    favoritosByIngredientes
+    verificarFavoritos,
+    favoritosByIngredientes,
+    getFavoritos
 }
