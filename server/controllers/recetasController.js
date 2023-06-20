@@ -72,11 +72,27 @@ const createRecetas = async (req, res) => {
     }
 }
 
+const getRecetasRecomendadas = async (req, res) => {
+
+    const fechaAnterior = new Date();
+    fechaAnterior.setDate(fechaAnterior.getDate() - 1);
+
+    const response = await pool.query(`
+        SELECT *
+        FROM Visualizaciones
+        WHERE fecha = $1
+        ORDER BY visualizaciones DESC
+        LIMIT 5;
+    `, [fechaAnterior]);
+
+    res.json(response.rows);
+}
 
   
 module.exports = {//aca se exportan los metodos
     getRecetas, 
     getRecetasById,
     getRecetasbyIngredientes,
-    createRecetas
+    createRecetas,
+    getRecetasRecomendadas
 }
