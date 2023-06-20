@@ -3,8 +3,6 @@ const router = express.Router();
 
 //importan los metodos de los controladores----------------------------
 const { getUsuarios, getNombreUsuarios, crearUsuario, vefificarUsuario, cantidadRecetasFavoritasUsuario, cantidadRecetasUsuario } = require('../controllers/usuariosController');
-
-const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas, getRecetasRecomendadas } = require('../controllers/recetasController');
 const { getRecetas, getRecetasById , getRecetasbyIngredientes, createRecetas, getRecetasByIdUsuario, deleteRecetasById, getRecetasRecomendadas} = require('../controllers/recetasController');
 const { getIngredientes, getIngredientesById, getIngredientesByIdList, busquedaNombre } = require('../controllers/IngredientesController');
 const { getIngredienteAsociado, getIngredientesIdByRecetaID } = require('../controllers/ingredienteAsociadoController')
