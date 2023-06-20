@@ -72,7 +72,6 @@ const favoritosByIngredientes = async (req, res) => {
         res.status(500).send('Error al añadir favorita')
     }
 }
-  
 
 module.exports = {// se exportan los métodos
     postFavoritos,
