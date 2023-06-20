@@ -77,7 +77,7 @@ const getRecetasByIdUsuario = async(req, res) => {
     const response = await pool.query(`SELECT r.*
     FROM Receta r
     INNER JOIN Creadas c ON r.ID_receta = c.ID_receta
-    WHERE c.ID_usuario = '${id_usuario}';`);
+    WHERE c.ID_usuario = '${id_usuario}'`);
     res.json(response.rows);
 }
 
